@@ -1,2 +1,4 @@
 /** @type import('haoma').PrettierConfig */
-module.exports = require('haoma').getPrettierConfig()
+module.exports = require('haoma').getPrettierConfig({
+  semi: true,
+})

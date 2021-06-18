@@ -1,8 +1,8 @@
-import fs from 'fs-extra';
 import exec from 'execa';
-import qa from 'prompts';
+import fs from 'fs-extra';
 import path from 'path';
-import { snakeCase, pascalCase, dedent } from 'vtils';
+import qa from 'prompts';
+import { dedent, pascalCase, snakeCase } from 'vtils';
 
 async function main() {
   const rootDir = path.join(__dirname, '..');
@@ -37,7 +37,7 @@ async function main() {
             import { defineComponent } from '@/utils'
 
             export default defineComponent({
-
+              name: '${ComponentName}'
             })
           </script>
 
