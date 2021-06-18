@@ -1,18 +1,2 @@
-module.exports = {
-  arrowParens: 'always',
-  bracketSpacing: true,
-  embeddedLanguageFormatting: 'auto',
-  endOfLine: 'lf',
-  jsxBracketSameLine: false,
-  jsxSingleQuote: true,
-  printWidth: 80,
-  quoteProps: 'consistent',
-  semi: true,
-  singleQuote: true,
-  trailingComma: 'all',
-  useTabs: false,
-  tabWidth: 2,
-  vueIndentScriptAndStyle: true,
-  htmlWhitespaceSensitivity: 'css',
-  proseWrap: 'preserve',
-};
+/** @type import('haoma').PrettierConfig */
+module.exports = require('haoma').getPrettierConfig()
