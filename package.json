@@ -7,7 +7,8 @@
     "preinstall": "npx only-allow yarn",
     "new-component": "haoma run scripts/new_component.js",
     "compile": "haoma compile",
-    "gen-index": "vgis \"src/**/index.js\""
+    "gen-index": "vgis \"src/**/index.js\"",
+    "notify-dingtalk": "notify-dingtalk"
   },
   "husky": {
     "hooks": {
@@ -40,6 +41,7 @@
     "husky": "^4",
     "jest": "^27",
     "lint-staged": "^10",
+    "notify-dingtalk": "^1.2.0",
     "only-allow": "^1.0.0",
     "prettier": "^2",
     "prompts": "^2.4.1",
