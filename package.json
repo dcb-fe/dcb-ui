@@ -1,8 +1,17 @@
 {
-  "name": "ddd",
-  "version": "1.0.0",
+  "name": "@dcbfe/ui",
+  "version": "0.0.5",
+  "description": "多彩宝移动端 UI 组件库。",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcb-fe/dcb-ui.git"
+  },
   "license": "MIT",
-  "main": "index.js",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "lib/_cjs/index.js",
+  "module": "lib/index.js",
   "scripts": {
     "preinstall": "npx only-allow yarn",
     "new-component": "haoma run scripts/new_component.js",
@@ -17,16 +26,16 @@
     }
   },
   "lint-staged": {
-    "*.{css,less,scss,sass,html,htm,vue,yml,yaml,json,md}": [
+    "*.{css,less,scss,sass,html,htm,yml,yaml,json,md}": [
       "prettier --write"
     ],
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,ts,tsx,.vue}": [
       "eslint --fix",
       "prettier --write"
     ]
   },
   "dependencies": {
-    "vue": "^2.6.11"
+    "@babel/runtime": "^7.14.6"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.11",
@@ -50,6 +59,7 @@
     "typescript": "^4",
     "typescript-snapshots-plugin": "^1",
     "vscode-generate-index-standalone": "^1.4.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue": "^2.6.14",
+    "vue-template-compiler": "^2.6.14"
   }
 }

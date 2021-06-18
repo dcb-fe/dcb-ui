@@ -9,6 +9,12 @@
 
   export default defineComponent({
     name: 'Button',
+
+    methods: {
+      async handleClick() {
+        console.log(1);
+      },
+    },
   });
 </script>
 
