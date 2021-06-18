@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "npx only-allow yarn",
-    "new_component": "haoma run scripts/new_component.js",
-    "compile": "haoma compile"
+    "new-component": "haoma run scripts/new_component.js",
+    "compile": "haoma compile",
+    "gen-index": "vgis \"src/**/index.js\""
   },
   "husky": {
     "hooks": {
@@ -46,6 +47,7 @@
     "tbify": "^1.5.0",
     "typescript": "^4",
     "typescript-snapshots-plugin": "^1",
+    "vscode-generate-index-standalone": "^1.4.0",
     "vue-template-compiler": "^2.6.11"
   }
 }

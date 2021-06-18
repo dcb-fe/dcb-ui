@@ -80,6 +80,9 @@ async function main() {
           stdio: 'inherit',
         },
       );
+      await exec('npm', ['run', 'gen-index'], {
+        stdio: 'inherit',
+      });
     } catch {}
   }
 }
