@@ -9,6 +9,11 @@ module.exports = {
       .set('@', path.join(__dirname, '../../src'))
       .set('@dcbfe/ui', path.join(__dirname, '../../src'));
   },
+  markdown: {
+    extendMarkdown: md => {
+      md.use(require('markdown-it-include'));
+    },
+  },
   themeConfig: {
     nav: [
       { text: '使用指南', link: '/guide.html' },
