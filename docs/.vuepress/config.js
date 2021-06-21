@@ -15,7 +15,21 @@ module.exports = {
       { text: '组件', link: '/components/' },
       { text: '更新日志', link: '/changelog.html' },
     ],
-    sidebar: {},
+    sidebar: {
+      '/components/': [
+        {
+          title: '基础',
+          collapsable: false,
+          children: [
+            {
+              title: 'Button 按钮',
+              path: '/components/button.html',
+              sidebarDepth: 0,
+            },
+          ],
+        },
+      ],
+    },
     lastUpdated: '上次更新时间',
   },
 };
