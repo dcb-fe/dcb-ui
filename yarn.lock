@@ -1510,6 +1510,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/highlight.js@^9.7.0":
+  version "9.12.4"
+  resolved "https://registry.nlark.com/@types/highlight.js/download/@types/highlight.js-9.12.4.tgz#8c3496bd1b50cc04aeefd691140aa571d4dbfa34"
+  integrity sha1-jDSWvRtQzASu79aRFAqlcdTb+jQ=
+
 "@types/http-cache-semantics@*":
   version "4.0.0"
   resolved "https://registry.nlark.com/@types/http-cache-semantics/download/@types/http-cache-semantics-4.0.0.tgz#9140779736aa2655635ee756e2467d787cfe8a2a"
@@ -1574,6 +1579,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/linkify-it@*":
+  version "3.0.1"
+  resolved "https://registry.nlark.com/@types/linkify-it/download/@types/linkify-it-3.0.1.tgz#4d26a9efe3aa2caf829234ec5a39580fc88b6001"
+  integrity sha1-TSap7+OqLK+CkjTsWjlYD8iLYAE=
+
 "@types/lodash-es@^4.17.3":
   version "4.17.4"
   resolved "https://registry.nlark.com/@types/lodash-es/download/@types/lodash-es-4.17.4.tgz?cache=0&sync_timestamp=1621243692613&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Flodash-es%2Fdownload%2F%40types%2Flodash-es-4.17.4.tgz#b2e440d2bf8a93584a9fd798452ec497986c9b97"
@@ -1585,6 +1595,20 @@
   version "4.14.170"
   resolved "https://registry.nlark.com/@types/lodash/download/@types/lodash-4.14.170.tgz?cache=0&sync_timestamp=1621681846824&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Flodash%2Fdownload%2F%40types%2Flodash-4.14.170.tgz#0d67711d4bf7f4ca5147e9091b847479b87925d6"
   integrity sha1-DWdxHUv39MpRR+kJG4R0ebh5JdY=
+
+"@types/markdown-it@^12.0.2":
+  version "12.0.2"
+  resolved "https://registry.nlark.com/@types/markdown-it/download/@types/markdown-it-12.0.2.tgz#153e5477970ed2a47b2f619ed4ab66f870de8a04"
+  integrity sha1-FT5Ud5cO0qR7L2Ge1Ktm+HDeigQ=
+  dependencies:
+    "@types/highlight.js" "^9.7.0"
+    "@types/linkify-it" "*"
+    "@types/mdurl" "*"
+
+"@types/mdurl@*":
+  version "1.0.2"
+  resolved "https://registry.nlark.com/@types/mdurl/download/@types/mdurl-1.0.2.tgz#e2ce9d83a613bacf284c7be7d491945e39e1f8e9"
+  integrity sha1-4s6dg6YTus8oTHvn1JGUXjnh+Ok=
 
 "@types/minimatch@*":
   version "3.0.4"
