@@ -14,3 +14,6 @@ dist
 *.njsproj
 *.sln
 *.sw?
+
+docs/components/*.md
+!docs/components/index.md
