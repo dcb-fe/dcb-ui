@@ -13285,7 +13285,7 @@ vtils@^2.7.1:
   resolved "https://registry.npm.taobao.org/vtils/download/vtils-2.59.0.tgz?cache=0&sync_timestamp=1616034965682&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvtils%2Fdownload%2Fvtils-2.59.0.tgz#d5ae21e86e0df3fb40b8277c25c6f330dc53a113"
   integrity sha1-1a4h6G4N8/tAuCd8JcbzMNxToRM=
 
-vtils@^4.1.0, vtils@^4.30.2:
+vtils@^4.1.0, vtils@^4.30.2, vtils@^4.34.0:
   version "4.34.0"
   resolved "https://registry.npm.taobao.org/vtils/download/vtils-4.34.0.tgz?cache=0&sync_timestamp=1616034965682&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvtils%2Fdownload%2Fvtils-4.34.0.tgz#186fb37a0c8aa16a59d2fb297c7ab1bd279868c2"
   integrity sha1-GG+zegyKoWpZ0vspfHqxvSeYaMI=
