@@ -15,5 +15,10 @@ export function defineComponent(options) {
     return this.$style;
   };
 
+  // 安装方法
+  options.install = Vue => {
+    Vue.component(options.name, options);
+  };
+
   return options;
 }
