@@ -11,7 +11,7 @@ module.exports = {
   },
   markdown: {
     extendMarkdown: md => {
-      md.use(require('./demoMarkdownPlugin'));
+      md.use(require('./markdownPlugin'));
     },
   },
   themeConfig: {
