@@ -63,4 +63,17 @@ td ul:last-child {
     width: calc(100% - 375px);
     max-height: 667px;
   }
+
+  @media(max-width: 419px) {
+    flex-direction: column;
+
+    > :first-child {
+      width: 100%;
+    }
+
+    > :last-child {
+      width: 100%;
+      margin-left: 0 !important;
+    }
+  }
 }
