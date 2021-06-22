@@ -1,5 +1,4 @@
-const { kebabCase, memoize } = require('vtils');
-const path = require('path');
+const { kebabCase, memoize, dedent } = require('vtils');
 
 const _kebabCase = memoize(kebabCase);
 
@@ -12,44 +11,50 @@ module.exports = (
   md.core.ruler.at('replacements', state => {
     const postRuns = [];
     state.tokens.forEach((token, index) => {
-      const matches = token.content.match(
-        /<demo\s+src=["']([^/]+)\/([^/]+)["']/,
+      const demoMatches = token.content.match(
+        /<demo\s+src=["']([^/]+?)\/([^/]+?)["']/,
       );
-      if (matches) {
-        token.type = 'html_inline';
-        token.content = `<demo-${_kebabCase(matches[1])}-${_kebabCase(
-          matches[2],
-        )} /> `;
+      if (demoMatches) {
+        const [, $1, $2] = demoMatches;
         postRuns.unshift(() => {
           state.tokens.splice(
             index,
             1,
-            {
-              type: 'html_block',
-              content: '<div class="x-demo-container">',
-            },
-            {
-              type: 'html_block',
-              content: '<div>',
-            },
-            token,
-            {
-              type: 'html_block',
-              content: '</div>',
-            },
-            {
-              type: 'fence',
-              info: 'vue',
-              src: path.join(
-                __dirname,
-                `../../src/components/${matches[1]}/__demo__/${matches[2]}.vue`,
-              ),
-              markup: '```',
-            },
-            {
-              type: 'html_block',
-              content: '</div>',
-            },
+            ...md.parse(dedent`
+              <div class="x-demo-container">
+
+                <div>
+                  <demo-${_kebabCase($1)}-${_kebabCase($2)} />
+                </div>
+
+                <<< @/src/components/${$1}/__demo__/${$2}.vue
+
+              </div>
+            `),
+          );
+        });
+      }
+
+      const apiMatches = token.content.match(/<api\s+src=["']([^/]+?)["']/);
+      if (apiMatches) {
+        const [, $1] = apiMatches;
+        postRuns.unshift(() => {
+          state.tokens.splice(
+            index,
+            1,
+            ...md.parse(dedent`
+              ### 属性
+
+              <p><api-table src="${$1}" type="props" /></p>
+
+              ### 插槽
+
+              <p><api-table src="${$1}" type="slots" /></p>
+
+              ### 事件
+
+              <p><api-table src="${$1}" type="emits" /></p>
+            `),
           );
         });
       }

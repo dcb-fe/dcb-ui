@@ -10,6 +10,39 @@
   export default defineComponent({
     name: 'Button',
 
+    props: {
+      type: {
+        type: String,
+        enum: ['default', 'primary', 'info', 'warning', 'danger'],
+        default: 'default',
+        desc: '描述',
+      },
+      size: {
+        type: String,
+        enum: ['normal', 'large', 'small', 'mini'],
+        default: 'normal',
+        desc: '尺寸',
+      },
+    },
+
+    slots: {
+      default: {
+        desc: '按钮内容',
+      },
+    },
+
+    emits: {
+      click: {
+        desc: '点击时触发',
+        payload: {
+          e: {
+            type: Object,
+            desc: '事件对象',
+          },
+        },
+      },
+    },
+
     methods: {
       async handleClick() {
         console.log(1);

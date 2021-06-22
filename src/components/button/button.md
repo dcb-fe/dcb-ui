@@ -11,3 +11,7 @@
 基本按钮。
 
 <demo src="button/basic" />
+
+## API
+
+<api src="button" />
