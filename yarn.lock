@@ -1255,6 +1255,11 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
+"@ls-lint/ls-lint@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.nlark.com/@ls-lint/ls-lint/download/@ls-lint/ls-lint-1.9.2.tgz#689f1f4c06072823a726802ba167340efcefe19c"
+  integrity sha1-aJ8fTAYHKCOnJoAroWc0Dvzv4Zw=
+
 "@microsoft/api-extractor-model@7.13.3":
   version "7.13.3"
   resolved "https://registry.nlark.com/@microsoft/api-extractor-model/download/@microsoft/api-extractor-model-7.13.3.tgz#ac01c064c5af520d3661c85d7e5ef95e1ca8ab92"

@@ -1,0 +1,8 @@
+ls:
+  '{src,scripts}':
+    .dir: snake_case
+    .vue: snake_case
+    .js: snake_case
+    .test.js: snake_case
+    .md: snake_case
+    .scss: snake_case

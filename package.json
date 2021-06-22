@@ -23,7 +23,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "ls-lint && lint-staged",
       "post-merge": "npx tbify yarn"
     }
   },
@@ -40,6 +40,7 @@
     "@babel/runtime": "^7.14.6"
   },
   "devDependencies": {
+    "@ls-lint/ls-lint": "^1.9.2",
     "@types/fs-extra": "^9.0.11",
     "@types/markdown-it": "^12.0.2",
     "@types/prompts": "^2.0.13",
