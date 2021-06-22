@@ -1,4 +1,6 @@
 const { kebabCase, memoize, dedent } = require('vtils');
+const fs = require('fs');
+const path = require('path');
 
 const _kebabCase = memoize(kebabCase);
 
@@ -55,6 +57,22 @@ module.exports = (
 
               <p><api-table src="${$1}" type="emits" /></p>
             `),
+          );
+        });
+      }
+
+      const includeMatches = token.content.match(
+        /<include\s+src=["']([^'"]+?)["']/,
+      );
+      if (includeMatches) {
+        const [, $1] = includeMatches;
+        postRuns.unshift(() => {
+          state.tokens.splice(
+            index,
+            1,
+            ...md.parse(
+              fs.readFileSync(path.join(process.cwd(), `./${$1}`), 'utf-8'),
+            ),
           );
         });
       }
