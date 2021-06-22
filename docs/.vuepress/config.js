@@ -1,4 +1,8 @@
+require('haoma/lib/esbuildRegister');
+
 const path = require('path');
+const { meta } = require('../../src/meta');
+const { snakeCase } = require('vtils');
 
 module.exports = {
   title: '多彩宝移动端 UI 组件库',
@@ -21,19 +25,15 @@ module.exports = {
       { text: '更新日志', link: '/changelog.html' },
     ],
     sidebar: {
-      '/components/': [
-        {
-          title: '基础',
-          collapsable: false,
-          children: [
-            {
-              title: 'Button 按钮',
-              path: '/components/button.html',
-              sidebarDepth: 0,
-            },
-          ],
-        },
-      ],
+      '/components/': meta.componentGroups.map(group => ({
+        title: group.title,
+        collapsable: false,
+        children: group.list.map(item => ({
+          title: `${item.name} ${item.cname}`,
+          path: `/components/${snakeCase(item.name)}.html`,
+          sidebarDepth: 0,
+        })),
+      })),
     },
     lastUpdated: '上次更新时间',
   },
