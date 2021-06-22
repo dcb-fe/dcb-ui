@@ -20,6 +20,7 @@
 
 <style lang="scss" module>
   .button {
+    border: 1px solid red;
     color: red;
   }
 </style>
