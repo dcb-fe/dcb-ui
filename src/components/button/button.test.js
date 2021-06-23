@@ -31,5 +31,21 @@ describe('Button', () => {
       await wrapper.trigger('click');
       expect(handleClick).toBeCalled().toBeCalledTimes(2);
     });
+
+    test('disabled 为 true 时点击组件不会触发 click 事件', async () => {
+      const handleClick = jest.fn();
+      const wrapper = shallowMount(Button, {
+        propsData: {
+          disabled: true,
+        },
+        listeners: {
+          click: handleClick,
+        },
+      });
+      await wrapper.trigger('click');
+      expect(handleClick).not.toBeCalled();
+      await wrapper.trigger('click');
+      expect(handleClick).not.toBeCalled();
+    });
   });
 });
