@@ -1,5 +1,12 @@
 <template>
-  <div :class="_.button">
+  <div
+    :class="[_.button, disabled && _.disabled]"
+    v-bind="$attrs"
+    v-on="{
+      ...$listeners,
+      click: handleClick,
+    }"
+  >
     <slot />
   </div>
 </template>
@@ -9,6 +16,8 @@
 
   export default defineComponent({
     name: 'Button',
+
+    inheritAttrs: false,
 
     props: {
       type: {
@@ -22,6 +31,11 @@
         enum: ['normal', 'large', 'small', 'mini'],
         default: 'normal',
         desc: '尺寸',
+      },
+      disabled: {
+        type: Boolean,
+        default: false,
+        desc: '是否禁用按钮',
       },
     },
 
@@ -44,8 +58,10 @@
     },
 
     methods: {
-      async handleClick() {
-        console.log(1);
+      handleClick(e) {
+        if (!this.disabled) {
+          this.$emit('click', e);
+        }
       },
     },
   });
@@ -55,5 +71,10 @@
   .button {
     border: 1px solid red;
     color: red;
+    user-select: none;
+
+    &.disabled {
+      pointer-events: none;
+    }
   }
 </style>
