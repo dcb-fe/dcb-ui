@@ -19,7 +19,8 @@
     "gen-index": "vgis \"src/**/index.js\" \"docs/.vuepress/demo.js\"",
     "notify-dingtalk": "notify-dingtalk",
     "docs-dev": "kill-port 9988 && concurrently -n dev,sync \"vuepress dev docs\" \"haoma run scripts/sync_docs.js\"",
-    "docs-build": "vuepress build docs"
+    "docs-build": "vuepress build docs",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
