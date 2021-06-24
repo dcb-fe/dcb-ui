@@ -1,5 +1,5 @@
 <template>
-  <d-button @click="handleClick">我是普通按钮</d-button>
+  <d-button @click="handleClick">我是主要按钮</d-button>
 </template>
 
 <script>

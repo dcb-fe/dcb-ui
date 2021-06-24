@@ -1,8 +1,8 @@
 <template>
   <div class="button-group">
-    <d-button disabled @click="handleClick">我是被禁用的普通按钮</d-button>
-    <d-button block disabled @click="handleClick">
-      我是被禁用的块级按钮
+    <d-button disabled @click="handleClick">我是被禁用的主要按钮</d-button>
+    <d-button secondary disabled @click="handleClick">
+      我是被禁用的次要按钮
     </d-button>
   </div>
 </template>

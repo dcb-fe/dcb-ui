@@ -1,21 +1,33 @@
 # Button
 
-## 基本按钮
+## 主要按钮
 
-<demo src="button/basic" />
+默认展示主要按钮。
 
-## 块级按钮
+<demo src="button/primary" />
 
-按钮元素默认为行内块级元素，通过 `block` 属性可将之设为块级元素。
+## 次要按钮
 
-<demo src="button/block" />
+通过 `secondary` 属性可展示次要按钮。
+
+<demo src="button/secondary" />
+
+## 自定义大小
+
+通过 `size` 属性可设置按钮尺寸。
+
+<demo src="button/size" />
+
+## 自定义颜色
+
+通过 CSS 属性 `background` 设置颜色。
+
+<demo src="button/color" />
 
 ## 禁用状态
 
 通过 `disabled` 属性可禁用按钮。
 
 <demo src="button/disabled" />
-
-## API
 
 <api src="button" />

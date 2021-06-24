@@ -61,7 +61,13 @@ td ul:last-child {
     margin-left: 16px;
     flex-grow: 1;
     width: calc(100% - 375px);
-    max-height: 667px;
+
+    > :first-child {
+      max-height: 667px;
+      box-sizing: border-box;
+      overflow: auto;
+      margin: 0;
+    }
   }
 
   @media(max-width: 419px) {
@@ -74,6 +80,16 @@ td ul:last-child {
     > :last-child {
       width: 100%;
       margin-left: 0 !important;
+
+      > :first-child {
+        max-height: 300px;
+      }
     }
+  }
+}
+
+@media(max-width: 419px) {
+  .x-api {
+    display: none;
   }
 }

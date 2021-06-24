@@ -2,10 +2,8 @@
   <div
     :class="[
       _.button,
-      block && _.block,
-      plain && _.plain,
-      square && _.square,
-      round && _.round,
+      secondary && _.secondary,
+      _[size],
       disabled && _.disabled,
     ]"
     v-bind="$attrs"
@@ -14,7 +12,9 @@
       click: handleClick,
     }"
   >
-    <slot />
+    <div :class="_.container">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -27,42 +27,21 @@
     inheritAttrs: false,
 
     props: {
-      type: {
-        type: String,
-        enum: ['default', 'primary', 'info', 'warning', 'danger'],
-        default: 'default',
-        desc: '描述',
+      secondary: {
+        type: Boolean,
+        default: false,
+        desc: '是否为次级按钮',
       },
       size: {
         type: String,
-        enum: ['normal', 'large', 'small', 'mini'],
+        enum: ['normal', 'large', 'small'],
         default: 'normal',
-        desc: '尺寸',
-      },
-      block: {
-        type: Boolean,
-        default: false,
-        desc: '是否为块级元素',
-      },
-      plain: {
-        type: Boolean,
-        default: false,
-        desc: '是否为朴素按钮',
-      },
-      square: {
-        type: Boolean,
-        default: false,
-        desc: '是否为方形按钮',
-      },
-      round: {
-        type: Boolean,
-        default: false,
-        desc: '是否为圆形按钮',
+        desc: '按钮尺寸',
       },
       disabled: {
         type: Boolean,
         default: false,
-        desc: '是否禁用按钮',
+        desc: '是否为禁用状态',
       },
     },
 
@@ -96,46 +75,79 @@
 
 <style lang="scss" module>
   .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
-    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 44px;
-    padding: 0 15px;
     box-sizing: border-box;
-    border-radius: 2px;
-    border: 1px solid #ebedf0;
-    background-color: white;
-    color: black;
+    background: #ff960a;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
     cursor: pointer;
     user-select: none;
 
-    &.block {
-      display: flex;
-    }
-
     &.disabled {
+      background: #e9e9e9 !important;
+      border-color: #e9e9e9;
+      color: white;
       cursor: not-allowed;
     }
 
-    &:not(.disabled) {
-      &:active {
-        &::before {
-          content: ' ';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 100%;
-          height: 100%;
-          background-color: #000;
-          border: inherit;
-          border-color: #000;
-          border-radius: inherit;
-          transform: translate(-50%, -50%);
-          opacity: 0.1;
-        }
+    &:not(.disabled):active {
+      &::before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: inherit;
+        background: rgba(black, 0.118);
       }
+    }
+
+    &.secondary {
+      background: white;
+      border-color: #e9e9e9;
+      color: #333333;
+
+      &.disabled {
+        background: white !important;
+        color: #d0d0d0;
+      }
+
+      &:not(.disabled):active {
+        &::before {
+          content: none;
+        }
+
+        background: #e9e9e9;
+        border-color: #e9e9e9;
+      }
+    }
+
+    &.large {
+      height: 50px;
+    }
+
+    &.small {
+      height: 38px;
+    }
+
+    .container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 </style>

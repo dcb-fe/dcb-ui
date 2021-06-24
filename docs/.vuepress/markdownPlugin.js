@@ -47,6 +47,10 @@ module.exports = (
             index,
             1,
             ...md.parse(dedent`
+              <div class="x-api">
+
+              ## API
+
               ### 属性
 
               <p><api-table src="${$1}" type="props" /></p>
@@ -58,6 +62,8 @@ module.exports = (
               ### 事件
 
               <p><api-table src="${$1}" type="emits" /></p>
+
+              </div>
             `),
           );
         });
