@@ -6382,10 +6382,10 @@ handlebars@^4.7.6:
   optionalDependencies:
     uglify-js "^3.1.4"
 
-haoma@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.nlark.com/haoma/download/haoma-3.2.0.tgz#3b78ab4624bd36ac38b5e74efa6413c87e892b0d"
-  integrity sha1-O3irRiS9Nqw4tedO+mQTyH6JKw0=
+haoma@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.nlark.com/haoma/download/haoma-3.2.1.tgz#90f0e90a8cad4ae131e1042b790fc05c76a963f9"
+  integrity sha1-kPDpCoytSuEx4QQreQ/AXHapY/k=
   dependencies:
     "@babel/core" "^7.12.13"
     "@babel/eslint-parser" "^7.12.13"
