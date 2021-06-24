@@ -1,6 +1,13 @@
 <template>
   <div
-    :class="[_.button, disabled && _.disabled]"
+    :class="[
+      _.button,
+      block && _.block,
+      plain && _.plain,
+      square && _.square,
+      round && _.round,
+      disabled && _.disabled,
+    ]"
     v-bind="$attrs"
     v-on="{
       ...$listeners,
@@ -31,6 +38,26 @@
         enum: ['normal', 'large', 'small', 'mini'],
         default: 'normal',
         desc: '尺寸',
+      },
+      block: {
+        type: Boolean,
+        default: false,
+        desc: '是否为块级元素',
+      },
+      plain: {
+        type: Boolean,
+        default: false,
+        desc: '是否为朴素按钮',
+      },
+      square: {
+        type: Boolean,
+        default: false,
+        desc: '是否为方形按钮',
+      },
+      round: {
+        type: Boolean,
+        default: false,
+        desc: '是否为圆形按钮',
       },
       disabled: {
         type: Boolean,
@@ -69,12 +96,46 @@
 
 <style lang="scss" module>
   .button {
-    border: 1px solid red;
-    color: red;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 16px;
+    height: 44px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid #ebedf0;
+    background-color: white;
+    color: black;
+    cursor: pointer;
     user-select: none;
 
+    &.block {
+      display: flex;
+    }
+
     &.disabled {
-      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    &:not(.disabled) {
+      &:active {
+        &::before {
+          content: ' ';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          height: 100%;
+          background-color: #000;
+          border: inherit;
+          border-color: #000;
+          border-radius: inherit;
+          transform: translate(-50%, -50%);
+          opacity: 0.1;
+        }
+      }
     }
   }
 </style>

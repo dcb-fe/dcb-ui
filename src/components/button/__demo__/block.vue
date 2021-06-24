@@ -1,5 +1,5 @@
 <template>
-  <d-button @click="handleClick">我是普通按钮</d-button>
+  <d-button block @click="handleClick">我是块级按钮</d-button>
 </template>
 
 <script>
