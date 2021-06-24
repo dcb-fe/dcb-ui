@@ -18,6 +18,21 @@ module.exports = {
       md.use(require('./markdownPlugin'));
     },
   },
+  css: {
+    getLocalIdent: (context, localIdentName, localName) => {
+      if (
+        context.resource &&
+        String(context.resource).includes('node_modules')
+      ) {
+        return localName;
+      }
+      const fileName = context.resource;
+      const className = localName;
+      const componentName = path.basename(fileName, path.extname(fileName));
+      const prefix = className === componentName ? '' : `${componentName}-`;
+      return `d-${prefix}${className}`;
+    },
+  },
   themeConfig: {
     nav: [
       { text: '使用指南', link: '/guide.html' },
