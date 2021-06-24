@@ -1,1 +1,1 @@
-<include src="/README.md" />
+<include src="/CHANGELOG.md" />

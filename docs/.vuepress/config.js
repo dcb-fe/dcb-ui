@@ -8,6 +8,7 @@ module.exports = {
   title: '多彩宝移动端 UI 组件库',
   description: '多彩宝移动端 UI 组件库',
   port: 9988,
+  base: '/dcb-ui/v0/',
   chainWebpack: config => {
     config.resolve.alias
       .set('@', path.join(__dirname, '../../src'))
