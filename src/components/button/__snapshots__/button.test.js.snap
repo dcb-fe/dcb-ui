@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button 视图 不传内容时渲染为空标签 1`] = `<div class="d-button"></div>`;
+exports[`Button 视图 不传内容时渲染为空标签 1`] = `
+<div class="d-button">
+  <div class="d-button-container"></div>
+</div>
+`;
 
-exports[`Button 视图 传入内容时渲染其为子元素 1`] = `<div class="d-button">确定</div>`;
+exports[`Button 视图 传入内容时渲染其为子元素 1`] = `
+<div class="d-button">
+  <div class="d-button-container">确定</div>
+</div>
+`;
