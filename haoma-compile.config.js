@@ -54,7 +54,7 @@ module.exports = getCompileConfig([
   {
     name: 'esm',
     inputFiles: ['./src/**/*.{js,vue}', '!**/__*/**', '!**/*.test.*'],
-    outDir: 'lib',
+    outDir: 'lib/lib',
     module: 'esm',
     target: 'browser',
     plugins: [removeVueDocHelpersPlugin],
@@ -67,7 +67,7 @@ module.exports = getCompileConfig([
   {
     name: 'cjs',
     inputFiles: ['./src/**/*.{js,vue}', '!**/__*/**', '!**/*.test.*'],
-    outDir: 'lib/_cjs',
+    outDir: 'lib/lib/_cjs',
     module: 'cjs',
     target: 'browser',
     plugins: [removeVueDocHelpersPlugin],

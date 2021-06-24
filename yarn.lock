@@ -12011,7 +12011,7 @@ standard-as-callback@^2.1.0:
   resolved "https://registry.npm.taobao.org/standard-as-callback/download/standard-as-callback-2.1.0.tgz?cache=0&sync_timestamp=1615717451921&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstandard-as-callback%2Fdownload%2Fstandard-as-callback-2.1.0.tgz#8953fc05359868a77b5b9739a665c5977bb7df45"
   integrity sha1-iVP8BTWYaKd7W5c5pmXFl3u330U=
 
-standard-version@^9:
+standard-version@^9.3.0:
   version "9.3.0"
   resolved "https://registry.nlark.com/standard-version/download/standard-version-9.3.0.tgz#2e6ff439aa49b2ea8952262f30ae6b70c02467d3"
   integrity sha1-Lm/0OapJsuqJUiYvMK5rcMAkZ9M=
