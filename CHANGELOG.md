@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.3](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.2...v0.0.6-beta.3) (2021-06-25)
+
+### 特性
+
+- 测试自动创建 GitHub Release ([df0674e](https://github.com/dcb-fe/dcb-ui/commit/df0674e915e87208dbd2c3fac552c83f9dc791c5))
+
 ### [0.0.6-beta.2](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.1...v0.0.6-beta.2) (2021-06-25)
 
 ### 修复
