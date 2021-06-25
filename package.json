@@ -13,23 +13,22 @@
   "main": "lib/_cjs/index.js",
   "module": "lib/index.js",
   "scripts": {
-    "preinstall": "npx only-allow yarn",
-    "postinstall": "patch-package",
-    "patch-packages": "patch-package @vuepress/core --exclude \"\\.temp\"",
     "new-component": "haoma run scripts/new_component.js",
-    "build": "haoma compile && haoma run scripts/gen_package.js",
-    "gen-index": "vgis \"src/**/index.js\" \"docs/.vuepress/demo.js\"",
-    "notify-dingtalk": "notify-dingtalk",
-    "docs-dev": "kill-port 9988 && concurrently -n dev,sync \"vuepress dev docs\" \"haoma run scripts/sync_docs.js\"",
-    "docs-build": "vuepress build docs",
+    "dev": "kill-port 9988 && concurrently -n dev,sync \"vuepress dev docs\" \"haoma run scripts/sync_docs.js\"",
     "test": "jest",
+    "build": "haoma compile && haoma run scripts/gen_package.js",
+    "build-docs": "vuepress build docs",
+    "gen-index": "vgis \"src/**/index.js\" \"docs/.vuepress/demo.js\"",
     "release": "standard-version -a",
     "postrelease": "git push --follow-tags origin master",
     "release-beta": "npm run release -- --release-as patch --prerelease beta",
     "release-major": "npm run release -- --release-as major",
     "release-major-beta": "npm run release -- --release-as major --prerelease beta",
     "publish-package": "cd lib && npm publish",
-    "publish-package-next": "npm run publish-package -- --tag next"
+    "publish-package-next": "npm run publish-package -- --tag next",
+    "preinstall": "npx only-allow yarn",
+    "postinstall": "patch-package",
+    "patch-packages": "patch-package @vuepress/core --exclude \"\\.temp\""
   },
   "husky": {
     "hooks": {

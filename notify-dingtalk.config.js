@@ -1,9 +1,27 @@
-const { defineConfig } = require('notify-dingtalk');
+const {
+  defineConfig,
+  getLatestConventionalChangelog,
+} = require('notify-dingtalk');
+const { dedent } = require('vtils');
 
 module.exports = defineConfig({
-  accessToken:
-    'a9303b222fa1be77e06b1023449773e970911e4c30890a750225e0408adef61a',
-  secret: 'SEC9ddb2b08ce79b6c2429532e477aa82e5b0cc0a8baf7ae9da8f93385b52e551b0',
-  title: '发布通知',
-  content: '测试',
+  title: '发布公告',
+  content: dedent`
+    # 发布公告
+
+    ---
+
+    ${getLatestConventionalChangelog()}
+
+    ---
+
+    ### 安装、更新命令
+
+    - npm i @dcbfe/ui
+    - yarn add @dcbfe/ui
+    - pnpm add @dcbfe/ui
+
+    ---
+    [更新日志→](https://dcb-fe.github.io/dcb-ui/v0/changelog.html)
+  `,
 });
