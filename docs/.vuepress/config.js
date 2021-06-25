@@ -37,7 +37,7 @@ module.exports = {
   themeConfig: {
     repo: 'dcb-fe/dcb-ui',
     nav: [
-      { text: '使用指南', link: '/guide.html' },
+      { text: '使用指南', link: '/guide/index.html' },
       { text: '组件', link: '/components/' },
       { text: '更新日志', link: '/changelog.html' },
     ],

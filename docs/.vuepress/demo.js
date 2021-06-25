@@ -5,3 +5,7 @@ export { default as DemoButtonPrimary } from '../../src/components/button/__demo
 export { default as DemoButtonSecondary } from '../../src/components/button/__demo__/secondary';
 export { default as DemoButtonSize } from '../../src/components/button/__demo__/size';
 // @endindex
+
+// @index(['../**/*.vue', '!**/.*/**'], (f, _) => `export { default as ${_.pascalCase('demo_docs_'+f.path)} } from '${f.path}';`)
+export { default as DemoDocsGuideUsage } from '../guide/usage';
+// @endindex

@@ -13,11 +13,13 @@ module.exports = (
   md.core.ruler.at('replacements', state => {
     const postRuns = [];
     state.tokens.forEach((token, index) => {
-      const demoMatches = token.content.match(
-        /<demo\s+src=["']([^/]+?)\/([^/]+?)["']/,
-      );
+      const demoMatches = token.content.match(/<demo\s+src=["'](.+?)["']/);
       if (demoMatches) {
-        const [, $1, $2] = demoMatches;
+        const demoPath = demoMatches[1];
+        const demoComponentPath = demoPath.split('/').map(_kebabCase).join('-');
+        const demoFilePath = demoPath.startsWith('docs/')
+          ? `@/${demoPath}.vue`
+          : `@/src/components/${demoPath.replace('/', '/__demo__/')}.vue`;
         postRuns.unshift(() => {
           state.tokens.splice(
             index,
@@ -28,10 +30,10 @@ module.exports = (
               <div class="x-demo-container">
 
                 <div>
-                  <demo-${_kebabCase($1)}-${_kebabCase($2)} />
+                  <demo-${demoComponentPath} />
                 </div>
 
-                <<< @/src/components/${$1}/__demo__/${$2}.vue
+                <<< ${demoFilePath}
 
               </div>
             `),

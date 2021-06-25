@@ -22,7 +22,10 @@ async function main() {
 
   // 更新组件演示
   const watch2 = chokidar
-    .watch(path.join(__dirname, '../src/components/*/__demo__/*.vue'))
+    .watch([
+      path.join(__dirname, '../src/components/*/__demo__/*.vue'),
+      path.join(__dirname, '../docs/**/*.vue'),
+    ])
     .on(
       'all',
       debounce(async () => {
