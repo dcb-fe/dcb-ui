@@ -4,6 +4,8 @@ sidebar: auto
 
 # 使用指南
 
+eee.
+
 ## 安装
 
 使用包管理器安装：
@@ -23,6 +25,16 @@ pnpm add @dcbfe/ui
 
 ## 使用
 
-在项目入口页（一般是 `src/main.js`）按需引入项目中要使用到的所有组件即可。
+在项目入口页（一般是 `src/main.js`）按需引入项目中要使用到的所有组件并注册即可。
 
-<demo src="docs/guide/usage" />
+由于 `@dcbfe/ui` 本身支持摇树优化，因此用这种方式只会引入你指定的组件，不会引入其他组件增加构建产物大小。
+
+```javascript
+import Vue from 'vue';
+
+import { Button, Icon } from '@dcbfe/ui';
+Vue.use(Button);
+Vue.use(Icon);
+```
+
+<inline src="docs/guide/usage" />

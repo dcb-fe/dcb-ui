@@ -13,9 +13,12 @@ module.exports = (
   md.core.ruler.at('replacements', state => {
     const postRuns = [];
     state.tokens.forEach((token, index) => {
-      const demoMatches = token.content.match(/<demo\s+src=["'](.+?)["']/);
+      const demoMatches = token.content.match(
+        /<(demo|inline)\s+src=["'](.+?)["']/,
+      );
       if (demoMatches) {
-        const demoPath = demoMatches[1];
+        const mode = demoMatches[1];
+        const demoPath = demoMatches[2];
         const demoComponentPath = demoPath.split('/').map(_kebabCase).join('-');
         const demoFilePath = demoPath.startsWith('docs/')
           ? `@/${demoPath}.vue`
@@ -24,19 +27,27 @@ module.exports = (
           state.tokens.splice(
             index,
             1,
-            ...md.parse(dedent`
-              <p></p>
-              
-              <div class="x-demo-container">
+            ...md.parse(
+              mode === 'demo'
+                ? dedent`
+                    <p></p>
+                    
+                    <div class="x-demo-container">
 
-                <div>
+                      <div>
+                        <demo-${demoComponentPath} />
+                      </div>
+
+                      <<< ${demoFilePath}
+
+                    </div>
+                  `
+                : dedent`
+                  <p></p>
+
                   <demo-${demoComponentPath} />
-                </div>
-
-                <<< ${demoFilePath}
-
-              </div>
-            `),
+                `,
+            ),
           );
         });
       }
