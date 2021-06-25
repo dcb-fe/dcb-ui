@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.2](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.1...v0.0.6-beta.2) (2021-06-25)
+
+### 修复
+
+- 同步组件文档 ([b9a2f1f](https://github.com/dcb-fe/dcb-ui/commit/b9a2f1fa1f9cf9eb12bd5f481d254a56f3d844cb))
+
 ### [0.0.6-beta.1](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.0...v0.0.6-beta.1) (2021-06-25)
 
 ### 特性
