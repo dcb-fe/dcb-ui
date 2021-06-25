@@ -9,8 +9,6 @@ async function main() {
   const packageJsonFile = join(packageDir, './package.json');
 
   const packageInfo = omit(rawPackageInfo, [
-    'husky',
-    'lint-staged',
     'devDependencies',
     'scripts',
     'resolutions',
