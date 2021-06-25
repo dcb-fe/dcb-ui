@@ -1,5 +1,5 @@
 export const meta = {
-  version: '0.0.6-beta.0',
+  version: '0.0.6-beta.1',
   componentGroups: [
     {
       title: '基础',

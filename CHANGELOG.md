@@ -1,3 +1,9 @@
 # 更新日志
 
+### [0.0.6-beta.1](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.0...v0.0.6-beta.1) (2021-06-25)
+
+### 特性
+
+- 新增自动打包、发布、通知 CI ([067ab44](https://github.com/dcb-fe/dcb-ui/commit/067ab44d3a0defd8cfa9352889e84452968f4dde))
+
 ### 0.0.6-beta.0 (2021-06-24)
