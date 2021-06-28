@@ -120,7 +120,7 @@
       },
       componentProps() {
         const props = components[this.componentName].props;
-        return Object.keys(props).map(key => ({
+        return Object.keys(props || {}).map(key => ({
           name: key,
           typeText: Array.isArray(props[key].enum)
             ? props[key].enum.map(item => `<code>${item}</code>`).join(' | ')
@@ -132,7 +132,7 @@
       },
       componentSlots() {
         const slots = components[this.componentName].slots;
-        return Object.keys(slots).map(key => ({
+        return Object.keys(slots || {}).map(key => ({
           name: key,
           params: Object.keys(slots[key].payload || {}).map(k => ({
             name: k,
@@ -150,7 +150,7 @@
       },
       componentEmits() {
         const emits = components[this.componentName].emits;
-        return Object.keys(emits).map(key => ({
+        return Object.keys(emits || {}).map(key => ({
           name: key,
           params: Object.keys(emits[key].payload || {}).map(k => ({
             name: k,

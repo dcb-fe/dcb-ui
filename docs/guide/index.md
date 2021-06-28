@@ -93,4 +93,16 @@ Vue.use(Icon);
 
 ### 4、开始开发
 
-点击运行命令 `dev` 启动文档：
+点击命令 `dev` 启动文档：
+
+<img class="x-paste-image" src="./images/dev.png" width="800" />
+
+然后在浏览器打开文档，并切换到组件页：
+
+<img class="x-paste-image" src="./images/docs-component.png" width="800" />
+
+### 5、添加组件
+
+点击命令 `new-component` 输入要添加的组件名后回车：
+
+<img class="x-paste-image" src="./images/new-component.png" width="800" />
