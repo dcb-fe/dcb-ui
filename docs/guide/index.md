@@ -53,7 +53,11 @@ Vue.use(Icon);
 
 ### 2、克隆仓库
 
-> 若你是首次克隆来自 GitHub 的仓库，你需要[在 GitHub 添加你的 SSH 密钥](https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)。
+::: tip 提示
+
+若你是首次克隆来自 GitHub 的仓库，你需要[在 GitHub 添加你的 SSH 密钥](https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)。
+
+:::
 
 去到你 Fork 后的仓库，复制仓库的 SSH 地址：
 
@@ -62,3 +66,27 @@ Vue.use(Icon);
 将仓库克隆到你的电脑上：
 
 <img class="x-paste-image" src="./images/clone.png" width="800" />
+
+### 3、初始化项目
+
+::: tip 前置要求
+
+- 使用 [VSCode](https://code.visualstudio.com/docs) 作为 IDE。
+
+  若尚未安装 VSCode，[可进入此处下载](https://code.visualstudio.com/download)。
+
+- 使用 [Yarn](https://classic.yarnpkg.com/lang/en/) 作为包管理工具。
+
+  若尚未安装 Yarn，可这样安装：
+
+  ```bash
+  npm i yarn -g --registry https://r.npm.taobao.org/
+  ```
+
+:::
+
+在 VSCode 打开刚刚克隆的项目，然后在控制台输入 `yarn` 开始安装依赖：
+
+<img class="x-paste-image" src="./images/install.png" width="800" />
+
+依赖安装完成后项目就初始化完毕了。
