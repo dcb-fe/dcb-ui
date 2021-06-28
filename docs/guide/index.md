@@ -4,8 +4,6 @@ sidebar: auto
 
 # 使用指南
 
-eee.
-
 ## 安装
 
 使用包管理器安装：
@@ -37,4 +35,6 @@ Vue.use(Button);
 Vue.use(Icon);
 ```
 
-<inline src="docs/guide/usage" />
+你可使用下面的工具选择项目中要用到的组件生成代码：
+
+<inline src="docs/guide/tool" />
