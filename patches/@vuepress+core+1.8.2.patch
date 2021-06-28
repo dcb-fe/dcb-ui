@@ -1,0 +1,30 @@
+diff --git a/node_modules/@vuepress/core/lib/node/webpack/createBaseConfig.js b/node_modules/@vuepress/core/lib/node/webpack/createBaseConfig.js
+index dd3130d..d26bbf2 100644
+--- a/node_modules/@vuepress/core/lib/node/webpack/createBaseConfig.js
++++ b/node_modules/@vuepress/core/lib/node/webpack/createBaseConfig.js
+@@ -248,13 +248,18 @@ module.exports = function createBaseConfig (context, isServer) {
+ 
+       rule.use('css-loader')
+         .loader('css-loader')
+-        .options({
+-          modules,
+-          localIdentName: `[local]_[hash:base64:8]`,
+-          importLoaders: 1,
+-          sourceMap: !isProd,
+-          exportOnlyLocals: isServer
+-        })
++        .options(
++          Object.assign(
++            {
++              modules,
++              localIdentName: `[local]_[hash:base64:8]`,
++              importLoaders: 1,
++              sourceMap: !isProd,
++              exportOnlyLocals: isServer
++            },
++            siteConfig.css,
++          )
++        )
+ 
+       rule.use('postcss-loader').loader('postcss-loader').options(Object.assign({
+         plugins: [require('autoprefixer')],

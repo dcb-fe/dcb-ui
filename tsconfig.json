@@ -1,21 +1,35 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
     "strict": true,
-    "jsx": "preserve",
-    "importHelpers": true,
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "skipLibCheck": true,
+    "declaration": true,
+    "removeComments": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "sourceMap": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
     "preserveSymlinks": true,
+    "resolveJsonModule": true,
+    "newLine": "LF",
     "allowJs": true,
-    "baseUrl": ".",
+    "noEmit": true,
+    "jsx": "react",
+    "lib": ["esnext", "dom"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "typescript-snapshots-plugin",
+        "snapshotCallIdentifiers": [
+          "toMatchSnapshot",
+          "toThrowErrorMatchingSnapshot",
+          "toMatchDiffSnapshot"
+        ]
+      }
+    ]
   }
 }
