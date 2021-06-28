@@ -1,5 +1,20 @@
 # 更新日志
 
+### 0.0.6-beta.4 (2021-06-28)
+
+### 特性
+
+- 合并 dev ([#1](https://github.com/dcb-fe/dcb-ui/issues/1)) ([e92a448](https://github.com/dcb-fe/dcb-ui/commit/e92a448ce683ce8585ddf27e3c983c72244570ee))
+- 完善新建组件脚本 ([37c3cd5](https://github.com/dcb-fe/dcb-ui/commit/37c3cd5fd6bb5941a93738a9daf0e55c8edb432f))
+
+### 文档
+
+- 初始化项目 ([010b233](https://github.com/dcb-fe/dcb-ui/commit/010b2335c98a6a79231042769797341e557ecbde))
+- 完善贡献流程 ([96cb4fb](https://github.com/dcb-fe/dcb-ui/commit/96cb4fb5b27f7789662054540ddc3dac75caef76))
+- 文档更新 ([6295fa3](https://github.com/dcb-fe/dcb-ui/commit/6295fa3a1b036403f99b2db5b0959619f7ffb30f))
+- 更新读我 ([1f1fbd6](https://github.com/dcb-fe/dcb-ui/commit/1f1fbd6fe6f552680dacb5e7bbefa8908d87eb03))
+- 配置优化 ([285d2b6](https://github.com/dcb-fe/dcb-ui/commit/285d2b6ce0757a069d397f3b07cbdf640449ec42))
+
 ### [0.0.6-beta.3](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.2...v0.0.6-beta.3) (2021-06-25)
 
 ### 特性
