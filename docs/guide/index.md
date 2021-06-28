@@ -115,6 +115,8 @@ Vue.use(Icon);
 
 ### 7、编写组件
 
+组件样式必须同组件设计（[蓝湖](https://lanhuapp.com/web/#/item/project/stage?pid=3e90f1e5-23df-4b27-9578-aade00912731&image_id=54c78a98-1cf5-4d02-b0ae-eab0b2f06b53)）一致，组件 API （属性、插槽、事件等）可参考 [Vant](https://vant-contrib.gitee.io/vant/#/zh-CN/button) 设计。
+
 组件编写与日常开发无异，不过为了方便行事，做一些约定：
 
 - 若组件有属性、插槽、事件，必须在组件定义时显式声明（目的在于方便组件 API 文档生成）。
@@ -188,3 +190,5 @@ Git 提交前会对代码进行如下检查，有一项不通过都会被阻止�
 接着填写请求标题、请求内容，点击 `Create pull request`：
 
 <img class="x-paste-image" src="./images/pr2.png" width="800" />
+
+如果你的合并请求 CI 运行不通过，或者存在其他问题，可能会要求你修改后再提交。
