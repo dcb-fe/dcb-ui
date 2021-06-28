@@ -14,7 +14,7 @@ module.exports = (
     const postRuns = [];
     state.tokens.forEach((token, index) => {
       const demoMatches = token.content.match(
-        /<(demo|inline)\s+src=["'](.+?)["']/,
+        /<(demo|embed)\s+src=["'](.+?)["']/,
       );
       if (demoMatches) {
         const mode = demoMatches[1];

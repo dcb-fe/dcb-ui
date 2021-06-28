@@ -37,4 +37,28 @@ Vue.use(Icon);
 
 你可使用下面的工具选择项目中要用到的组件生成代码：
 
-<inline src="docs/guide/tool" />
+<embed src="docs/guide/tool" />
+
+引入组件后在项目中即可使用：
+
+<demo src="docs/guide/usage" />
+
+## 参与贡献
+
+### 1、Fork 仓库
+
+打开 [dcb-fe/dcb-ui](https://github.com/dcb-fe/dcb-ui)，点击右上角 Fork 按钮：
+
+<img class="x-paste-image" src="./images/fork.png" width="800" />
+
+### 2、克隆仓库
+
+> 若你是首次克隆来自 GitHub 的仓库，你需要[在 GitHub 添加你的 SSH 密钥](https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)。
+
+去到你 Fork 后的仓库，复制仓库的 SSH 地址：
+
+<img class="x-paste-image" src="./images/ssh.png" width="800" />
+
+将仓库克隆到你的电脑上：
+
+<img class="x-paste-image" src="./images/clone.png" width="800" />
