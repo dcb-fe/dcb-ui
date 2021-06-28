@@ -2,5 +2,12 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.options": {
     "resolvePluginsRelativeTo": "."
+  },
+  "npm.packageManager": "npm",
+  "npm.scriptExplorerAction": "run",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": false
   }
 }

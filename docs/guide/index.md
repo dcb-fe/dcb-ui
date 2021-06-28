@@ -90,3 +90,7 @@ Vue.use(Icon);
 <img class="x-paste-image" src="./images/install.png" width="800" />
 
 依赖安装完成后项目就初始化完毕了。
+
+### 4、开始开发
+
+点击运行命令 `dev` 启动文档：
