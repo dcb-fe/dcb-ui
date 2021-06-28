@@ -4,6 +4,8 @@ export { default as DemoButtonDisabled } from '../../src/components/button/__dem
 export { default as DemoButtonPrimary } from '../../src/components/button/__demo__/primary';
 export { default as DemoButtonSecondary } from '../../src/components/button/__demo__/secondary';
 export { default as DemoButtonSize } from '../../src/components/button/__demo__/size';
+export { default as DemoFormBasic } from '../../src/components/form/__demo__/basic';
+export { default as DemoFormLarge } from '../../src/components/form/__demo__/large';
 // @endindex
 
 // @index(['../**/*.vue', '!**/.*/**'], (f, _) => `export { default as ${_.pascalCase('demo_docs_'+f.path)} } from '${f.path}';`)
