@@ -4,7 +4,7 @@ module.exports = {
     { type: 'feat', section: '特性' },
     { type: 'fix', section: '修复' },
     { type: 'docs', section: '文档' },
-    { type: 'chore', hidden: true },
+    { type: 'chore', section: '杂项' },
   ],
   // ref: https://github.com/conventional-changelog/standard-version#can-i-use-standard-version-for-additional-metadata-files-languages-or-version-files
   bumpFiles: [
