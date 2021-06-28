@@ -9,9 +9,6 @@ export const meta = {
    */
   componentGroups:
     // 分组开始
-    [
-      { title: '基础', list: [{ name: 'Button', cname: '按钮' }] },
-      { title: '业务', list: [{ name: 'SkuBar', cname: 'sku栏' }] },
-    ],
+    [{ title: '基础', list: [{ name: 'Button', cname: '按钮' }] }],
   // 分组结束
 };
