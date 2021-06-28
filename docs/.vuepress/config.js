@@ -14,6 +14,7 @@ module.exports = {
       .set('@', path.join(__dirname, '../../src'))
       .set('@dcbfe/ui', path.join(__dirname, '../../src'));
   },
+  extraWatchFiles: [path.join(__dirname, '../../src/meta.js')],
   markdown: {
     extendMarkdown: md => {
       md.use(require('./markdownPlugin'));

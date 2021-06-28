@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <td>分类</td>
-      <td>组件列表</td>
+      <td>列表</td>
     </tr>
   </thead>
   <tbody>
@@ -12,10 +12,15 @@
       <td>{{ group.title }}</td>
       <td>
         <div :class="$style.list">
-          <a :href="`/components/${snakeCase(item.name)}.html`" v-for="item in group.list" :key="item.name" @click.prevent="handleClick(item)">
-            {{ item.name }}
-          </a>
-          <span :class="$style.divider">,</span>
+          <template v-for="item in group.list">
+            <a
+              :href="`/components/${snakeCase(item.name)}.html`"
+              :key="item.name"
+              @click.prevent="handleClick(item)">
+              {{ item.name }}
+            </a>
+            <span :class="$style.divider" :key="item.name">,</span>
+          </template>
         </div>
       </td>
     </tr>
