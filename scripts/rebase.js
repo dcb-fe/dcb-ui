@@ -23,11 +23,17 @@ async function main() {
   await exec('git', ['pull', '--rebase', 'upstream', 'master'], {
     stdio: 'inherit',
   });
+  await exec('git', ['push', 'origin', 'master'], {
+    stdio: 'inherit',
+  }).catch(noop);
   if (!isMaster) {
     await exec('git', ['checkout', currentBranch], {
       stdio: 'inherit',
     });
     await exec('git', ['rebase', 'master'], {
+      stdio: 'inherit',
+    });
+    await exec('git', ['push', '--force', 'origin', currentBranch], {
       stdio: 'inherit',
     });
   }
