@@ -66,6 +66,7 @@
     "prettier": "^2",
     "prompts": "^2.4.1",
     "sass-loader": "^10",
+    "slash2": "^2.0.0",
     "standard-version": "^9.3.0",
     "tbify": "^1.5.0",
     "typescript": "^4",

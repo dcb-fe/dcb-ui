@@ -5,6 +5,7 @@
   },
   "npm.packageManager": "npm",
   "npm.scriptExplorerAction": "run",
+  "window.title": "多彩宝移动端组件库",
   "editor.quickSuggestions": {
     "other": true,
     "comments": true,

@@ -3,6 +3,7 @@ import exec from 'execa';
 import fs from 'fs-extra';
 import globby from 'globby';
 import path from 'path';
+import slash from 'slash2';
 import { debounce, wait } from 'vtils';
 
 async function main() {
@@ -21,7 +22,7 @@ async function main() {
   const watch1 = chokidar
     .watch(path.join(__dirname, '../src/components/*/*.md'))
     .on('all', async (type, filePath) => {
-      const [, $1, $2] = filePath.match(/^.+\/(.+?)\/(.+?)\.md$/);
+      const [, $1, $2] = slash(filePath).match(/^.+\/(.+?)\/(.+?)\.md$/);
       if ($1 === $2) {
         const docsFile = path.join(__dirname, `../docs/components/${$1}.md`);
         if (type !== 'unlink') {
