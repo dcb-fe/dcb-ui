@@ -14,7 +14,17 @@ module.exports = {
     },
     {
       filename: 'src/meta.js',
-      updater: '.versionrc.meta-updater.js',
+      updater: {
+        readVersion: content => {
+          return content.match(/version:\s*'(.+?)',/)[1];
+        },
+        writeVersion: (content, version) => {
+          return content.replace(
+            new RegExp(/(?<=version:\s*').+?(?=',)/),
+            version,
+          );
+        },
+      },
     },
   ],
 };
