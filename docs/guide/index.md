@@ -59,6 +59,8 @@ Vue.use(Icon);
   npm i yarn -g --registry https://r.npm.taobao.org/
   ```
 
+- 安装 [GitHub 桌面版](https://docs.github.com/cn/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop)。
+
 :::
 
 ### 1、Fork 仓库
@@ -145,6 +147,41 @@ Vue.use(Icon);
 组件测试的具体示例请参考 `src/components/button/button.test.js`。
 
 ### 10、Git 提交
+
+::: warning 提示
+
+由于开发工作不可能一蹴而就，可能你在提交时，[dcb-fe/dcb-ui](https://github.com/dcb-fe/dcb-ui) 仓库（下称上游仓库）的代码已经发生了变化，但你 Fork 过来的代码是不会自动同步的。
+
+因此，在每次提交前，必须手动更新下上游仓库的代码以保证代码同步。
+
+首先，配置上游库（该操作仅需执行一次）：
+
+```bash
+git remote add upstream https://github.com/dcb-fe/dcb-ui.git
+```
+
+然后，在每次提交前这样操作：
+
+- 首先，切换到 `master` 分支更新上游代码：
+
+  ```bash
+  git checkout master
+  git pull --rebase upstream master
+  ```
+
+- 接着，再切换到我们创建的 `feat/xxx`、`fix/xxx` 等分支，同步代码：
+
+  ```bash
+  git checkout feat/xxx
+  git rebase master
+  ```
+
+以上，我们的 `master` 分支仅是作为代码同步的作用，真正的开发在 `feat/xxx`、`fix/xxx` 等分支进行。
+
+上述步骤略显繁复但有迹可循，因此我们准备了个脚本让你可以一键执行以上操作，点击 `NPM SCRIPTS` 下的 `rebase` 即可：
+
+<img class="x-paste-image" src="./images/rebase.png" width="400" />
+:::
 
 Git 提交前会对代码进行如下检查，有一项不通过都会被阻止：
 

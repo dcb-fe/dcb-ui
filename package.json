@@ -17,6 +17,7 @@
     "dev": "kill-port 9988 && concurrently -n dev,sync \"vuepress dev docs\" \"haoma run scripts/sync_docs.js\"",
     "test": "jest",
     "build": "haoma compile && haoma run scripts/gen_package.js",
+    "rebase": "haoma run scripts/rebase.js",
     "build-docs": "haoma run scripts/sync_docs.js --once && vuepress build docs",
     "gen-index": "vgis \"src/**/index.js\" \"docs/.vuepress/demo.js\"",
     "release": "standard-version -a",
