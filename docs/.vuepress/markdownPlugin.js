@@ -77,6 +77,14 @@ module.exports = (
               <p><api-table src="${$1}" type="emits" /></p>
 
               </div>
+
+              <div class="x-contributors">
+              
+              ## 贡献者
+
+              <component-contributors src="${$1}" />
+
+              </div>
             `),
           );
         });
