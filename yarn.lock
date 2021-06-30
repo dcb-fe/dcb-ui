@@ -1394,6 +1394,13 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
+"@linusborg/vue-simple-portal@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.nlark.com/@linusborg/vue-simple-portal/download/@linusborg/vue-simple-portal-0.1.5.tgz#d21ec54d3345713de7985e042b89e8ccb74833f8"
+  integrity sha1-0h7FTTNFcT3nmF4EK4nozLdIM/g=
+  dependencies:
+    nanoid "^3.1.20"
+
 "@ls-lint/ls-lint@^1.9.2":
   version "1.9.2"
   resolved "https://registry.nlark.com/@ls-lint/ls-lint/download/@ls-lint/ls-lint-1.9.2.tgz#689f1f4c06072823a726802ba167340efcefe19c"
@@ -1733,7 +1740,7 @@
   resolved "https://registry.nlark.com/@types/estree/download/@types/estree-0.0.48.tgz#18dc8091b285df90db2f25aa7d906cfc394b7f74"
   integrity sha1-GNyAkbKF35DbLyWqfZBs/DlLf3Q=
 
-"@types/fs-extra@^9.0.11":
+"@types/fs-extra@^9.0.11", "@types/fs-extra@^9.0.6":
   version "9.0.11"
   resolved "https://registry.nlark.com/@types/fs-extra/download/@types/fs-extra-9.0.11.tgz#8cc99e103499eab9f347dbc6ca4e99fb8d2c2b87"
   integrity sha1-jMmeEDSZ6rnzR9vGyk6Z+40sK4c=
@@ -5736,6 +5743,11 @@ execa@^5.0.0, execa@^5.1.1:
     signal-exit "^3.0.3"
     strip-final-newline "^2.0.0"
 
+exit-hook@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npm.taobao.org/exit-hook/download/exit-hook-2.2.1.tgz?cache=0&sync_timestamp=1614432099764&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexit-hook%2Fdownload%2Fexit-hook-2.2.1.tgz#007b2d92c6428eda2b76e7016a34351586934593"
+  integrity sha1-AHstksZCjtorducBajQ1FYaTRZM=
+
 exit@^0.1.2:
   version "0.1.2"
   resolved "https://registry.npm.taobao.org/exit/download/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
@@ -6625,10 +6637,10 @@ handlebars@^4.7.6:
   optionalDependencies:
     uglify-js "^3.1.4"
 
-haoma@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.nlark.com/haoma/download/haoma-3.2.1.tgz#90f0e90a8cad4ae131e1042b790fc05c76a963f9"
-  integrity sha1-kPDpCoytSuEx4QQreQ/AXHapY/k=
+haoma@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.nlark.com/haoma/download/haoma-3.3.0.tgz#ca4e84352b65d58e0fc5f33bff4e252fc010e865"
+  integrity sha1-yk6ENStl1Y4PxfM7/04lL8AQ6GU=
   dependencies:
     "@babel/core" "^7.12.13"
     "@babel/eslint-parser" "^7.12.13"
@@ -6643,9 +6655,11 @@ haoma@^3.2.1:
     "@microsoft/api-extractor" "^7.13.0"
     "@testing-library/jest-dom" "^5.14.1"
     "@types/eslint" "^7.2.6"
+    "@types/fs-extra" "^9.0.6"
     "@types/jest" "^26.0.23"
     "@types/node" "^14.14.22"
     "@types/prettier" "^2.1.6"
+    "@types/prompts" "^2.0.13"
     "@typescript-eslint/eslint-plugin" "^4.14.2"
     "@typescript-eslint/parser" "^4.14.2"
     "@vue/babel-helper-vue-jsx-merge-props" "^1.2.1"
@@ -6657,6 +6671,7 @@ haoma@^3.2.1:
     babel-plugin-module-resolver "^4.1.0"
     babel-plugin-transform-inline-environment-variables "^0.4.3"
     chalk "^4.1.0"
+    chokidar "^3.5.2"
     common-dir "^3.0.0"
     core-js "^3.9.0"
     cross-spawn "^7.0.3"
@@ -6672,6 +6687,7 @@ haoma@^3.2.1:
     eslint-plugin-sort-imports-es6-autofix "^0.5.0"
     eslint-plugin-vue "^7.5.0"
     execa "^5.0.0"
+    exit-hook "^2.2.1"
     fs-extra "^9.1.0"
     globby "^11.0.2"
     jest-chain "^1.1.5"
@@ -6688,6 +6704,7 @@ haoma@^3.2.1:
     postcss-modules "^4.0.0"
     prettier-plugin-packagejson "^2.2.9"
     prettier-plugin-sh "^0.6.0"
+    prompts "^2.4.1"
     react-test-renderer "^17.0.1"
     rimraf "^3.0.2"
     sass "^1.32.6"
