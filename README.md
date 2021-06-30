@@ -2,4 +2,4 @@
 
 WIP...
 
-[点击查看文档 👉](https://dcb-fe.github.io/dcb-ui/v0/guide.html)
+[点击查看文档 👉](https://dcb-fe.github.io/dcb-ui/v0/guide/index.html)
