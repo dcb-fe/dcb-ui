@@ -1,5 +1,20 @@
 # 更新日志
 
+### [0.0.6-beta.6](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.5...v0.0.6-beta.6) (2021-06-30)
+
+### 修复
+
+- 文档同步修正 ([16221af](https://github.com/dcb-fe/dcb-ui/commit/16221af1e261d8b82f4e7e8b7bc634a986c14590))
+
+### 文档
+
+- 为组件文档添加贡献者展示 ([#4](https://github.com/dcb-fe/dcb-ui/issues/4)) ([f23bc75](https://github.com/dcb-fe/dcb-ui/commit/f23bc75d4c4cf272d3e1a74003820fb3630cb4a9))
+- 修复读我文档链接 ([#5](https://github.com/dcb-fe/dcb-ui/issues/5)) ([69dfa9e](https://github.com/dcb-fe/dcb-ui/commit/69dfa9ef2a474a642f7199f6fc2b85da0b6893c4))
+
+### 特性
+
+- 新增 Popup 弹出层组件 ([#6](https://github.com/dcb-fe/dcb-ui/issues/6)) ([7126a02](https://github.com/dcb-fe/dcb-ui/commit/7126a02d0aa3a2ab39d2a0804f69e91daac868a6))
+
 ### [0.0.6-beta.5](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.4...v0.0.6-beta.5) (2021-06-29)
 
 ### 文档
