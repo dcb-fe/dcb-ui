@@ -7,6 +7,7 @@ export { default as DemoButtonSize } from '../../src/components/button/__demo__/
 export { default as DemoPopupBasic } from '../../src/components/popup/__demo__/basic';
 export { default as DemoPopupCustomTransition } from '../../src/components/popup/__demo__/custom_transition';
 export { default as DemoPopupDrawer } from '../../src/components/popup/__demo__/drawer';
+export { default as DemoPopupNoMask } from '../../src/components/popup/__demo__/no_mask';
 export { default as DemoPopupTransparentMask } from '../../src/components/popup/__demo__/transparent_mask';
 // @endindex
 

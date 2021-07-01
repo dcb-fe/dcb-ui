@@ -30,4 +30,10 @@
 
 <demo src="popup/transparent_mask" />
 
+## 无遮罩
+
+通过 `noMask` 属性可不渲染遮罩。
+
+<demo src="popup/no_mask" />
+
 <api src="popup" />

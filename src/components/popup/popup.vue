@@ -7,6 +7,7 @@
     >
       <!-- 遮罩 -->
       <transition
+        v-if="!noMask"
         appear
         name="d-transition-fade"
         @after-enter="handleTransitionEnterEnd"
@@ -84,6 +85,11 @@
         default: false,
         desc: '是否原地渲染，默认会将弹出层渲染到 document.body 下以避免样式污染',
       },
+      noMask: {
+        type: Boolean,
+        default: false,
+        desc: '是否没有遮罩',
+      },
     },
 
     emits: {
@@ -122,6 +128,9 @@
             }[this.position]
           : this.transitionName;
       },
+      _transitionEndCount() {
+        return this.noMask ? 1 : 2;
+      },
     },
 
     watch: {
@@ -155,7 +164,7 @@
         }
         this._handleTransitionEnterEndCount++;
         // 由于涉及遮罩过渡、内容过渡，因此需要这二者都过渡结束才可触发
-        if (this._handleTransitionEnterEndCount === 2) {
+        if (this._handleTransitionEnterEndCount === this._transitionEndCount) {
           this.$emit('opend');
           this._handleTransitionEnterEndCount = 0;
         }
@@ -168,7 +177,7 @@
         }
         this._handleTransitionLeaveEndCount++;
         // 由于涉及遮罩过渡、内容过渡，因此需要这二者都过渡结束才可触发
-        if (this._handleTransitionLeaveEndCount === 2) {
+        if (this._handleTransitionLeaveEndCount === this._transitionEndCount) {
           this.$emit('closed');
           this._handleTransitionLeaveEndCount = 0;
         }
@@ -185,6 +194,7 @@
     bottom: 0;
     right: 0;
     display: flex;
+    pointer-events: none;
 
     &.hidden {
       pointer-events: none;
@@ -227,6 +237,10 @@
       &.transparent {
         background: transparent;
       }
+    }
+
+    > * {
+      pointer-events: auto;
     }
   }
 </style>
