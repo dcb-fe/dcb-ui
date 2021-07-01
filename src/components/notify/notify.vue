@@ -11,11 +11,12 @@
 <!--      {{ options.message.default }}-->
 <!--    </span>-->
 <!--  </p>-->
-  <div>
+  <p @click="handleClick">
     <d-popup
       :position="position"
       :visible="notifyVisible"
       :class="[_.notify]"
+      noMask
       :maskTransparent="true"
       render-in-place
       @maskClick="handleMaskClick"
@@ -25,13 +26,13 @@
                   _.sp,
                   _[options.type.default],
                 ]"
-                :style="{color:options.color.default,background:options.background.default}"
+                :style="{color:options.color.default,backgroundColor:options.background.default}"
             >
             <i v-if="options.icon.default" :class="options.icon.default" />
             {{ options.message.default }}
           </span>
     </d-popup>
-  </div>
+  </p>
 </template>
 
 <script>
@@ -157,27 +158,57 @@
         this.visible = false;
       },
       initNotify(options){
-        this.notifyVisible = false
+        //
+        this.$emit('onOpened')
+        //参数初始化
+        this.options= {
+          type: {
+            type: String,
+            enum: ['primary','success', 'error', 'warning'],
+            default: 'primary',
+            desc: '通知状态',
+          },
+          message:{
+            type:String,
+            default: '通知内容',
+            desc: '通知内容',
+          },
+          icon:{
+            type:String,
+            default: null,
+            desc: 'icon的Class名称',
+          },
+          duration:{
+            type:Number && String,
+            default:3000,
+            desc:'展示时长(ms)，值为 0 时，notify 不会消失'
+          },
+          color:{
+            type:String,
+            default:'white',
+            desc:'字体颜色'
+          },
+          background:{
+            type:String,
+            default:null,
+            desc:'背景颜色'
+          },
+        }
+        //判断是否有参数
         if (options){
           Object.keys(options).forEach((key)=>{
             this.options[key].default = options[key]
-          })
-        }
-        if (!options.type){
-          console.log('123213123')
-          this.options.type.default = 'primary'
-        }
+          })}
         this.notifyVisible = true
         clearTimeout(this.setTimeoutOfId)
-        this.setTimeoutOfId = setTimeout(()=>{this.notifyVisible = false},this.options.duration.default)
-
+        this.setTimeoutOfId = setTimeout(()=>{
+          this.$emit('onOpened')
+          this.notifyVisible = false
+        },this.options.duration.default)
       },
       handleClick(){
-        this.$emit('click')
-      }
-    },
-    notify(){
-      console.log(22233)
+        this.$emit('onClick')
+      },
     },
     });
 </script>
@@ -192,16 +223,16 @@
       z-index: 50;
     }
     .error{
-      background-color: red !important;
+      background-color: red ;
     }
     .success{
-      background-color: green !important;
+      background-color: green ;
     }
     .primary{
-      background-color: blue !important;
+      background-color: blue ;
     }
     .warning{
-      background-color: orange !important;
+      background-color: orange ;
     }
   }
   .drawer {

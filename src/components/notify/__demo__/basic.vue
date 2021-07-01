@@ -17,6 +17,13 @@
     <div class="notify-item">
       <span @click="notifyShowWarning">警告通知</span>
     </div>
+    <span>自定义配置</span>
+      <div class="notify-item">
+        <span @click="notifyShowColor">自定义颜色</span>
+      </div>
+      <div class="notify-item">
+        <span @click="notifyShowTime">自定义时长</span>
+      </div>
     <d-notify ref="notify" />
   </div>
 
@@ -48,6 +55,12 @@
       notifyShowWarning(){
         this.$refs.notify.initNotify({message:'警告通知',type:'warning'})
       },
+      notifyShowColor(){
+        this.$refs.notify.initNotify({message:'自定义颜色',background:'yellow'})
+      },
+      notifyShowTime(){
+        this.$refs.notify.initNotify({message:'自定义时长',duration:10000})
+      }
     },
   };
 </script>
