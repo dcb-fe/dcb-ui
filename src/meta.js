@@ -17,6 +17,7 @@ export const meta = {
           { name: 'Popup', cname: '弹出层' },
         ],
       },
+      { title: '反馈', list: [{ name: 'Notify', cname: '通知' }] },
     ],
   // 分组结束
 };

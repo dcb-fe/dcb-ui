@@ -4,6 +4,7 @@ export { default as DemoButtonDisabled } from '../../src/components/button/__dem
 export { default as DemoButtonPrimary } from '../../src/components/button/__demo__/primary';
 export { default as DemoButtonSecondary } from '../../src/components/button/__demo__/secondary';
 export { default as DemoButtonSize } from '../../src/components/button/__demo__/size';
+export { default as DemoNotifyBasic } from '../../src/components/notify/__demo__/basic';
 export { default as DemoPopupBasic } from '../../src/components/popup/__demo__/basic';
 export { default as DemoPopupCustomTransition } from '../../src/components/popup/__demo__/custom_transition';
 export { default as DemoPopupDrawer } from '../../src/components/popup/__demo__/drawer';
