@@ -1,5 +1,20 @@
 # 更新日志
 
+### [0.0.6](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.4...v0.0.6) (2021-07-05)
+
+### 文档
+
+- 添加代码更新说明、脚本 ([1c875d0](https://github.com/dcb-fe/dcb-ui/commit/1c875d005f0c5a1d68b8339e8435ee70b42671b5))
+
+### 修复
+
+- 文档同步修正 ([16221af](https://github.com/dcb-fe/dcb-ui/commit/16221af1e261d8b82f4e7e8b7bc634a986c14590))
+
+### 特性
+
+- 新增 Search 组件 ([d032cc0](https://github.com/dcb-fe/dcb-ui/commit/d032cc0b26b75ac994b311314b62d8f382b5b134))
+- 新增 Search 组件 ([28b394e](https://github.com/dcb-fe/dcb-ui/commit/28b394ef5b949258945b51f428044594d22a505e))
+
 ### [0.0.6-beta.5](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.4...v0.0.6-beta.5) (2021-06-29)
 
 ### 文档
