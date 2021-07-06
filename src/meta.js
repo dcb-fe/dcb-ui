@@ -15,6 +15,7 @@ export const meta = {
         list: [
           { name: 'Button', cname: '按钮' },
           { name: 'Popup', cname: '弹出层' },
+          { name: 'Icon', cname: '图标' },
         ],
       },
     ],
