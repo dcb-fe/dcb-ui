@@ -2,7 +2,7 @@ export const meta = {
   /**
    * 版本号。
    */
-  version: '0.0.6-beta.7',
+  version: '0.0.6-beta.8',
 
   /**
    * 组件分组。
@@ -19,6 +19,7 @@ export const meta = {
         ],
       },
       { title: '表单', list: [{ name: 'NumberKeyboard', cname: '数字键盘' }] },
+      { title: '反馈', list: [{ name: 'Notify', cname: '通知' }] },
     ],
   // 分组结束
 };
