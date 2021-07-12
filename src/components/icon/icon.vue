@@ -6,6 +6,8 @@
   import { defineComponent } from '@/utils';
 
   const types = [
+    'keyboard',
+    'backspace',
     'add',
     'camera',
     'calendar',
@@ -118,240 +120,249 @@
 </script>
 
 <style lang="scss" module>
-  @font-face {
-    font-family: 'd-icon';  /* Project id 2653829 */
-    src: url('//at.alicdn.com/t/font_2653829_x0umm698no.woff2?t=1625551076049') format('woff2'),
-        url('//at.alicdn.com/t/font_2653829_x0umm698no.woff?t=1625551076049') format('woff'),
-        url('//at.alicdn.com/t/font_2653829_x0umm698no.ttf?t=1625551076049') format('truetype');
-  }
+@font-face {
+  font-family: 'd-icon';  /* Project id 2653829 */
+  src: url('//at.alicdn.com/t/font_2653829_xatlfsuivv.woff2?t=1626057701178') format('woff2'),
+       url('//at.alicdn.com/t/font_2653829_xatlfsuivv.woff?t=1626057701178') format('woff'),
+       url('//at.alicdn.com/t/font_2653829_xatlfsuivv.ttf?t=1626057701178') format('truetype');
+}
 
-  .icon {
-    list-style: none;
-    display: inline-block;
-    font-family: "d-icon" !important;
-    font-style: normal;
-    color: #2e2d2d;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+.icon {
+  list-style: none;
+  display: inline-block;
+  font-family: "d-icon" !important;
+  font-style: normal;
+  color: #2e2d2d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .add:before {
-    content: "\e722";
-  }
+.backspace:before {
+  content: "\e746";
+}
 
-  .camera:before {
-    content: "\e723";
-  }
+.keyboard:before {
+  content: "\e745";
+}
 
-  .calendar:before {
-    content: "\e724";
-  }
+.add:before {
+  content: "\e722";
+}
 
-  .close:before {
-    content: "\e725";
-  }
+.camera:before {
+  content: "\e723";
+}
 
-  .clock:before {
-    content: "\e726";
-  }
+.calendar:before {
+  content: "\e724";
+}
 
-  .cart:before {
-    content: "\e727";
-  }
+.close:before {
+  content: "\e725";
+}
 
-  .copy:before {
-    content: "\e728";
-  }
+.clock:before {
+  content: "\e726";
+}
 
-  .closed_eye:before {
-    content: "\e729";
-  }
+.cart:before {
+  content: "\e727";
+}
 
-  .eye:before {
-    content: "\e72a";
-  }
+.copy:before {
+  content: "\e728";
+}
 
-  .coupon:before {
-    content: "\e72b";
-  }
+.closed_eye:before {
+  content: "\e729";
+}
 
-  .edit:before {
-    content: "\e72c";
-  }
+.eye:before {
+  content: "\e72a";
+}
 
-  .delete:before {
-    content: "\e72d";
-  }
+.coupon:before {
+  content: "\e72b";
+}
 
-  .feedback:before {
-    content: "\e72e";
-  }
+.edit:before {
+  content: "\e72c";
+}
 
-  .good_job:before {
-    content: "\e72f";
-  }
+.delete:before {
+  content: "\e72d";
+}
 
-  .more:before {
-    content: "\e730";
-  }
+.feedback:before {
+  content: "\e72e";
+}
 
-  .like:before {
-    content: "\e731";
-  }
+.good_job:before {
+  content: "\e72f";
+}
 
-  .fire:before {
-    content: "\e732";
-  }
+.more:before {
+  content: "\e730";
+}
 
-  .location:before {
-    content: "\e733";
-  }
+.like:before {
+  content: "\e731";
+}
 
-  .home:before {
-    content: "\e734";
-  }
+.fire:before {
+  content: "\e732";
+}
 
-  .link:before {
-    content: "\e735";
-  }
+.location:before {
+  content: "\e733";
+}
 
-  .notice:before {
-    content: "\e736";
-  }
+.home:before {
+  content: "\e734";
+}
 
-  .qr_code:before {
-    content: "\e737";
-  }
+.link:before {
+  content: "\e735";
+}
 
-  .picture:before {
-    content: "\e738";
-  }
+.notice:before {
+  content: "\e736";
+}
 
-  .popup_close:before {
-    content: "\e739";
-  }
+.qr_code:before {
+  content: "\e737";
+}
 
-  .order:before {
-    content: "\e73a";
-  }
+.picture:before {
+  content: "\e738";
+}
 
-  .return:before {
-    content: "\e73b";
-  }
+.popup_close:before {
+  content: "\e739";
+}
 
-  .refresh:before {
-    content: "\e73c";
-  }
+.order:before {
+  content: "\e73a";
+}
 
-  .search:before {
-    content: "\e73d";
-  }
+.return:before {
+  content: "\e73b";
+}
 
-  .scan:before {
-    content: "\e73e";
-  }
+.refresh:before {
+  content: "\e73c";
+}
 
-  .service:before {
-    content: "\e73f";
-  }
+.search:before {
+  content: "\e73d";
+}
 
-  .star:before {
-    content: "\e740";
-  }
+.scan:before {
+  content: "\e73e";
+}
 
-  .telephone:before {
-    content: "\e741";
-  }
+.service:before {
+  content: "\e73f";
+}
 
-  .setting:before {
-    content: "\e742";
-  }
+.star:before {
+  content: "\e740";
+}
 
-  .user_circle:before {
-    content: "\e743";
-  }
+.telephone:before {
+  content: "\e741";
+}
 
-  .theme_color:before {
-    content: "\e744";
-  }
+.setting:before {
+  content: "\e742";
+}
 
-  .copy_fill:before {
-    content: "\e70e";
-  }
+.user_circle:before {
+  content: "\e743";
+}
 
-  .cart_fill:before {
-    content: "\e70f";
-  }
+.theme_color:before {
+  content: "\e744";
+}
 
-  .edit_fill:before {
-    content: "\e710";
-  }
+.copy_fill:before {
+  content: "\e70e";
+}
 
-  .calendar_fill:before {
-    content: "\e711";
-  }
+.cart_fill:before {
+  content: "\e70f";
+}
 
-  .coupon_fill:before {
-    content: "\e712";
-  }
+.edit_fill:before {
+  content: "\e710";
+}
 
-  .like_fill:before {
-    content: "\e713";
-  }
+.calendar_fill:before {
+  content: "\e711";
+}
 
-  .eye_fill:before {
-    content: "\e714";
-  }
+.coupon_fill:before {
+  content: "\e712";
+}
 
-  .home_fill:before {
-    content: "\e715";
-  }
+.like_fill:before {
+  content: "\e713";
+}
 
-  .good_job_fill:before {
-    content: "\e716";
-  }
+.eye_fill:before {
+  content: "\e714";
+}
 
-  .location_fill:before {
-    content: "\e717";
-  }
+.home_fill:before {
+  content: "\e715";
+}
 
-  .fire_fill:before {
-    content: "\e718";
-  }
+.good_job_fill:before {
+  content: "\e716";
+}
 
-  .qr_code_fill:before {
-    content: "\e719";
-  }
+.location_fill:before {
+  content: "\e717";
+}
 
-  .theme_color_fill:before {
-    content: "\e71a";
-  }
+.fire_fill:before {
+  content: "\e718";
+}
 
-  .setting_fill:before {
-    content: "\e71b";
-  }
+.qr_code_fill:before {
+  content: "\e719";
+}
 
-  .delete_fill:before {
-    content: "\e71c";
-  }
+.theme_color_fill:before {
+  content: "\e71a";
+}
 
-  .telephone_fill:before {
-    content: "\e71d";
-  }
+.setting_fill:before {
+  content: "\e71b";
+}
 
-  .user_circle_fill:before {
-    content: "\e71e";
-  }
+.delete_fill:before {
+  content: "\e71c";
+}
 
-  .camera_fill:before {
-    content: "\e71f";
-  }
+.telephone_fill:before {
+  content: "\e71d";
+}
 
-  .star_fill:before {
-    content: "\e720";
-  }
+.user_circle_fill:before {
+  content: "\e71e";
+}
 
-  .notice_fill:before {
-    content: "\e721";
-  }
+.camera_fill:before {
+  content: "\e71f";
+}
+
+.star_fill:before {
+  content: "\e720";
+}
+
+.notice_fill:before {
+  content: "\e721";
+}
+
 </style>
