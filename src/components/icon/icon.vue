@@ -105,11 +105,11 @@
   }
 
   .icon {
-    list-style: none;
     display: inline-block;
     font-family: 'd-icon' !important;
     font-style: normal;
-    color: #2e2d2d;
+    font-size: inherit;
+    text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
