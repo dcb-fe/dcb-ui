@@ -6,9 +6,8 @@ export { default as DemoButtonSecondary } from '../../src/components/button/__de
 export { default as DemoButtonSize } from '../../src/components/button/__demo__/size';
 export { default as DemoIconBasic } from '../../src/components/icon/__demo__/basic';
 export { default as DemoNotifyBasic } from '../../src/components/notify/__demo__/basic';
-export { default as DemoNotifyCustomize } from '../../src/components/notify/__demo__/customize';
-export { default as DemoNotifyIconCustomize } from '../../src/components/notify/__demo__/icon';
-export { default as DemoNotifyTypeUsage } from '../../src/components/notify/__demo__/type';
+export { default as DemoNotifyDuration } from '../../src/components/notify/__demo__/duration';
+export { default as DemoNotifyType } from '../../src/components/notify/__demo__/type';
 export { default as DemoPopupBasic } from '../../src/components/popup/__demo__/basic';
 export { default as DemoPopupCustomTransition } from '../../src/components/popup/__demo__/custom_transition';
 export { default as DemoPopupDrawer } from '../../src/components/popup/__demo__/drawer';

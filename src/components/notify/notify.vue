@@ -1,180 +1,139 @@
 <template>
-  <p @click="handleClick">
-    <d-popup
-      :position="position"
-      :visible="notifyVisible"
-      :class="[_.notify]"
-      no-mask
-      :mask-transparent="true"
-      render-in-place
-      @maskClick="handleMaskClick"
-    >
-          <span  v-if="notifyVisible"
-                :class="[
-                  _.sp,
-                  _[type],
-                ]"
-                :style="{color:color,backgroundColor:background}"
-            >
-
-            <d-icon v-if="icon" :name="icon" />
-            {{ message }}
-          </span>
-    </d-popup>
-  </p>
+  <Popup
+    position="top"
+    :visible="visible"
+    :no-mask="true"
+    :mask-transparent="true"
+    :render-in-place="renderInPlace"
+  >
+    <div :class="[_.notify, _[type]]">
+      <slot>
+        {{ message }}
+      </slot>
+    </div>
+  </Popup>
 </template>
 
 <script>
-  import Icon from '@/components/icon/icon';
   import Popup from '@/components/popup/popup';
-
   import { defineComponent } from '@/utils';
 
   export default defineComponent({
     name: 'Notify',
-    // eslint-disable-next-line vue/no-unused-components
-    components:{Popup,Icon},
+
+    components: { Popup },
+
+    model: {
+      prop: 'visible',
+      event: 'visibleChange',
+    },
+
     props: {
-      notifyVisible:{
-        type:Boolean,
-        default:false,
-        desc:'是否显示'
+      visible: {
+        type: Boolean,
+        required: true,
+        desc: '通知是否显示',
       },
       type: {
         type: String,
-        enum: ['primary','success', 'error', 'warning'],
-        default: 'normal',
-        desc: '通知状态',
+        enum: ['primary', 'success', 'warning', 'danger'],
+        default: 'danger',
+        desc: '通知类型',
       },
-      message:{
-        type:String,
-        default: '通知内容',
-        desc: '通知内容',
+      message: {
+        type: String,
+        required: true,
+        desc: '展示文案',
       },
-      icon:{
-        type:String,
-        default: null,
-        desc: 'icon图标name名称(详情查看icon组件)',
+      duration: {
+        type: Number,
+        default: 1500,
+        desc: '展示时长，单位：ms，设为 0 一直展示',
       },
-      color:{
-        type:String,
-        default:'white',
-        desc:'字体颜色'
-      },
-      background:{
-        type:String,
-        default:null,
-        desc:'背景颜色'
-      },
-      className:{
-        type:String,
-        default:null,
-        desc:'自定义类名'
+      renderInPlace: {
+        type: Boolean,
+        default: false,
+        desc: '是否原地渲染，默认会将弹出层渲染到 document.body 下以避免样式污染',
       },
     },
+
     slots: {
       default: {
-        desc: '按钮内容',
+        desc: '展示文案，如果和属性 message 同时出现，此项优先级更高',
       },
     },
-    emits: {
-      onClick:{
-        type:String,
-        default:null,
-        desc:'点击时的回调函数'
-      },
 
+    emits: {
+      visibleChange: {
+        desc: '通知显示状态变化时触发',
+        payload: {
+          visible: {
+            type: Boolean,
+            desc: '当前是否显示',
+          },
+        },
+      },
     },
-    data(){
-      return{
-        position: 'top',
-        setTimeoutOfId:'',
-        options:{
-          type: {
-            type: String,
-            enum: ['primary','success', 'error', 'warning'],
-            default: 'primary',
-            desc: '通知状态',
-          },
-          message:{
-            type:String,
-            default: '通知内容',
-            desc: '通知内容',
-          },
-          icon:{
-            type:String,
-            default: null,
-            desc: 'icon的Class名称',
-          },
-          color:{
-            type:String,
-            default:'white',
-            desc:'字体颜色'
-          },
-          background:{
-            type:String,
-            default:null,
-            desc:'背景颜色'
-          },
+
+    watch: {
+      visible: {
+        immediate: true,
+        handler(visible) {
+          this.dispose();
+          if (visible && this.duration !== 0) {
+            this._timer = setTimeout(() => {
+              this.$emit('visibleChange', false);
+            }, this.duration);
+          }
+        },
+      },
+    },
+
+    beforeDestroy() {
+      this.dispose();
+    },
+
+    methods: {
+      dispose() {
+        if (this._timer) {
+          clearTimeout(this._timer);
+          this._timer = null;
         }
-      }
-    },
-    created() {
-      this.timer = setTimeout(() => {
-        this.timeFlag = true;
-      }, this.time);
-    },
-    mounted(){
-      console.log('123')
-    },
-    methods:{
-      handleButtonClick(position) {
-        this.position = position;
-        this.visible = !this.visible;
-      },
-      handleMaskClick() {
-        this.visible = false;
-      },
-      handleClick(){
-        this.$emit('onClick')
       },
     },
-    });
+  });
 </script>
 
 <style lang="scss" module>
   .notify {
-    .sp{
-      width: 100%;
-      height: 30px;
-      line-height: 30px;
-      text-align: center;
-      z-index: 50;
-    }
-    .error{
-      background-color: red ;
-    }
-    .success{
-      background-color: green ;
-    }
-    .primary{
-      background-color: blue ;
-    }
-    .warning{
-      background-color: orange ;
-    }
-  }
-  .drawer {
-    width: 60%;
-    height: 100%;
-    background-color: #f7f8fa;
-    padding: 20px;
-    box-sizing: border-box;
+    margin-top: 12px;
+    width: 200px;
+    height: 44px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #ffffff;
 
-    &.top,
-    &.bottom {
-      width: 100%;
-      height: 40%;
+    &.danger {
+      background: #ee0d24;
+      box-shadow: 0px 4px 14px 0px rgba(238, 13, 36, 0.24);
+    }
+
+    &.primary {
+      background: #ff960a;
+      box-shadow: 0px 4px 14px 0px rgba(255, 150, 10, 0.24);
+    }
+
+    &.success {
+      background: #10c15f;
+      box-shadow: 0px 4px 14px 0px rgba(16, 193, 95, 0.24);
+    }
+
+    &.warning {
+      background: #ff976a;
+      box-shadow: 0px 4px 14px 0px rgba(255, 151, 106, 0.24);
     }
   }
 </style>
