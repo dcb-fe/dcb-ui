@@ -1,11 +1,11 @@
 <template>
-  <i :class="[_.icon,  _[type]]" v-html="icon" :style="{ fontSize: size, color: color }" v-on="$listeners"/>
+  <i :class="[_.icon, _[name]]" v-bind="$attrs" v-on="$listeners" />
 </template>
 
 <script>
   import { defineComponent } from '@/utils';
 
-  const types = [
+  const icons = [
     'keyboard',
     'backspace',
     'add',
@@ -62,7 +62,7 @@
     'user_circle_fill',
     'camera_fill',
     'star_fill',
-    'notice_fill'
+    'notice_fill',
   ];
 
   export default defineComponent({
@@ -71,24 +71,12 @@
     inheritAttrs: false,
 
     props: {
-      type: {
+      name: {
         type: String,
-        enum: types,
-        default: '',
-        desc: '图标类型，比如：calender/add'
+        enum: icons,
+        required: true,
+        desc: '图标名称',
       },
-
-      size: {
-        type: String,
-        default: '',
-        desc: '尺寸，需要带单位'
-      },
-
-      color: {
-        type: String,
-        default: '#2e2d2d',
-        desc: '颜色'
-      }
     },
 
     emits: {
@@ -102,267 +90,255 @@
         },
       },
     },
-
-    data () {
-      return {
-        icon: null
-      }
-    },
-
-    created() {
-      if (types.indexOf(this.type) === -1) {
-        console.error(`d-icon组件type值(${  this.type  })有误，无此icon!`);
-      } else {
-        // this.icon = require(`../../assets/svg/${  this.type  }.svg`);
-      }
-    }
   });
 </script>
 
 <style lang="scss" module>
-@font-face {
-  font-family: 'd-icon';  /* Project id 2653829 */
-  src: url('//at.alicdn.com/t/font_2653829_xatlfsuivv.woff2?t=1626057701178') format('woff2'),
-       url('//at.alicdn.com/t/font_2653829_xatlfsuivv.woff?t=1626057701178') format('woff'),
-       url('//at.alicdn.com/t/font_2653829_xatlfsuivv.ttf?t=1626057701178') format('truetype');
-}
+  @font-face {
+    font-family: 'd-icon'; /* Project id 2653829 */
+    src: url('//at.alicdn.com/t/font_2653829_xatlfsuivv.woff2?t=1626057701178')
+        format('woff2'),
+      url('//at.alicdn.com/t/font_2653829_xatlfsuivv.woff?t=1626057701178')
+        format('woff'),
+      url('//at.alicdn.com/t/font_2653829_xatlfsuivv.ttf?t=1626057701178')
+        format('truetype');
+  }
 
-.icon {
-  list-style: none;
-  display: inline-block;
-  font-family: "d-icon" !important;
-  font-style: normal;
-  color: #2e2d2d;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  .icon {
+    list-style: none;
+    display: inline-block;
+    font-family: 'd-icon' !important;
+    font-style: normal;
+    color: #2e2d2d;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-.backspace:before {
-  content: "\e746";
-}
+  .backspace:before {
+    content: '\e746';
+  }
 
-.keyboard:before {
-  content: "\e745";
-}
+  .keyboard:before {
+    content: '\e745';
+  }
 
-.add:before {
-  content: "\e722";
-}
+  .add:before {
+    content: '\e722';
+  }
 
-.camera:before {
-  content: "\e723";
-}
+  .camera:before {
+    content: '\e723';
+  }
 
-.calendar:before {
-  content: "\e724";
-}
+  .calendar:before {
+    content: '\e724';
+  }
 
-.close:before {
-  content: "\e725";
-}
+  .close:before {
+    content: '\e725';
+  }
 
-.clock:before {
-  content: "\e726";
-}
+  .clock:before {
+    content: '\e726';
+  }
 
-.cart:before {
-  content: "\e727";
-}
+  .cart:before {
+    content: '\e727';
+  }
 
-.copy:before {
-  content: "\e728";
-}
+  .copy:before {
+    content: '\e728';
+  }
 
-.closed_eye:before {
-  content: "\e729";
-}
+  .closed_eye:before {
+    content: '\e729';
+  }
 
-.eye:before {
-  content: "\e72a";
-}
+  .eye:before {
+    content: '\e72a';
+  }
 
-.coupon:before {
-  content: "\e72b";
-}
+  .coupon:before {
+    content: '\e72b';
+  }
 
-.edit:before {
-  content: "\e72c";
-}
+  .edit:before {
+    content: '\e72c';
+  }
 
-.delete:before {
-  content: "\e72d";
-}
+  .delete:before {
+    content: '\e72d';
+  }
 
-.feedback:before {
-  content: "\e72e";
-}
+  .feedback:before {
+    content: '\e72e';
+  }
 
-.good_job:before {
-  content: "\e72f";
-}
+  .good_job:before {
+    content: '\e72f';
+  }
 
-.more:before {
-  content: "\e730";
-}
+  .more:before {
+    content: '\e730';
+  }
 
-.like:before {
-  content: "\e731";
-}
+  .like:before {
+    content: '\e731';
+  }
 
-.fire:before {
-  content: "\e732";
-}
+  .fire:before {
+    content: '\e732';
+  }
 
-.location:before {
-  content: "\e733";
-}
+  .location:before {
+    content: '\e733';
+  }
 
-.home:before {
-  content: "\e734";
-}
+  .home:before {
+    content: '\e734';
+  }
 
-.link:before {
-  content: "\e735";
-}
+  .link:before {
+    content: '\e735';
+  }
 
-.notice:before {
-  content: "\e736";
-}
+  .notice:before {
+    content: '\e736';
+  }
 
-.qr_code:before {
-  content: "\e737";
-}
+  .qr_code:before {
+    content: '\e737';
+  }
 
-.picture:before {
-  content: "\e738";
-}
+  .picture:before {
+    content: '\e738';
+  }
 
-.popup_close:before {
-  content: "\e739";
-}
+  .popup_close:before {
+    content: '\e739';
+  }
 
-.order:before {
-  content: "\e73a";
-}
+  .order:before {
+    content: '\e73a';
+  }
 
-.return:before {
-  content: "\e73b";
-}
+  .return:before {
+    content: '\e73b';
+  }
 
-.refresh:before {
-  content: "\e73c";
-}
+  .refresh:before {
+    content: '\e73c';
+  }
 
-.search:before {
-  content: "\e73d";
-}
+  .search:before {
+    content: '\e73d';
+  }
 
-.scan:before {
-  content: "\e73e";
-}
+  .scan:before {
+    content: '\e73e';
+  }
 
-.service:before {
-  content: "\e73f";
-}
+  .service:before {
+    content: '\e73f';
+  }
 
-.star:before {
-  content: "\e740";
-}
+  .star:before {
+    content: '\e740';
+  }
 
-.telephone:before {
-  content: "\e741";
-}
+  .telephone:before {
+    content: '\e741';
+  }
 
-.setting:before {
-  content: "\e742";
-}
+  .setting:before {
+    content: '\e742';
+  }
 
-.user_circle:before {
-  content: "\e743";
-}
+  .user_circle:before {
+    content: '\e743';
+  }
 
-.theme_color:before {
-  content: "\e744";
-}
+  .theme_color:before {
+    content: '\e744';
+  }
 
-.copy_fill:before {
-  content: "\e70e";
-}
+  .copy_fill:before {
+    content: '\e70e';
+  }
 
-.cart_fill:before {
-  content: "\e70f";
-}
+  .cart_fill:before {
+    content: '\e70f';
+  }
 
-.edit_fill:before {
-  content: "\e710";
-}
+  .edit_fill:before {
+    content: '\e710';
+  }
 
-.calendar_fill:before {
-  content: "\e711";
-}
+  .calendar_fill:before {
+    content: '\e711';
+  }
 
-.coupon_fill:before {
-  content: "\e712";
-}
+  .coupon_fill:before {
+    content: '\e712';
+  }
 
-.like_fill:before {
-  content: "\e713";
-}
+  .like_fill:before {
+    content: '\e713';
+  }
 
-.eye_fill:before {
-  content: "\e714";
-}
+  .eye_fill:before {
+    content: '\e714';
+  }
 
-.home_fill:before {
-  content: "\e715";
-}
+  .home_fill:before {
+    content: '\e715';
+  }
 
-.good_job_fill:before {
-  content: "\e716";
-}
+  .good_job_fill:before {
+    content: '\e716';
+  }
 
-.location_fill:before {
-  content: "\e717";
-}
+  .location_fill:before {
+    content: '\e717';
+  }
 
-.fire_fill:before {
-  content: "\e718";
-}
+  .fire_fill:before {
+    content: '\e718';
+  }
 
-.qr_code_fill:before {
-  content: "\e719";
-}
+  .qr_code_fill:before {
+    content: '\e719';
+  }
 
-.theme_color_fill:before {
-  content: "\e71a";
-}
+  .theme_color_fill:before {
+    content: '\e71a';
+  }
 
-.setting_fill:before {
-  content: "\e71b";
-}
+  .setting_fill:before {
+    content: '\e71b';
+  }
 
-.delete_fill:before {
-  content: "\e71c";
-}
+  .delete_fill:before {
+    content: '\e71c';
+  }
 
-.telephone_fill:before {
-  content: "\e71d";
-}
+  .telephone_fill:before {
+    content: '\e71d';
+  }
 
-.user_circle_fill:before {
-  content: "\e71e";
-}
+  .user_circle_fill:before {
+    content: '\e71e';
+  }
 
-.camera_fill:before {
-  content: "\e71f";
-}
+  .camera_fill:before {
+    content: '\e71f';
+  }
 
-.star_fill:before {
-  content: "\e720";
-}
+  .star_fill:before {
+    content: '\e720';
+  }
 
-.notice_fill:before {
-  content: "\e721";
-}
-
+  .notice_fill:before {
+    content: '\e721';
+  }
 </style>

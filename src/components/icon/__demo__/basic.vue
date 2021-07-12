@@ -1,45 +1,46 @@
 <template>
-  <ul class="icon-list">
-    <li v-for="(item, index) in types" :key="index">
-      <d-icon :type="item" size="24px" @click="handleClick(item)"/>
-      <p>{{item}}</p>
+  <ul class="list">
+    <li
+      v-for="item in icons"
+      :key="item"
+      class="item"
+      @click="handleClick(item)"
+    >
+      <d-icon :name="item" class="icon" />
+      <div class="name">{{ item }}</div>
     </li>
   </ul>
 </template>
 
 <script>
-  import Icon from '@/components/icon/icon.vue'
+  import Icon from '@/components/icon/icon.vue';
+  import { copyTextToClipboard } from 'vtils';
 
   export default {
-    data () {
+    data() {
       return {
-        types: Icon.props.type.enum
-      }
+        icons: Icon.props.name.enum,
+      };
     },
     methods: {
-      handleClick (text) {
-        console.log(text);
-      }
-    }
+      handleClick(name) {
+        copyTextToClipboard(`<d-icon name="${name}" />`);
+        alert('已复制');
+      },
+    },
   };
 </script>
 
-<style lang="scss">
-  .icon-list {
-    height: 100%;
+<style lang="scss" scoped>
+  .list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    overflow: auto;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    li {
+    .item {
       border: 1px solid #e8e8e8;
       height: 100px;
       flex: 0 0 100px;
@@ -48,10 +49,21 @@
       align-items: center;
       justify-content: center;
       margin: 5px 0;
+      cursor: pointer;
+      background-color: white;
+      border-radius: 4px;
 
-      p {
+      .icon {
+        font-size: 24px;
+      }
+
+      .name {
         font-size: 12px;
         white-space: nowrap;
+      }
+
+      &:active {
+        background-color: mix(black, white, 10%);
       }
     }
   }
