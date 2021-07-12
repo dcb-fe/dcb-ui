@@ -13,8 +13,8 @@
 </template>
 
 <script>
-  import Icon from '@/components/icon/icon.vue';
   import { copyTextToClipboard } from 'vtils';
+  import { Icon } from '@dcbfe/ui';
 
   export default {
     data() {
