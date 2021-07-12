@@ -18,6 +18,7 @@ export const meta = {
           { name: 'Icon', cname: '图标' },
         ],
       },
+      { title: '反馈', list: [{ name: 'Notify', cname: '通知' }] },
     ],
   // 分组结束
 };
