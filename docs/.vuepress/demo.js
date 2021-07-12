@@ -5,6 +5,7 @@ export { default as DemoButtonPrimary } from '../../src/components/button/__demo
 export { default as DemoButtonSecondary } from '../../src/components/button/__demo__/secondary';
 export { default as DemoButtonSize } from '../../src/components/button/__demo__/size';
 export { default as DemoIconBasic } from '../../src/components/icon/__demo__/basic';
+export { default as DemoNumberKeyboardDef } from '../../src/components/number_keyboard/__demo__/def';
 export { default as DemoNotifyBasic } from '../../src/components/notify/__demo__/basic';
 export { default as DemoNotifyDuration } from '../../src/components/notify/__demo__/duration';
 export { default as DemoNotifyType } from '../../src/components/notify/__demo__/type';
