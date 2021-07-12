@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.8](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.7...v0.0.6-beta.8) (2021-07-12)
+
+### 特性
+
+- 新增 Notify 通知组件 ([#11](https://github.com/dcb-fe/dcb-ui/issues/11)) ([917bb80](https://github.com/dcb-fe/dcb-ui/commit/917bb8043b93ee52b597b7d11c4c5b3036a3d16e))
+
 ### [0.0.6-beta.7](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.6...v0.0.6-beta.7) (2021-07-12)
 
 ### 修复
