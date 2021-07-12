@@ -1,5 +1,16 @@
 # 更新日志
 
+### [0.0.6-beta.7](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.6...v0.0.6-beta.7) (2021-07-12)
+
+### 修复
+
+- 修复测试问题 ([4376767](https://github.com/dcb-fe/dcb-ui/commit/4376767d79d7673e6c752894dde219f4fe62af3f))
+
+### 特性
+
+- 新增 Icon 图标组件 ([#10](https://github.com/dcb-fe/dcb-ui/issues/10)) ([f5f368e](https://github.com/dcb-fe/dcb-ui/commit/f5f368eed20a04dfe47d30ace61b98e5af5f70f7))
+- **Popup:** 新增 noMask 属性支持不渲染遮罩 ([#7](https://github.com/dcb-fe/dcb-ui/issues/7)) ([f5b45bc](https://github.com/dcb-fe/dcb-ui/commit/f5b45bc400c60b9a0cdb9ad0a9790138c976bc2c))
+
 ### [0.0.6-beta.6](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.5...v0.0.6-beta.6) (2021-06-30)
 
 ### 修复
