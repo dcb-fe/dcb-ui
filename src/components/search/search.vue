@@ -1,6 +1,6 @@
 <template>
-<form action="javascript:void 0">
   <div :class="_.search" :style="{backgroundColor: background}">
+    <form class="form" action="javascript:void 0">
       <div :class="[_.content, {[_.round]: shape === 'round'}]">
         <d-icon name="search" />
         <input 
@@ -8,6 +8,7 @@
         :class="[_.control, _[inputAlign]]" 
         type="text" 
         :placeholder="placeholder" 
+        v-bind={...$attr}
         @focus="handlerInputFocus" 
         @blur="handlerInputBlur"
         @keyup.13="handlerInputSearch"
@@ -18,8 +19,8 @@
       <div v-if="hasSlot" :class="_.action">
         <slot name="right"/>
       </div>
+      </form>
   </div>
-</form>
 </template>
 
 <script>
@@ -144,8 +145,6 @@
 
 <style lang="scss" module>
   .search {
-    display: flex;
-    align-items: center;
     width: auto;
     padding: 12px;
     background: white;
@@ -203,4 +202,10 @@
       line-height: 22px;
       cursor: pointer;
     }
+</style>
+<style lang=scss scoped>
+  .form {
+    display: flex;
+    align-items: center;
+  }
 </style>
