@@ -3,76 +3,88 @@
     <ul class="card">
       <li @click.stop.prevent="showFn(1)">
         <span>弹出默认键盘</span>
-        <d-icon name="return"/>
+        <d-icon name="return" />
       </li>
       <li @click.stop.prevent="showFn(2)">
         <span>弹出带右侧栏键盘</span>
-        <d-icon name="return"/>
+        <d-icon name="return" />
       </li>
       <li @click.stop.prevent="showFn(3)">
         <span>弹出身份证号键盘</span>
-        <d-icon name="return"/>
+        <d-icon name="return" />
       </li>
       <li @click.stop.prevent="showFn(4)">
         <span>弹出带标题键盘</span>
-        <d-icon name="return"/>
+        <d-icon name="return" />
       </li>
       <li @click.stop.prevent="showFn(5)">
         <span>弹出随机键盘</span>
-        <d-icon name="return"/>
+        <d-icon name="return" />
       </li>
       <li @click.stop.prevent="showFn(6)">
         <span>弹出配置多个按键的键盘</span>
-        <d-icon name="return"/>
+        <d-icon name="return" />
       </li>
       <li @click.stop.prevent="showFn(7)">
-        <span>双向绑定<input placeholder="点此输入" readonly v-model="text"/></span>
+        <span
+          >双向绑定<input placeholder="点此输入" readonly v-model="text"
+        /></span>
       </li>
     </ul>
-    <d-number-keyboard @blur="show1 = false"
-                       @close="show1 = false"
-                       :show="show1">
+    <d-number-keyboard
+      @blur="show1 = false"
+      @close="show1 = false"
+      :show="show1"
+    >
     </d-number-keyboard>
-    <d-number-keyboard theme="custom"
-                       extraKey="."
-                       @close="show2 = false"
-                       :show="show2">
+    <d-number-keyboard
+      theme="custom"
+      extraKey="."
+      @close="show2 = false"
+      :show="show2"
+    >
     </d-number-keyboard>
-    <d-number-keyboard extraKey="X"
-                       closeButtonText="完成"
-                       @close="show3 = false"
-                       :show="show3">
+    <d-number-keyboard
+      extraKey="X"
+      closeButtonText="完成"
+      @close="show3 = false"
+      :show="show3"
+    >
     </d-number-keyboard>
-    <d-number-keyboard title="标题"
-                       closeButtonText="完成"
-                       extraKey="."
-                       @close="show4 = false"
-                       :show="show4">
+    <d-number-keyboard
+      title="标题"
+      closeButtonText="完成"
+      extraKey="."
+      @close="show4 = false"
+      :show="show4"
+    >
     </d-number-keyboard>
-    <d-number-keyboard @close="show5 = false"
-                       :show="show5"
-                       :randomKey="true">
+    <d-number-keyboard @close="show5 = false" :show="show5" :randomKey="true">
     </d-number-keyboard>
-    <d-number-keyboard closeButtonText="完成"
-                       @close="show6 = false"
-                       :extraKey="['0','0']"
-                       :show="show6"
-                       :randomKey="false">
+    <d-number-keyboard
+      closeButtonText="完成"
+      @close="show6 = false"
+      :extraKey="['0', '0']"
+      :show="show6"
+      :randomKey="false"
+    >
     </d-number-keyboard>
-    <d-number-keyboard v-model="text"
-                       closeButtonText="完成"
-                       @close="show7 = false"
-                       @select="select"
-                       :extraKey="['0','0']"
-                       :show="show7"
-                       :randomKey="true">
+    <d-number-keyboard
+      v-model="text"
+      closeButtonText="完成"
+      @close="show7 = false"
+      @select="select"
+      :extraKey="['0', '0']"
+      :show="show7"
+      :randomKey="true"
+    >
     </d-number-keyboard>
   </div>
 </template>
 <!--test-->
 <script>
   export default {
-    name: "test",
+    name: 'test',
     components: {},
     data() {
       return {
@@ -83,28 +95,27 @@
         show4: false,
         show5: false,
         show6: false,
-        show7: false
-      }
+        show7: false,
+      };
     },
-    mounted() {
-    },
+    mounted() {},
     methods: {
       select(val) {
-        console.log(val)
+        console.log(val);
       },
       showFn(key) {
         [1, 2, 3, 4, 5, 6, 7].map(key => {
-          this['show' + key] = false
-        })
-        this['show' + key] = true
+          this['show' + key] = false;
+        });
+        this['show' + key] = true;
       },
       close() {
         [1, 2, 3, 4, 5, 6, 7].map(key => {
-          this['show' + key] = false
-        })
-      }
-    }
-  }
+          this['show' + key] = false;
+        });
+      },
+    },
+  };
 </script>
 
 <style scoped lang="scss">
@@ -114,7 +125,7 @@
       transform: rotate(180deg);
     }
     .card {
-      background: #FFFFFF;
+      background: #ffffff;
       border-radius: 8px;
       padding: 0 12px;
       margin: 0;
