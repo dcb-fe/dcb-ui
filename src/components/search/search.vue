@@ -19,7 +19,7 @@
       <div v-if="hasSlot" :class="_.action">
         <slot name="right"/>
       </div>
-      </form>
+    </form>
   </div>
 </template>
 
