@@ -13,7 +13,7 @@
       <button :class="_.close" @click.prevent="finish" v-if="closeButtonText">{{closeButtonText}}</button>
     </div>
 
-    <div :class="theme === 'custom' ? _.right : _.def">
+    <div :class="theme === 'custom' ? _.right : ''">
       <div :class="_.keys" v-if="listKeys.length">
         <div :class="_.key" v-for="(item, index) in listKeys" :key="index">
           <div v-html="item.value"
@@ -126,7 +126,7 @@
       },
       theme: {
         type: String,
-        default: 'def',
+        default: '',
         desc: '样式风格，可选值为 custom'
       },
       title: {
@@ -462,7 +462,6 @@
 <style lang="scss" module>
   .number-keyboard {
     &-show {
-      -webkit-animation: fadelogIn .4s;
       animation: fadelogIn .4s;
       color: rgba(70, 81, 102, 1);
       height: auto;
@@ -479,7 +478,6 @@
       }
       100% {
         margin-bottom: 0;
-        -webkit-transform: none;
         transform: none;
       }
     }
