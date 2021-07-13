@@ -8,7 +8,7 @@
         :class="[_.control, _[inputAlign]]" 
         type="text" 
         :placeholder="placeholder" 
-        v-bind={...$attr}
+        v-bind={...$attrs}
         @focus="handlerInputFocus" 
         @blur="handlerInputBlur"
         @keyup.13="handlerInputSearch"
@@ -112,6 +112,9 @@
     computed: {
       hasSlot() {
         return Object.keys(this.$slots).length
+      },
+      attrs() {
+        return this.$attrs;
       }
     },
     watch: {
