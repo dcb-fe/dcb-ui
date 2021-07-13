@@ -1,5 +1,15 @@
 # 更新日志
 
+### [0.0.6-beta.9](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.8...v0.0.6-beta.9) (2021-07-13)
+
+### 特性
+
+- 新增 NumberKeyboard 组件 ([818aee7](https://github.com/dcb-fe/dcb-ui/commit/818aee7707c81df416940326d5571a391884fd1e))
+
+### 文档
+
+- 组件属性类型推导优化；添加属性必填标志 ([c4f33e1](https://github.com/dcb-fe/dcb-ui/commit/c4f33e166abf05de4674f27d50cbe040241d993a))
+
 ### [0.0.6-beta.8](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.7...v0.0.6-beta.8) (2021-07-12)
 
 ### 特性
