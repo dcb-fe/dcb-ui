@@ -52,8 +52,12 @@ td ul:last-child {
     border-radius: 6px;
     transform: scale(1);
     max-height: 667px;
-    overflow: hidden;
+    overflow: auto;
     background-color: #f7f8fa;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   > :last-child {

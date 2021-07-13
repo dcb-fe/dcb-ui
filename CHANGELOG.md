@@ -1,21 +1,46 @@
 # 更新日志
 
-### [0.0.7](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6...v0.0.7) (2021-07-05)
+### [0.0.6-beta.9](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.8...v0.0.6-beta.9) (2021-07-13)
 
-### [0.0.6](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.4...v0.0.6) (2021-07-05)
+### 特性
+
+- 新增 NumberKeyboard 组件 ([818aee7](https://github.com/dcb-fe/dcb-ui/commit/818aee7707c81df416940326d5571a391884fd1e))
 
 ### 文档
 
-- 添加代码更新说明、脚本 ([1c875d0](https://github.com/dcb-fe/dcb-ui/commit/1c875d005f0c5a1d68b8339e8435ee70b42671b5))
+- 组件属性类型推导优化；添加属性必填标志 ([c4f33e1](https://github.com/dcb-fe/dcb-ui/commit/c4f33e166abf05de4674f27d50cbe040241d993a))
+
+### [0.0.6-beta.8](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.7...v0.0.6-beta.8) (2021-07-12)
+
+### 特性
+
+- 新增 Notify 通知组件 ([#11](https://github.com/dcb-fe/dcb-ui/issues/11)) ([917bb80](https://github.com/dcb-fe/dcb-ui/commit/917bb8043b93ee52b597b7d11c4c5b3036a3d16e))
+
+### [0.0.6-beta.7](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.6...v0.0.6-beta.7) (2021-07-12)
+
+### 修复
+
+- 修复测试问题 ([4376767](https://github.com/dcb-fe/dcb-ui/commit/4376767d79d7673e6c752894dde219f4fe62af3f))
+
+### 特性
+
+- 新增 Icon 图标组件 ([#10](https://github.com/dcb-fe/dcb-ui/issues/10)) ([f5f368e](https://github.com/dcb-fe/dcb-ui/commit/f5f368eed20a04dfe47d30ace61b98e5af5f70f7))
+- **Popup:** 新增 noMask 属性支持不渲染遮罩 ([#7](https://github.com/dcb-fe/dcb-ui/issues/7)) ([f5b45bc](https://github.com/dcb-fe/dcb-ui/commit/f5b45bc400c60b9a0cdb9ad0a9790138c976bc2c))
+
+### [0.0.6-beta.6](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.5...v0.0.6-beta.6) (2021-06-30)
 
 ### 修复
 
 - 文档同步修正 ([16221af](https://github.com/dcb-fe/dcb-ui/commit/16221af1e261d8b82f4e7e8b7bc634a986c14590))
 
+### 文档
+
+- 为组件文档添加贡献者展示 ([#4](https://github.com/dcb-fe/dcb-ui/issues/4)) ([f23bc75](https://github.com/dcb-fe/dcb-ui/commit/f23bc75d4c4cf272d3e1a74003820fb3630cb4a9))
+- 修复读我文档链接 ([#5](https://github.com/dcb-fe/dcb-ui/issues/5)) ([69dfa9e](https://github.com/dcb-fe/dcb-ui/commit/69dfa9ef2a474a642f7199f6fc2b85da0b6893c4))
+
 ### 特性
 
-- 新增 Search 组件 ([d032cc0](https://github.com/dcb-fe/dcb-ui/commit/d032cc0b26b75ac994b311314b62d8f382b5b134))
-- 新增 Search 组件 ([28b394e](https://github.com/dcb-fe/dcb-ui/commit/28b394ef5b949258945b51f428044594d22a505e))
+- 新增 Popup 弹出层组件 ([#6](https://github.com/dcb-fe/dcb-ui/issues/6)) ([7126a02](https://github.com/dcb-fe/dcb-ui/commit/7126a02d0aa3a2ab39d2a0804f69e91daac868a6))
 
 ### [0.0.6-beta.5](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.4...v0.0.6-beta.5) (2021-06-29)
 

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popup 视图 visible 为 false 时不渲染遮罩和内容 1`] = `
+<portal-stub selector="d-portal-container" tag="DIV">
+  <div class="d-popup d-popup-center d-popup-hidden" style="z-index: 5000;">
+    <transition-stub name="d-transition-fade" appear="true">
+      <!---->
+    </transition-stub>
+    <transition-stub name="d-transition-fade" appear="true">
+      <!---->
+    </transition-stub>
+  </div>
+</portal-stub>
+`;
+
+exports[`Popup 视图 visible 为 true 时渲染遮罩和内容 1`] = `
+<portal-stub selector="d-portal-container" tag="DIV">
+  <div class="d-popup d-popup-center" style="z-index: 5001;">
+    <transition-stub name="d-transition-fade" appear="true">
+      <div class="d-popup-mask"></div>
+    </transition-stub>
+    <transition-stub name="d-transition-fade" appear="true">内容</transition-stub>
+  </div>
+</portal-stub>
+`;

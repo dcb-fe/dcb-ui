@@ -1,3 +1,5 @@
+let zIndex = 5000;
+
 /**
  * 定义组件。
  *
@@ -9,10 +11,16 @@ export function defineComponent(options) {
     options.name = `D${options.name}`;
   }
 
-  // 定义 _ 作为 $style 的别名，方便使用
   options.computed ??= {};
+
+  // 定义 _ 作为 $style 的别名，方便使用
   options.computed._ = function () {
     return this.$style;
+  };
+
+  // 递增 zIndex
+  options.computed.zIndex = function () {
+    return zIndex++;
   };
 
   // 安装方法

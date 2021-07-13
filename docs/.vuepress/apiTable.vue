@@ -10,12 +10,27 @@
     </thead>
     <tbody>
       <tr v-for="prop in componentProps" :key="prop.name">
-        <td>{{ prop.name }}</td>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <td :class="$style.name">
+          {{ prop.name }}
+          <div :class="$style.tags">
+            <div
+              v-if="prop.isModelProp"
+              :class="$style.tag"
+              title="可使用 v-model 双向绑定"
+            >
+              v-model
+            </div>
+          </div>
+        </td>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <td v-html="prop.desc" />
         <!-- eslint-disable-next-line vue/no-v-html -->
         <td v-html="prop.typeText" />
-        <td>{{ prop.default }}</td>
+        <td>
+          <div v-if="prop.isRequired" :class="$style.required">必填</div>
+          <template v-else>{{ prop.default }}</template>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -120,13 +135,32 @@
       },
       componentProps() {
         const props = components[this.componentName].props;
+        const model = {
+          prop: 'value',
+          event: 'input',
+          ...components[this.componentName].model,
+        };
+        const getType = prop => {
+          return Array.isArray(prop.enum)
+            ? prop.enum.map(item => `<code>${item}</code>`).join(' | ')
+            : typeof prop.type === 'function'
+            ? prop.type.name.toLowerCase()
+            : Array.isArray(prop.type)
+            ? prop.type
+                .map(type =>
+                  getType({
+                    ...prop,
+                    type: type,
+                  }),
+                )
+                .join(' | ')
+            : 'any';
+        };
         return Object.keys(props || {}).map(key => ({
           name: key,
-          typeText: Array.isArray(props[key].enum)
-            ? props[key].enum.map(item => `<code>${item}</code>`).join(' | ')
-            : typeof props[key].type === 'function'
-            ? props[key].type.name.toLowerCase()
-            : 'any',
+          isModelProp: model.prop === key,
+          isRequired: !!props[key].required,
+          typeText: getType(props[key]),
           ...props[key],
         }));
       },
@@ -171,8 +205,37 @@
 </script>
 
 <style lang="scss" module>
+  thead {
+    td {
+      white-space: nowrap;
+    }
+  }
+
   .name {
     width: 4em;
+    white-space: nowrap;
+
+    .tags {
+      display: flex;
+      align-items: center;
+
+      .tag {
+        background-color: #d2d0d0;
+        padding: 4px;
+        border-radius: 4px;
+        line-height: 1;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .required {
+    display: inline-flex;
+    background-color: #fdec58;
+    padding: 4px;
+    border-radius: 4px;
+    line-height: 1;
+    font-size: 12px;
   }
 
   .desc {
