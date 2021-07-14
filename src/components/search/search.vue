@@ -2,7 +2,7 @@
   <div :class="_.search" :style="{backgroundColor: background}">
     <form :class="_.form" action="javascript:void 0">
       <div :class="[_.content, {[_.round]: shape === 'round'}]">
-        <d-icon name="search" />
+        <d-icon name="search" :style="{color: searchIconColor, fontSize: searchIconSize}" />
         <input 
         v-model="keyword" 
         :class="[_.control, _[inputAlign]]" 
@@ -14,7 +14,7 @@
         @keyup.13="handlerInputSearch"
         @input=handlerInput
         >
-        <d-icon v-show="keyword.length" name="close" @click="handlerClearClick"/>
+        <d-icon v-show="keyword.length" name="search_eliminate" :style="{color: clearIconColor, fontSize: clearIconSize}" @click="handlerClearClick"/>
       </div>
       <div v-if="hasSlot" :class="_.action">
         <slot name="right"/>
@@ -58,6 +58,26 @@
         default: 'left',
         enum: ['left', 'center', 'right'],
         desc: '输入框对齐方式, 可选值为center, right'
+      },
+      searchIconColor: {
+        type: String,
+        default: '#333333',
+        desc: '左侧图标颜色'
+      },
+      clearIconColor: {
+        type: String,
+        default: '#D2D5D9',
+        desc: '清除图标颜色'
+      },
+      searchIconSize: {
+        type: String,
+        default: '22px',
+        desc: '搜索图标大小'
+      },
+      clearIconSize: {
+        type: String,
+        default: '22px',
+        desc: '清除图标大小'
       }
     },
     emits: {
@@ -164,6 +184,7 @@
     display: flex;
     flex: 1;
     align-items: center;
+    height: 22px;
     padding: 8px 12px;
     background: #F5F5F5;
     border-radius: 6px;

@@ -4,8 +4,8 @@ exports[`Search 视图 圆形搜索框 1`] = `
 <div class="d-search" style="background-color: white;">
   <form action="javascript:void 0" class="d-search-form">
     <div class="d-search-content">
-      <d-icon-stub name="search"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
-      <d-icon-stub name="close" style="display: none;"></d-icon-stub>
+      <d-icon-stub name="search" style="color: rgb(51, 51, 51); font-size: 22px;"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
+      <d-icon-stub name="search_eliminate" style="color: rgb(210, 213, 217); font-size: 22px; display: none;"></d-icon-stub>
     </div>
     <!---->
   </form>
@@ -16,8 +16,8 @@ exports[`Search 视图 搜索框内容对齐 1`] = `
 <div class="d-search" style="background-color: white;">
   <form action="javascript:void 0" class="d-search-form">
     <div class="d-search-content">
-      <d-icon-stub name="search"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control">
-      <d-icon-stub name="close" style="display: none;"></d-icon-stub>
+      <d-icon-stub name="search" style="color: rgb(51, 51, 51); font-size: 22px;"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control">
+      <d-icon-stub name="search_eliminate" style="color: rgb(210, 213, 217); font-size: 22px; display: none;"></d-icon-stub>
     </div>
     <!---->
   </form>
@@ -28,8 +28,8 @@ exports[`Search 视图 普通展示 1`] = `
 <div class="d-search" style="background-color: white;">
   <form action="javascript:void 0" class="d-search-form">
     <div class="d-search-content">
-      <d-icon-stub name="search"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
-      <d-icon-stub name="close" style="display: none;"></d-icon-stub>
+      <d-icon-stub name="search" style="color: rgb(51, 51, 51); font-size: 22px;"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
+      <d-icon-stub name="search_eliminate" style="color: rgb(210, 213, 217); font-size: 22px; display: none;"></d-icon-stub>
     </div>
     <!---->
   </form>
@@ -40,8 +40,8 @@ exports[`Search 视图 自定义右侧内容 1`] = `
 <div class="d-search" style="background-color: white;">
   <form action="javascript:void 0" class="d-search-form">
     <div class="d-search-content">
-      <d-icon-stub name="search"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
-      <d-icon-stub name="close" style="display: none;"></d-icon-stub>
+      <d-icon-stub name="search" style="color: rgb(51, 51, 51); font-size: 22px;"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
+      <d-icon-stub name="search_eliminate" style="color: rgb(210, 213, 217); font-size: 22px; display: none;"></d-icon-stub>
     </div>
     <div class="d-search-action"><span class="btn">搜索</span></div>
   </form>
@@ -52,8 +52,8 @@ exports[`Search 视图 自定义背景色 1`] = `
 <div class="d-search">
   <form action="javascript:void 0" class="d-search-form">
     <div class="d-search-content">
-      <d-icon-stub name="search"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
-      <d-icon-stub name="close" style="display: none;"></d-icon-stub>
+      <d-icon-stub name="search" style="color: rgb(51, 51, 51); font-size: 22px;"></d-icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
+      <d-icon-stub name="search_eliminate" style="color: rgb(210, 213, 217); font-size: 22px; display: none;"></d-icon-stub>
     </div>
     <!---->
   </form>
