@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import Icon from '../icon/icon.vue';
+  import Icon from '../icon/icon';
   import { defineComponent } from '@/utils';
   export default defineComponent({
     name: 'Search',
@@ -45,6 +45,7 @@
       shape: {
         type: String,
         default: 'square',
+        enum: ['square', 'round'],
         desc: '搜索框形状，可选值为 round'
       },
       background: {
@@ -55,6 +56,7 @@
       inputAlign: {
         type: String,
         default: 'left',
+        enum: ['left', 'center', 'right'],
         desc: '输入框对齐方式, 可选值为center, right'
       }
     },
@@ -206,7 +208,7 @@
       cursor: pointer;
     }
 </style>
-<style lang=scss scoped>
+<style lang=scss>
   .form {
     display: flex;
     align-items: center;
