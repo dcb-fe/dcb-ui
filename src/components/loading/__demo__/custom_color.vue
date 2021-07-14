@@ -1,19 +1,16 @@
 <template>
   <div class="demo-spinner">
-    <d-loading color="#FF980E"></d-loading>
-    <d-loading type="spinner" color="#FF980E"></d-loading>
+    <d-loading :style="{ color: '#FF980E' }"></d-loading>
+    <d-loading type="spinner" class="custom"></d-loading>
   </div>
 </template>
 
-<script>
-  export default {
-    methods: {},
-  };
-</script>
-<style lang="scss">
+<style lang="scss" scoped>
   .demo-spinner {
-    .d-loading {
-      margin-left: 10px;
+    display: flex;
+
+    .custom {
+      color: #ff980e;
     }
   }
 </style>

@@ -14,8 +14,8 @@
           @input="handlerInput"
         />
         <Icon
-          :class="_.clear"
           v-show="keyword.length"
+          :class="_.clear"
           name="search_eliminate"
           @click="handlerClearClick"
         />
@@ -28,8 +28,8 @@
 </template>
 
 <script>
-  import { defineComponent } from '@/utils';
   import Icon from '@/components/icon/icon';
+  import { defineComponent } from '@/utils';
 
   export default defineComponent({
     name: 'Search',

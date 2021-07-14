@@ -1,19 +1,14 @@
 <template>
   <div class="demo-spinner">
-    <d-loading size="24px"></d-loading>
-    <d-loading type="spinner" size="24px"></d-loading>
+    <d-loading class="custom"></d-loading>
+    <d-loading type="spinner" class="custom"></d-loading>
   </div>
 </template>
 
-<script>
-  export default {
-    methods: {},
-  };
-</script>
-<style lang="scss">
+<style lang="scss" scoped>
   .demo-spinner {
-    .d-loading {
-      margin-left: 10px;
+    .custom {
+      font-size: 24px;
     }
   }
 </style>

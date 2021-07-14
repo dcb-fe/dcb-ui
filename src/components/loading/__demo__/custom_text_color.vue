@@ -1,20 +1,20 @@
 <template>
   <div class="demo-spinner">
-    <d-loading color="#FF980E" vertical>加载中...</d-loading>
-    <d-loading type="spinner" vertical text-color="#FF980E">加载中...</d-loading>
+    <d-loading vertical class="custom">加载中...</d-loading>
+    <d-loading type="spinner" vertical class="custom">加载中...</d-loading>
   </div>
 </template>
 
-<script>
-  export default {
-    methods: {},
-  };
-</script>
-<style lang="scss">
+<style lang="scss" scoped>
   .demo-spinner {
     display: flex;
-    .d-loading {
-      margin-left: 10px;
+
+    .custom {
+      ::v-deep {
+        .d-loading-text {
+          color: #ff980e;
+        }
+      }
     }
   }
 </style>
