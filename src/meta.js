@@ -20,7 +20,6 @@ export const meta = {
       },
       { title: '表单', list: [{ name: 'NumberKeyboard', cname: '数字键盘' }] },
       { title: '反馈', list: [{ name: 'Notify', cname: '通知' }] },
-      { title: '业务', list: [{ name: 'SubmitBar', cname: '提交订单栏' }] },
     ],
   // 分组结束
 };
