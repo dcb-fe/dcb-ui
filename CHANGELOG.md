@@ -1,5 +1,15 @@
 # 更新日志
 
+### [0.0.6-beta.10](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.9...v0.0.6-beta.10) (2021-07-13)
+
+### 特性
+
+- **Icon:** 新增 3 个图标：plus、minus、search_eliminate ([#14](https://github.com/dcb-fe/dcb-ui/issues/14)) ([e781d8d](https://github.com/dcb-fe/dcb-ui/commit/e781d8db2a3f2f6c72b98be1ba1c84400dae83bf))
+
+### 修复
+
+- **NumberKeyboard:** 代码风格优化 ([#15](https://github.com/dcb-fe/dcb-ui/issues/15)) ([ddbfba1](https://github.com/dcb-fe/dcb-ui/commit/ddbfba1c245e9e7a57ab4927fdaf445fcf281400))
+
 ### [0.0.6-beta.9](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.8...v0.0.6-beta.9) (2021-07-13)
 
 ### 特性
