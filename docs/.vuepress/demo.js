@@ -14,6 +14,7 @@ export { default as DemoPopupCustomTransition } from '../../src/components/popup
 export { default as DemoPopupDrawer } from '../../src/components/popup/__demo__/drawer';
 export { default as DemoPopupNoMask } from '../../src/components/popup/__demo__/no_mask';
 export { default as DemoPopupTransparentMask } from '../../src/components/popup/__demo__/transparent_mask';
+export { default as DemoSubmitBarBasic } from '../../src/components/submit_bar/__demo__/basic';
 // @endindex
 
 // @index(['../**/*.vue', '!**/.*/**'], (f, _) => `export { default as ${_.pascalCase('demo_docs_'+f.path)} } from '${f.path}';`)

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubmitBar 视图 不传内容时渲染为空标签 1`] = `
+<div class="d-submit_bar d-submit_bar-safe_area_inset_bottom">
+  <!---->
+  <div class="d-submit_bar-bar">
+    <div class="d-submit_bar-text"><span class="d-submit_bar-label">合计：</span> <span>
+        ¥
+        <span class="d-submit_bar-price">NaN</span>
+
+
+      </span></div>
+    <d-button class="d-submit_bar-button">提交订单</d-button>
+  </div>
+</div>
+`;
+
+exports[`SubmitBar 视图 传入内容时渲染其为子元素 1`] = `
+<div class="d-submit_bar d-submit_bar-safe_area_inset_bottom">
+  <!---->
+  <div class="d-submit_bar-bar">
+    <div class="d-submit_bar-text"><span class="d-submit_bar-label">合计：</span> <span>
+        ¥
+        <span class="d-submit_bar-price">40</span>
+
+
+      </span></div>
+    <d-button class="d-submit_bar-button">提交订单</d-button>
+  </div>
+</div>
+`;

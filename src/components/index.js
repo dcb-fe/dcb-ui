@@ -4,4 +4,5 @@ export { default as Icon } from './icon/icon';
 export { default as Notify } from './notify/notify';
 export { default as NumberKeyboard } from './number_keyboard/number_keyboard';
 export { default as Popup } from './popup/popup';
+export { default as SubmitBar } from './submit_bar/submit_bar';
 // @endindex
