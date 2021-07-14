@@ -5,6 +5,12 @@ export { default as DemoButtonPrimary } from '../../src/components/button/__demo
 export { default as DemoButtonSecondary } from '../../src/components/button/__demo__/secondary';
 export { default as DemoButtonSize } from '../../src/components/button/__demo__/size';
 export { default as DemoIconBasic } from '../../src/components/icon/__demo__/basic';
+export { default as DemoLoadingBasic } from '../../src/components/loading/__demo__/basic';
+export { default as DemoLoadingCustomColor } from '../../src/components/loading/__demo__/custom_color';
+export { default as DemoLoadingCustomSize } from '../../src/components/loading/__demo__/custom_size';
+export { default as DemoLoadingCustomTextColor } from '../../src/components/loading/__demo__/custom_text_color';
+export { default as DemoLoadingDirection } from '../../src/components/loading/__demo__/direction';
+export { default as DemoLoadingText } from '../../src/components/loading/__demo__/text';
 export { default as DemoNotifyBasic } from '../../src/components/notify/__demo__/basic';
 export { default as DemoNotifyDuration } from '../../src/components/notify/__demo__/duration';
 export { default as DemoNotifyType } from '../../src/components/notify/__demo__/type';
@@ -14,6 +20,11 @@ export { default as DemoPopupCustomTransition } from '../../src/components/popup
 export { default as DemoPopupDrawer } from '../../src/components/popup/__demo__/drawer';
 export { default as DemoPopupNoMask } from '../../src/components/popup/__demo__/no_mask';
 export { default as DemoPopupTransparentMask } from '../../src/components/popup/__demo__/transparent_mask';
+export { default as DemoSearchBackground } from '../../src/components/search/__demo__/background';
+export { default as DemoSearchBasic } from '../../src/components/search/__demo__/basic';
+export { default as DemoSearchCenter } from '../../src/components/search/__demo__/center';
+export { default as DemoSearchRightContent } from '../../src/components/search/__demo__/right_content';
+export { default as DemoSearchRound } from '../../src/components/search/__demo__/round';
 export { default as DemoSubmitBarBasic } from '../../src/components/submit_bar/__demo__/basic';
 export { default as DemoSubmitBarDisabled } from '../../src/components/submit_bar/__demo__/disabled';
 export { default as DemoSubmitBarHigh } from '../../src/components/submit_bar/__demo__/high';

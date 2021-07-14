@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search 视图 圆形搜索框 1`] = `
+<div class="d-search">
+  <form action="javascript:void 0" class="d-search-form">
+    <div class="d-search-content">
+      <icon-stub name="search" class="d-search-icon"></icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
+      <icon-stub name="search_eliminate" class="d-search-clear" style="display: none;"></icon-stub>
+    </div>
+    <!---->
+  </form>
+</div>
+`;
+
+exports[`Search 视图 搜索框内容对齐 1`] = `
+<div class="d-search">
+  <form action="javascript:void 0" class="d-search-form">
+    <div class="d-search-content">
+      <icon-stub name="search" class="d-search-icon"></icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control">
+      <icon-stub name="search_eliminate" class="d-search-clear" style="display: none;"></icon-stub>
+    </div>
+    <!---->
+  </form>
+</div>
+`;
+
+exports[`Search 视图 普通展示 1`] = `
+<div class="d-search">
+  <form action="javascript:void 0" class="d-search-form">
+    <div class="d-search-content">
+      <icon-stub name="search" class="d-search-icon"></icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
+      <icon-stub name="search_eliminate" class="d-search-clear" style="display: none;"></icon-stub>
+    </div>
+    <!---->
+  </form>
+</div>
+`;
+
+exports[`Search 视图 自定义右侧内容 1`] = `
+<div class="d-search">
+  <form action="javascript:void 0" class="d-search-form">
+    <div class="d-search-content">
+      <icon-stub name="search" class="d-search-icon"></icon-stub> <input type="text" placeholder="请输入搜索关键字" class="d-search-control d-search-left">
+      <icon-stub name="search_eliminate" class="d-search-clear" style="display: none;"></icon-stub>
+    </div>
+    <div class="d-search-action"><span class="btn">搜索</span></div>
+  </form>
+</div>
+`;
