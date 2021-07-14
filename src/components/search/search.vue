@@ -1,6 +1,6 @@
 <template>
   <div :class="_.search" :style="{backgroundColor: background}">
-    <form class="form" action="javascript:void 0">
+    <form :class="_.form" action="javascript:void 0">
       <div :class="[_.content, {[_.round]: shape === 'round'}]">
         <d-icon name="search" />
         <input 
@@ -155,62 +155,61 @@
     background: white;
   }
 
-  .content {
-      display: flex;
-      flex: 1;
-      align-items: center;
-      padding: 8px 12px;
-      background: #F5F5F5;
-      border-radius: 6px;
-      font-size: 22px;
-
-      &.round {
-        border-radius: 18px;
-      }
-    }
-
-    .control {
-      flex: 1;
-      margin-left: 2px;
-      font-size: 14px;
-      font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 400;
-      color: #333333;
-      line-height: 20px;
-      border: none;
-      outline: none;
-      background: transparent;
-
-      &::placeholder {
-        color: #AAAAAA;
-      }
-
-      &.left {
-        text-align: left;
-      }
-
-      &.center {
-        text-align: center;
-      }
-
-      &.right {
-        text-align: right;
-      }
-    }
-
-    .action {
-      padding: 8px 4px 8px 16px;
-      font-size: 16px;
-      font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 400;
-      color: #FF960A;
-      line-height: 22px;
-      cursor: pointer;
-    }
-</style>
-<style lang=scss>
   .form {
     display: flex;
     align-items: center;
+  }
+
+  .content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 8px 12px;
+    background: #F5F5F5;
+    border-radius: 6px;
+    font-size: 22px;
+
+    &.round {
+      border-radius: 18px;
+    }
+  }
+
+  .control {
+    flex: 1;
+    margin-left: 2px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    line-height: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    &::placeholder {
+      color: #AAAAAA;
+    }
+
+    &.left {
+      text-align: left;
+    }
+
+    &.center {
+      text-align: center;
+    }
+
+    &.right {
+      text-align: right;
+    }
+  }
+
+  .action {
+    padding: 8px 4px 8px 16px;
+    font-size: 16px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FF960A;
+    line-height: 22px;
+    cursor: pointer;
   }
 </style>
