@@ -18,6 +18,8 @@
 
 ## 自定义背景色
 
+请使用 CSS 自定义背景色。
+
 <demo src="search/background" />
 
 <api src="search" />

@@ -1,3 +1,3 @@
 <template>
-  <d-search shape="round" background="red"></d-search>
+  <d-search shape="round" :style="{ background: 'red' }"></d-search>
 </template>

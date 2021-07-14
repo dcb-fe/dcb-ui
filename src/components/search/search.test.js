@@ -35,15 +35,6 @@ describe('Search', () => {
       });
       expect(search.html()).toMatchSnapshot();
     });
-
-    test('自定义背景色', () => {
-      const search = shallowMount(Search, {
-        props: {
-          background: 'green',
-        },
-      });
-      expect(search.html()).toMatchSnapshot();
-    });
   });
 
   describe('事件', () => {
