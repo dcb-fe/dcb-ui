@@ -25,7 +25,13 @@ export const meta = {
           { name: 'Search', cname: '搜索' },
         ],
       },
-      { title: '反馈', list: [{ name: 'Notify', cname: '通知' }] },
+      {
+        title: '反馈',
+        list: [
+          { name: 'Notify', cname: '通知' },
+          { name: 'Loading', cname: '加载' },
+        ],
+      },
     ],
   // 分组结束
 };
