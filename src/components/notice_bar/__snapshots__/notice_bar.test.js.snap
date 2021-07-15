@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoticeBar 视图 时不渲染遮罩和内容 1`] = `
+<div class="d-notice_bar" style="color: rgb(237, 106, 11); background-color: rgb(255, 251, 232);">
+  <!---->
+  <div class="d-notice_bar-notice_text">
+    <div class="d-notice_bar-wrapable d-notice_bar-scrollX">
+      你好多彩宝
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`NoticeBar 视图 滚动内容 1`] = `
+<div class="d-notice_bar" style="color: rgb(237, 106, 11); background-color: rgb(255, 251, 232);">
+  <icon-stub name="notice" class="d-notice_bar-icon"></icon-stub>
+  <div class="d-notice_bar-notice_text">
+    <div class="d-notice_bar-wrapable d-notice_bar-scrollX">
+      你好多彩宝
+    </div>
+  </div>
+  <icon-stub name="return" class="d-notice_bar-right_icon"></icon-stub>
+</div>
+`;
