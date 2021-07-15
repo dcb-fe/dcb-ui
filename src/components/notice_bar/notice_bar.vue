@@ -160,6 +160,7 @@
     .right_icon{
       font-size:16px;
       cursor: pointer;
+      transform:rotate(180deg);
     }
   }
 </style>
