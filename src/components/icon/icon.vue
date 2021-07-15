@@ -6,6 +6,9 @@
   import { defineComponent } from '@/utils';
 
   const icons = [
+    'plus',
+    'minus',
+    'search_eliminate',
     'keyboard',
     'backspace',
     'add',
@@ -95,13 +98,10 @@
 
 <style lang="scss" module>
   @font-face {
-    font-family: 'd-icon'; /* Project id 2653829 */
-    src: url('//at.alicdn.com/t/font_2653829_xatlfsuivv.woff2?t=1626057701178')
-        format('woff2'),
-      url('//at.alicdn.com/t/font_2653829_xatlfsuivv.woff?t=1626057701178')
-        format('woff'),
-      url('//at.alicdn.com/t/font_2653829_xatlfsuivv.ttf?t=1626057701178')
-        format('truetype');
+    font-family: 'd-icon';  /* Project id 2653829 */
+    src: url('//at.alicdn.com/t/font_2653829_0wdqomj1rtg.woff2?t=1626147012941') format('woff2'),
+        url('//at.alicdn.com/t/font_2653829_0wdqomj1rtg.woff?t=1626147012941') format('woff'),
+        url('//at.alicdn.com/t/font_2653829_0wdqomj1rtg.ttf?t=1626147012941') format('truetype');
   }
 
   .icon {
@@ -114,231 +114,243 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .plus:before {
+    content: "\e748";
+  }
+
+  .minus:before {
+    content: "\e749";
+  }
+
+  .search_eliminate:before {
+    content: "\e747";
+  }
+
   .backspace:before {
-    content: '\e746';
+    content: "\e746";
   }
 
   .keyboard:before {
-    content: '\e745';
+    content: "\e745";
   }
 
   .add:before {
-    content: '\e722';
+    content: "\e722";
   }
 
   .camera:before {
-    content: '\e723';
+    content: "\e723";
   }
 
   .calendar:before {
-    content: '\e724';
+    content: "\e724";
   }
 
   .close:before {
-    content: '\e725';
+    content: "\e725";
   }
 
   .clock:before {
-    content: '\e726';
+    content: "\e726";
   }
 
   .cart:before {
-    content: '\e727';
+    content: "\e727";
   }
 
   .copy:before {
-    content: '\e728';
+    content: "\e728";
   }
 
   .closed_eye:before {
-    content: '\e729';
+    content: "\e729";
   }
 
   .eye:before {
-    content: '\e72a';
+    content: "\e72a";
   }
 
   .coupon:before {
-    content: '\e72b';
+    content: "\e72b";
   }
 
   .edit:before {
-    content: '\e72c';
+    content: "\e72c";
   }
 
   .delete:before {
-    content: '\e72d';
+    content: "\e72d";
   }
 
   .feedback:before {
-    content: '\e72e';
+    content: "\e72e";
   }
 
   .good_job:before {
-    content: '\e72f';
+    content: "\e72f";
   }
 
   .more:before {
-    content: '\e730';
+    content: "\e730";
   }
 
   .like:before {
-    content: '\e731';
+    content: "\e731";
   }
 
   .fire:before {
-    content: '\e732';
+    content: "\e732";
   }
 
   .location:before {
-    content: '\e733';
+    content: "\e733";
   }
 
   .home:before {
-    content: '\e734';
+    content: "\e734";
   }
 
   .link:before {
-    content: '\e735';
+    content: "\e735";
   }
 
   .notice:before {
-    content: '\e736';
+    content: "\e736";
   }
 
   .qr_code:before {
-    content: '\e737';
+    content: "\e737";
   }
 
   .picture:before {
-    content: '\e738';
+    content: "\e738";
   }
 
   .popup_close:before {
-    content: '\e739';
+    content: "\e739";
   }
 
   .order:before {
-    content: '\e73a';
+    content: "\e73a";
   }
 
   .return:before {
-    content: '\e73b';
+    content: "\e73b";
   }
 
   .refresh:before {
-    content: '\e73c';
+    content: "\e73c";
   }
 
   .search:before {
-    content: '\e73d';
+    content: "\e73d";
   }
 
   .scan:before {
-    content: '\e73e';
+    content: "\e73e";
   }
 
   .service:before {
-    content: '\e73f';
+    content: "\e73f";
   }
 
   .star:before {
-    content: '\e740';
+    content: "\e740";
   }
 
   .telephone:before {
-    content: '\e741';
+    content: "\e741";
   }
 
   .setting:before {
-    content: '\e742';
+    content: "\e742";
   }
 
   .user_circle:before {
-    content: '\e743';
+    content: "\e743";
   }
 
   .theme_color:before {
-    content: '\e744';
+    content: "\e744";
   }
 
   .copy_fill:before {
-    content: '\e70e';
+    content: "\e70e";
   }
 
   .cart_fill:before {
-    content: '\e70f';
+    content: "\e70f";
   }
 
   .edit_fill:before {
-    content: '\e710';
+    content: "\e710";
   }
 
   .calendar_fill:before {
-    content: '\e711';
+    content: "\e711";
   }
 
   .coupon_fill:before {
-    content: '\e712';
+    content: "\e712";
   }
 
   .like_fill:before {
-    content: '\e713';
+    content: "\e713";
   }
 
   .eye_fill:before {
-    content: '\e714';
+    content: "\e714";
   }
 
   .home_fill:before {
-    content: '\e715';
+    content: "\e715";
   }
 
   .good_job_fill:before {
-    content: '\e716';
+    content: "\e716";
   }
 
   .location_fill:before {
-    content: '\e717';
+    content: "\e717";
   }
 
   .fire_fill:before {
-    content: '\e718';
+    content: "\e718";
   }
 
   .qr_code_fill:before {
-    content: '\e719';
+    content: "\e719";
   }
 
   .theme_color_fill:before {
-    content: '\e71a';
+    content: "\e71a";
   }
 
   .setting_fill:before {
-    content: '\e71b';
+    content: "\e71b";
   }
 
   .delete_fill:before {
-    content: '\e71c';
+    content: "\e71c";
   }
 
   .telephone_fill:before {
-    content: '\e71d';
+    content: "\e71d";
   }
 
   .user_circle_fill:before {
-    content: '\e71e';
+    content: "\e71e";
   }
 
   .camera_fill:before {
-    content: '\e71f';
+    content: "\e71f";
   }
 
   .star_fill:before {
-    content: '\e720';
+    content: "\e720";
   }
 
   .notice_fill:before {
-    content: '\e721';
+    content: "\e721";
   }
 </style>

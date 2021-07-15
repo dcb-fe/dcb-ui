@@ -1,5 +1,22 @@
 # 更新日志
 
+### [0.0.6-beta.11](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.10...v0.0.6-beta.11) (2021-07-14)
+
+### 特性
+
+- 新增 Loading 加载中组件 ([#19](https://github.com/dcb-fe/dcb-ui/issues/19)) ([6975a04](https://github.com/dcb-fe/dcb-ui/commit/6975a04ab7b55358ec6d9c98d13146b4c8012e26))
+- 新增 Search 搜索组件 ([#16](https://github.com/dcb-fe/dcb-ui/issues/16)) ([fe75891](https://github.com/dcb-fe/dcb-ui/commit/fe758919259a1009b83b1516121bc38b2deb7907))
+
+### [0.0.6-beta.10](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.9...v0.0.6-beta.10) (2021-07-13)
+
+### 特性
+
+- **Icon:** 新增 3 个图标：plus、minus、search_eliminate ([#14](https://github.com/dcb-fe/dcb-ui/issues/14)) ([e781d8d](https://github.com/dcb-fe/dcb-ui/commit/e781d8db2a3f2f6c72b98be1ba1c84400dae83bf))
+
+### 修复
+
+- **NumberKeyboard:** 代码风格优化 ([#15](https://github.com/dcb-fe/dcb-ui/issues/15)) ([ddbfba1](https://github.com/dcb-fe/dcb-ui/commit/ddbfba1c245e9e7a57ab4927fdaf445fcf281400))
+
 ### [0.0.6-beta.9](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.8...v0.0.6-beta.9) (2021-07-13)
 
 ### 特性

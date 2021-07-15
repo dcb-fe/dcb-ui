@@ -2,7 +2,7 @@ export const meta = {
   /**
    * 版本号。
    */
-  version: '0.0.6-beta.9',
+  version: '0.0.6-beta.11',
 
   /**
    * 组件分组。
@@ -18,9 +18,21 @@ export const meta = {
           { name: 'Icon', cname: '图标' },
         ],
       },
-      { title: '表单', list: [{ name: 'NumberKeyboard', cname: '数字键盘' }] },
-      { title: '反馈', list: [{ name: 'Notify', cname: '通知' }] },
       { title: '展示', list: [{ name: 'NoticeBar', cname: '通知栏' }] },
+      {
+        title: '表单',
+        list: [
+          { name: 'NumberKeyboard', cname: '数字键盘' },
+          { name: 'Search', cname: '搜索' },
+        ],
+      },
+      {
+        title: '反馈',
+        list: [
+          { name: 'Notify', cname: '通知' },
+          { name: 'Loading', cname: '加载' },
+        ],
+      },
     ],
   // 分组结束
 };
