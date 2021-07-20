@@ -23,6 +23,7 @@ export const meta = {
         list: [
           { name: 'NumberKeyboard', cname: '数字键盘' },
           { name: 'Search', cname: '搜索' },
+          { name: 'Stepper', cname: '步进器' },
         ],
       },
       {
