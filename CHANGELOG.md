@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.13](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.12...v0.0.6-beta.13) (2021-07-22)
+
+### 修复
+
+- 将 Event 改为 Object ([623e32a](https://github.com/dcb-fe/dcb-ui/commit/623e32a0069d16a30c77862e94c5d1fff15ee357))
+
 ### [0.0.6-beta.12](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.11...v0.0.6-beta.12) (2021-07-22)
 
 ### 特性
