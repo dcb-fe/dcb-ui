@@ -1,15 +1,15 @@
 <template>
   <div :class="[_.stepper, theme === 'round' && _.round]">
-    <button 
+    <button
       :class="[_.minus, minusDisabled && _.disabled]"
       @click="handleClick('minus')"
       @touchstart="handleTouchstart('minus')"
       @touchend="onTouchEnd"
       @touchcancel="onTouchEnd"
     />
-    <input 
-      type="number" 
-      :value="currentValue" 
+    <input
+      type="number"
+      :value="currentValue"
       role="spinbutton"
       :class="_.input"
       :aria-valuemax="max"
@@ -21,7 +21,7 @@
       @focus="onFocus"
       @blur="onBlur"
     />
-    <button 
+    <button
       :class="[_.plus, plusDisabled && _.disabled]"
       @click="handleClick('plus')"
       @touchstart="handleTouchstart('plus')"
@@ -45,70 +45,70 @@
       value: {
         type: [Number, String],
         default: null,
-        desc: '当前输入默认值'
+        desc: '当前输入默认值',
       },
 
       integer: {
         type: Boolean,
-        desc: '是否只允许输入整数'
+        desc: '是否只允许输入整数',
       },
 
       disabled: {
         type: Boolean,
-        desc: '是否禁用步进器'
+        desc: '是否禁用步进器',
       },
 
       inputWidth: {
         type: [Number, String],
         default: '',
-        desc: '输入框宽度，默认单位为px'
+        desc: '输入框宽度，默认单位为px',
       },
 
       buttonSize: {
         type: [Number, String],
         default: '',
-        desc: '按钮大小以及输入框高度，默认单位为px'
+        desc: '按钮大小以及输入框高度，默认单位为px',
       },
 
       asyncChange: {
         type: Boolean,
-        desc: '是否开启异步变更，开启后需要手动控制输入值'
-      }, 
+        desc: '是否开启异步变更，开启后需要手动控制输入值',
+      },
 
       disableInput: {
         type: Boolean,
-        desc: '是否禁用输入框'
+        desc: '是否禁用输入框',
       },
 
       min: {
         type: [Number, String],
         default: 1,
-        desc: '最小值'
+        desc: '最小值',
       },
 
       max: {
         type: [Number, String],
         default: Infinity,
-        desc: '最大值'
+        desc: '最大值',
       },
 
       step: {
         type: [Number, String],
         default: 1,
-        desc: '步长，每次点击时改变的值'
+        desc: '步长，每次点击时改变的值',
       },
 
       defaultValue: {
         type: [Number, String],
         default: 1,
-        desc: '初始值，当 v-model 为空时生效'
+        desc: '初始值，当 v-model 为空时生效',
       },
 
       theme: {
         type: String,
         default: '',
-        desc: '样式风格，可选值为 round'
-      }
+        desc: '样式风格，可选值为 round',
+      },
     },
 
     emits: {
@@ -127,18 +127,18 @@
       },
 
       plus: {
-        desc: '点击增加按钮时触发'
+        desc: '点击增加按钮时触发',
       },
 
       minus: {
-        desc: '点击减少按钮时触发'
+        desc: '点击减少按钮时触发',
       },
 
       focus: {
         desc: '输入框聚焦时触发',
         payload: {
           e: {
-            type: Event,
+            type: Object,
             desc: '回调参数',
           },
         },
@@ -148,35 +148,37 @@
         desc: '输入框失焦时触发',
         payload: {
           e: {
-            type: Event,
+            type: Object,
             desc: '回调参数',
           },
         },
-      }
+      },
     },
 
-    data () {
-      const value = this.range(isDef(this.value) ? this.value : this.defaultValue);
+    data() {
+      const value = this.range(
+        isDef(this.value) ? this.value : this.defaultValue,
+      );
 
       if (value !== +this.value) {
         this.$emit('input', value);
       }
 
       return {
-        currentValue: value
-      }
+        currentValue: value,
+      };
     },
 
     computed: {
-      minusDisabled () {
+      minusDisabled() {
         return this.disabled || this.currentValue <= this.min;
       },
 
-      plusDisabled () {
+      plusDisabled() {
         return this.disabled || this.currentValue >= this.max;
       },
 
-      inputStyle () {
+      inputStyle() {
         const style = {};
 
         if (this.inputWidth) {
@@ -200,11 +202,11 @@
         }
 
         return style;
-      }
+      },
     },
 
     watch: {
-      value (val) {
+      value(val) {
         if (val !== this.currentValue) {
           this.currentValue = this.format(val);
         }
@@ -213,7 +215,7 @@
       currentValue(val) {
         this.$emit('input', val);
         this.$emit('change', val);
-      }
+      },
     },
 
     methods: {
@@ -222,12 +224,12 @@
         return value === '' ? 0 : this.integer ? Math.floor(value) : +value;
       },
 
-      range (value) {
+      range(value) {
         return Math.max(Math.min(this.max, this.format(value)), this.min);
       },
 
-      onInput (event) {
-        const {value} = event.target;
+      onInput(event) {
+        const { value } = event.target;
         const formatted = this.format(value);
 
         if (this.asyncChange) {
@@ -243,7 +245,7 @@
         }
       },
 
-      onChange () {
+      onChange() {
         const { type } = this;
 
         if (this[`${type}Disabled`]) {
@@ -264,11 +266,11 @@
         this.$emit(type);
       },
 
-      onFocus (event) {
+      onFocus(event) {
         this.$emit('focus', event);
       },
 
-      onBlur (event) {
+      onBlur(event) {
         this.currentValue = this.range(this.currentValue);
         this.$emit('blur', event);
 
@@ -281,14 +283,14 @@
         }
       },
 
-      longPressStep () {
+      longPressStep() {
         this.longPressTimer = setTimeout(() => {
           this.onChange();
           this.longPressStep();
         }, LONG_PRESS_INTERVAL);
       },
 
-      onTouchStart () {
+      onTouchStart() {
         clearTimeout(this.longPressTimer);
         this.isLongPress = false;
 
@@ -296,10 +298,10 @@
           this.isLongPress = true;
           this.onChange();
           this.longPressStep();
-        }, LONG_PRESS_START_TIME)
+        }, LONG_PRESS_START_TIME);
       },
 
-      onTouchEnd (event) {
+      onTouchEnd(event) {
         clearTimeout(this.longPressTimer);
 
         if (this.isLongPress) {
@@ -315,8 +317,8 @@
       handleTouchstart(type) {
         this.type = type;
         this.onTouchStart();
-      }
-    }
+      },
+    },
   });
 </script>
 
@@ -324,7 +326,8 @@
   .stepper {
     font-size: 0;
 
-    .minus, .plus {
+    .minus,
+    .plus {
       position: relative;
       box-sizing: border-box;
       width: 33px;
@@ -408,7 +411,8 @@
       }
     }
 
-    input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
       margin: 0;
       -webkit-appearance: none;
     }
@@ -420,13 +424,14 @@
         color: #333;
       }
 
-      .plus, .minus {
+      .plus,
+      .minus {
         width: 24px;
         height: 24px;
         border-radius: 100%;
 
         &:active {
-          opacity: #FF960A;
+          opacity: #ff960a;
         }
 
         &__disabled {
@@ -439,13 +444,13 @@
 
       .plus {
         color: #fff;
-        background-color: #FF960A;
+        background-color: #ff960a;
       }
 
       .minus {
-        color: #FF960A;
+        color: #ff960a;
         background-color: #fff;
-        border: 1px solid #FF960A;
+        border: 1px solid #ff960a;
       }
     }
   }

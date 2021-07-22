@@ -28,4 +28,5 @@ jobs:
       - run: |
           rm -rf node_modules/.cache
           yarn build
+          yarn build-docs
           yarn test
