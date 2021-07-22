@@ -5,6 +5,7 @@ export { default as Loading } from './loading/loading';
 export { default as Notify } from './notify/notify';
 export { default as NumberKeyboard } from './number_keyboard/number_keyboard';
 export { default as Popup } from './popup/popup';
+export { default as Radio } from './radio/radio';
 export { default as Search } from './search/search';
 export { default as Stepper } from './stepper/stepper';
 export { default as Switch } from './switch/switch';

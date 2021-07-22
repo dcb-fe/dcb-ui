@@ -20,6 +20,9 @@ export { default as DemoPopupCustomTransition } from '../../src/components/popup
 export { default as DemoPopupDrawer } from '../../src/components/popup/__demo__/drawer';
 export { default as DemoPopupNoMask } from '../../src/components/popup/__demo__/no_mask';
 export { default as DemoPopupTransparentMask } from '../../src/components/popup/__demo__/transparent_mask';
+export { default as DemoRadioBasic } from '../../src/components/radio/__demo__/basic';
+export { default as DemoRadioChange } from '../../src/components/radio/__demo__/change';
+export { default as DemoRadioDisabled } from '../../src/components/radio/__demo__/disabled';
 export { default as DemoSearchBackground } from '../../src/components/search/__demo__/background';
 export { default as DemoSearchBasic } from '../../src/components/search/__demo__/basic';
 export { default as DemoSearchCenter } from '../../src/components/search/__demo__/center';
