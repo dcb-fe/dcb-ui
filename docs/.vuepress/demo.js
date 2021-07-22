@@ -25,6 +25,13 @@ export { default as DemoSearchBasic } from '../../src/components/search/__demo__
 export { default as DemoSearchCenter } from '../../src/components/search/__demo__/center';
 export { default as DemoSearchRightContent } from '../../src/components/search/__demo__/right_content';
 export { default as DemoSearchRound } from '../../src/components/search/__demo__/round';
+export { default as DemoStepperAsync } from '../../src/components/stepper/__demo__/async';
+export { default as DemoStepperBasic } from '../../src/components/stepper/__demo__/basic';
+export { default as DemoStepperDisabled } from '../../src/components/stepper/__demo__/disabled';
+export { default as DemoStepperInteger } from '../../src/components/stepper/__demo__/integer';
+export { default as DemoStepperLimit } from '../../src/components/stepper/__demo__/limit';
+export { default as DemoStepperRound } from '../../src/components/stepper/__demo__/round';
+export { default as DemoStepperStep } from '../../src/components/stepper/__demo__/step';
 // @endindex
 
 // @index(['../**/*.vue', '!**/.*/**'], (f, _) => `export { default as ${_.pascalCase('demo_docs_'+f.path)} } from '${f.path}';`)

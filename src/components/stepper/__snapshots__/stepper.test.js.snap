@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stepper 视图 禁用步进器 1`] = `<div class="d-stepper"><button class="d-stepper-minus d-stepper-disabled"></button> <input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="d-stepper-input"> <button class="d-stepper-plus"></button></div>`;
+
+exports[`Stepper 视图 禁用输入框 1`] = `<div class="d-stepper"><button class="d-stepper-minus d-stepper-disabled"></button> <input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" disabled="disabled" class="d-stepper-input"> <button class="d-stepper-plus"></button></div>`;
