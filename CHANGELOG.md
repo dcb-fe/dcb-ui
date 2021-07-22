@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.14](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.13...v0.0.6-beta.14) (2021-07-22)
+
+### 特性
+
+- 新增 Radio 单选框组件 ([#23](https://github.com/dcb-fe/dcb-ui/issues/23)) ([4206068](https://github.com/dcb-fe/dcb-ui/commit/4206068325d6707f256ab681fa7c370b4e9a8440))
+
 ### [0.0.6-beta.13](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.12...v0.0.6-beta.13) (2021-07-22)
 
 ### 修复
