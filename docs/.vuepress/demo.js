@@ -32,6 +32,10 @@ export { default as DemoStepperInteger } from '../../src/components/stepper/__de
 export { default as DemoStepperLimit } from '../../src/components/stepper/__demo__/limit';
 export { default as DemoStepperRound } from '../../src/components/stepper/__demo__/round';
 export { default as DemoStepperStep } from '../../src/components/stepper/__demo__/step';
+export { default as DemoSwitchBasic } from '../../src/components/switch/__demo__/basic';
+export { default as DemoSwitchChange } from '../../src/components/switch/__demo__/change';
+export { default as DemoSwitchCustom } from '../../src/components/switch/__demo__/custom';
+export { default as DemoSwitchDisabled } from '../../src/components/switch/__demo__/disabled';
 // @endindex
 
 // @index(['../**/*.vue', '!**/.*/**'], (f, _) => `export { default as ${_.pascalCase('demo_docs_'+f.path)} } from '${f.path}';`)
