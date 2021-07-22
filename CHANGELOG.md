@@ -1,5 +1,12 @@
 # 更新日志
 
+### [0.0.6-beta.12](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.11...v0.0.6-beta.12) (2021-07-22)
+
+### 特性
+
+- 新增 Stepper 步进器组件 ([#21](https://github.com/dcb-fe/dcb-ui/issues/21)) ([76b5692](https://github.com/dcb-fe/dcb-ui/commit/76b569281f5ba03d537252b6f7d56c94fe95edf3))
+- 新增 Switch 开关组件 ([#22](https://github.com/dcb-fe/dcb-ui/issues/22)) ([8da61b4](https://github.com/dcb-fe/dcb-ui/commit/8da61b4bf59827c296e994d4a6ed675a635b649a))
+
 ### [0.0.6-beta.11](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.10...v0.0.6-beta.11) (2021-07-14)
 
 ### 特性
