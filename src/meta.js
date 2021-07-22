@@ -25,6 +25,7 @@ export const meta = {
           { name: 'Search', cname: '搜索' },
           { name: 'Stepper', cname: '步进器' },
           { name: 'Switch', cname: '开关' },
+          { name: 'Radio', cname: '单选框' },
         ],
       },
       {
