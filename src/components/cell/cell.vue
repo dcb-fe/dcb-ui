@@ -95,7 +95,7 @@
 
 <style lang="scss" module>
   .cell {
-    border-bottom: 1px solid #E9E9E9;
+    
     box-sizing: border-box;
     padding: 0 0 0 12px;
     text-decoration: none;
@@ -105,6 +105,7 @@
   }
 
   .box {
+    border-bottom: 1px solid #E9E9E9;
     box-sizing: border-box;
     display: flex;
     align-items: center;
