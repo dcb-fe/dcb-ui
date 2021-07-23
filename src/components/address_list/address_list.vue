@@ -22,7 +22,7 @@
     </div>
 
     <div :class="_.bottom">
-      <d-button :class="_.add" @click="$emit('add')">{{addButtonText}}</d-button>
+      <d-button :class="_.add" @click="$emit('add')"><d-icon name="plus"/>{{addButtonText}}</d-button>
     </div>
   </div>
 </template>
