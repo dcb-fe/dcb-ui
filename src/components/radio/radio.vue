@@ -77,7 +77,6 @@
     methods: {
       clickEvt () {
         if (this.isDisabled) return;
-        console.log(this.label);
         this.currentValue = this.label;
         this.$emit('click', this.label);
       }
@@ -88,11 +87,13 @@
 <style lang="scss" module>
   .radio {
     margin-right: 10px;
+    display: flex;
+    align-items: center;
   }
 
   .label {
     pointer-events: none;
-    vertical-align: middle;
+    font-size: 13px;
   }
 
   .input {

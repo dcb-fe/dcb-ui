@@ -35,6 +35,7 @@ export const meta = {
           { name: 'Loading', cname: '加载' },
         ],
       },
+      { title: '业务组件', list: [{ name: 'AddressList', cname: '地址列表' }] },
     ],
   // 分组结束
 };
