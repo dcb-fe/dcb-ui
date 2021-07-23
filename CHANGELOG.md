@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.15](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.14...v0.0.6-beta.15) (2021-07-23)
+
+### 特性
+
+- 新增 AddressList 地址列表组件 ([#24](https://github.com/dcb-fe/dcb-ui/issues/24)) ([c6398b6](https://github.com/dcb-fe/dcb-ui/commit/c6398b6b784290ea6348b884b15a6f27532c3e3e))
+
 ### [0.0.6-beta.14](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.13...v0.0.6-beta.14) (2021-07-22)
 
 ### 特性
