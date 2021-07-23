@@ -16,6 +16,7 @@ export const meta = {
           { name: 'Button', cname: '按钮' },
           { name: 'Popup', cname: '弹出层' },
           { name: 'Icon', cname: '图标' },
+          { name: 'Cell', cname: '单元格' },
         ],
       },
       {
