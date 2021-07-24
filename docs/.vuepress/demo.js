@@ -5,6 +5,7 @@ export { default as DemoButtonDisabled } from '../../src/components/button/__dem
 export { default as DemoButtonPrimary } from '../../src/components/button/__demo__/primary';
 export { default as DemoButtonSecondary } from '../../src/components/button/__demo__/secondary';
 export { default as DemoButtonSize } from '../../src/components/button/__demo__/size';
+export { default as DemoCellBasic } from '../../src/components/cell/__demo__/basic';
 export { default as DemoIconBasic } from '../../src/components/icon/__demo__/basic';
 export { default as DemoLoadingBasic } from '../../src/components/loading/__demo__/basic';
 export { default as DemoLoadingCustomColor } from '../../src/components/loading/__demo__/custom_color';
