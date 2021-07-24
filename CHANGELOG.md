@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.16](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.15...v0.0.6-beta.16) (2021-07-24)
+
+### 特性
+
+- 新增 Cell 单元格组件 ([#25](https://github.com/dcb-fe/dcb-ui/issues/25)) ([9f169e6](https://github.com/dcb-fe/dcb-ui/commit/9f169e6efa8e6d3d5d80f3440c47ba66cb79c650))
+
 ### [0.0.6-beta.15](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.14...v0.0.6-beta.15) (2021-07-23)
 
 ### 特性
