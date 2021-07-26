@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.17](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.16...v0.0.6-beta.17) (2021-07-26)
+
+### 特性
+
+- 新增 Area 省市区选择组件 ([#26](https://github.com/dcb-fe/dcb-ui/issues/26)) ([b16c530](https://github.com/dcb-fe/dcb-ui/commit/b16c530ba1042af8ac805eda2a96e828ed13620a))
+
 ### [0.0.6-beta.16](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.15...v0.0.6-beta.16) (2021-07-24)
 
 ### 特性
