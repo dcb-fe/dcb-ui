@@ -10,7 +10,7 @@
           <slot name="title">{{ title }}</slot>
         </span>
 
-        <div :class="_.sub-title">
+        <div v-if="subTitle" :class="_.sub-title">
           <slot name="sub-title">{{ subTitle }}</slot>
         </div>
       </div>
@@ -77,10 +77,6 @@
       }
     },
 
-    created () {
-      console.log(this.$slots.desc);
-    },
-
     methods: {
       clickCell () {
         this.$emit('click-cell');
@@ -94,8 +90,7 @@
 </script>
 
 <style lang="scss" module>
-  .cell {
-    
+  .cell { 
     box-sizing: border-box;
     padding: 0 0 0 12px;
     text-decoration: none;
@@ -108,9 +103,9 @@
     border-bottom: 1px solid #E9E9E9;
     box-sizing: border-box;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     min-height: 54px;
-    padding-right: 12px;
+    padding: 16px 12px 16px 0;
   }
 
   .title, .desc {
@@ -140,7 +135,7 @@
   .right {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
   }
 </style>

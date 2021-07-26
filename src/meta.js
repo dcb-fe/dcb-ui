@@ -36,7 +36,13 @@ export const meta = {
           { name: 'Loading', cname: '加载' },
         ],
       },
-      { title: '业务组件', list: [{ name: 'AddressList', cname: '地址列表' }] },
+      {
+        title: '业务组件',
+        list: [
+          { name: 'AddressList', cname: '地址列表' },
+          { name: 'Area', cname: '省市区选择' },
+        ],
+      },
     ],
   // 分组结束
 };
