@@ -83,6 +83,28 @@
       }
     },
 
+    emits: {
+      onChange: {
+        desc: '选择地区时触发',
+        payload: {
+          calBack: {
+            type: Object,
+            desc: '当前点击的行政区域'
+          }
+        }
+      },
+
+      confirm: {
+        desc: '选择最后一级行政区域触发',
+        payload: {
+          selectedRegion: {
+            type: Object,
+            desc: '选中的三个行政区域'
+          }
+        }
+      }
+    },
+
     data () {
       return {
         showPopup: false,
