@@ -6,6 +6,8 @@
   import { defineComponent } from '@/utils';
 
   const icons = [
+    'arrow_right',
+    'select',
     'plus',
     'minus',
     'search_eliminate',
@@ -99,11 +101,11 @@
 <style lang="scss" module>
   @font-face {
     font-family: 'd-icon';  /* Project id 2653829 */
-    src: url('//at.alicdn.com/t/font_2653829_0wdqomj1rtg.woff2?t=1626147012941') format('woff2'),
-        url('//at.alicdn.com/t/font_2653829_0wdqomj1rtg.woff?t=1626147012941') format('woff'),
-        url('//at.alicdn.com/t/font_2653829_0wdqomj1rtg.ttf?t=1626147012941') format('truetype');
+    src: url('//at.alicdn.com/t/font_2653829_b1j7sr82g3q.woff2?t=1627295124609') format('woff2'),
+        url('//at.alicdn.com/t/font_2653829_b1j7sr82g3q.woff?t=1627295124609') format('woff'),
+        url('//at.alicdn.com/t/font_2653829_b1j7sr82g3q.ttf?t=1627295124609') format('truetype');
   }
-
+  
   .icon {
     display: inline-block;
     font-family: 'd-icon' !important;
@@ -112,6 +114,14 @@
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .arrow_right:before {
+    content: "\e74b";
+  }
+
+  .select:before {
+    content: "\e74a";
   }
 
   .plus:before {
