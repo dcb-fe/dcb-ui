@@ -139,6 +139,7 @@
     position: relative;
     display: inline-block;
     background: #fdfdfd;
+    box-sizing: border-box;
     border-radius: 1000px;
     border: 2px solid rgba(204, 204, 204, 1);
     transition: all 0.1s;
@@ -154,8 +155,8 @@
       box-shadow: -1px 1px 1px #999;
       border: 1px solid rgba(50, 50, 50, 0.1);
       transition: all 0.3s;
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
     }
 
     &_active {
