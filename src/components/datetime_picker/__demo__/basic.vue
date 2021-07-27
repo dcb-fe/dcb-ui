@@ -2,7 +2,7 @@
   <div class="datetime-picker-demo">
     <p class="title">选择年月日</p>
     <d-cell
-      title="年月日"
+      label="年月日"
       desc="描述文字"
       right-icon="return"
       @click="showDatetime(1)"
@@ -18,7 +18,7 @@
     </d-cell>
     <p class="title">选择年月</p>
     <d-cell
-      title="年月"
+      label="年月"
       desc="描述文字"
       right-icon="return"
       @click="showDatetime(2)"
@@ -34,7 +34,7 @@
     </d-cell>
     <p class="title">选择月日</p>
     <d-cell
-      title="月日"
+      label="月日"
       desc="描述文字"
       right-icon="return"
       @click="showDatetime(3)"
@@ -50,7 +50,7 @@
     </d-cell>
     <p class="title">选择时分</p>
     <d-cell
-      title="时分"
+      label="时分"
       desc="描述文字"
       right-icon="return"
       @click="showDatetime(4)"
@@ -66,7 +66,7 @@
     </d-cell>
     <p class="title">选项过滤器</p>
     <d-cell
-      title="过滤器"
+      label="过滤器"
       desc="描述文字"
       right-icon="return"
       @click="showDatetime(5)"
@@ -82,7 +82,7 @@
     </d-cell>
     <p class="title">选项完整时间</p>
     <d-cell
-      title="完整时间"
+      label="完整时间"
       desc="描述文字"
       right-icon="return"
       @click="showDatetime(5)"
