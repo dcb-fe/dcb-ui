@@ -2,6 +2,7 @@
 export { default as AddressList } from './address_list/address_list';
 export { default as Button } from './button/button';
 export { default as Cell } from './cell/cell';
+export { default as DatetimePicker } from './datetime_picker/datetime_picker';
 export { default as Icon } from './icon/icon';
 export { default as Loading } from './loading/loading';
 export { default as Notify } from './notify/notify';
