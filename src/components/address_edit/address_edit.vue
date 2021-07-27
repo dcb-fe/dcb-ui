@@ -41,6 +41,10 @@
 </template>
 
 <script>
+  import DArea from '../area/area';
+  import DButton from '../button/button';
+  import DCell from '../cell/cell';
+  import DSwitch from '../switch/switch';
   import { defineComponent } from '@/utils';
   import { getRootScrollTop } from '../../utils/dom/scroll';
   import { isIOS } from '../../utils/validate/system';
@@ -48,6 +52,13 @@
 
   export default defineComponent({
     name: 'AddressEdit',
+
+    components: {
+      DArea,
+      DButton,
+      DCell,
+      DSwitch
+    },
 
     props: {
       province: {

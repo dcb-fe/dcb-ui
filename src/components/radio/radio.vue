@@ -103,11 +103,12 @@
     -webkit-appearance: none;
     border: 1px solid #dadada;
     border-radius: 50%;
-    background-size: cover;
+    background-color: transparent;
     outline: none;
     opacity: 1;
     vertical-align: middle;
-    margin-top: 0px;
+    margin-top: 0;
+    margin-right: 8px;
 
     &::after {
       position: absolute;
