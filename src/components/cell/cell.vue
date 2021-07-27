@@ -1,9 +1,9 @@
 <template>
   <div :class="_.cell" :style="{ 'background-color': bgColor }">
     <div :class="[_.box, border && _.border_bottom]">
-      <slot name="left-icon">
+      <!-- <slot name="left-icon">
         <d-icon v-if="leftIcon" :class="_.left_icon" :name="leftIcon"/>
-      </slot>
+      </slot> -->
 
       <div :class="_.left">
         <span :class="_.title">
@@ -42,13 +42,13 @@
       label: {
         type: String,
         default: '',
-        desc: ''
+        desc: '单元格标题'
       },
 
       subTitle: {
         type: String,
         default: '',
-        desc: ''
+        desc: '单元格副标题'
       },
 
       leftIcon: {
