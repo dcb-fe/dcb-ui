@@ -187,10 +187,11 @@
     height: 100%;
     background-color: #F5F5F5;
     box-sizing: border-box;
+    padding-bottom: 24px;
   }
 
   .cell_group {
-    margin-top: 8px;
+    border-top: 8px solid #F5F5F5;
   }
 
   .input, .textarea {
@@ -217,10 +218,14 @@
 
   .address_text {
     flex: 1;
+    font-size: 16px;
+    line-height: 22px;
   }
 
   .placeholder {
     color: #ccc;
+    font-size: 16px;
+    line-height: 22px;
   }
 
   .bottom {
