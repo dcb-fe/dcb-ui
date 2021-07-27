@@ -117,6 +117,7 @@
   }
 
   .title, .desc {
+    display: block;
     color: #333;
     font-size: 16px;
     line-height: 22px;

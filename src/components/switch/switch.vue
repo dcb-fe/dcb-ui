@@ -94,12 +94,8 @@
       switchStyle() {
         const style = {};
 
-        if (this.height) {
-          style.width = `${this.width}px`;
-          style.height = `${this.height}px`;
-          style.background = this.isActive ? this.activeBgColor : this.inActiveBgColor;
-          style.borderColor = this.isActive ? this.activeBgColor : this.inActiveBgColor;
-        }
+        style.background = this.isActive ? this.activeBgColor : this.inActiveBgColor;
+        style.borderColor = this.isActive ? this.activeBgColor : this.inActiveBgColor;
 
         return style;
       },
@@ -107,12 +103,7 @@
       buttonStyle() {
         const style = {};
 
-        if (this.height) {
-          style.width = `${this.height}px`;
-          style.height = `${this.height}px`;
-          style.left = this.isActive ? `${(this.width - this.height)}px` : '0';
-          style.background = this.btnColor;
-        }
+        style.background = this.btnColor;
 
         return style;
       }
@@ -151,6 +142,8 @@
     border-radius: 1000px;
     border: 2px solid rgba(204, 204, 204, 1);
     transition: all 0.1s;
+    width: 46px;
+    height: 24px;
 
     &_btn {
       position: absolute;
@@ -161,6 +154,8 @@
       box-shadow: -1px 1px 1px #999;
       border: 1px solid rgba(50, 50, 50, 0.1);
       transition: all 0.3s;
+      width: 24px;
+      height: 24px;
     }
 
     &_active {
@@ -168,7 +163,7 @@
       transition: all 0.2s ease 0.2s;
 
       .switch_btn {
-        left: 20px;
+        left: 22px;
         transition: all 0.3s ease 0.05s;
       }
     }
