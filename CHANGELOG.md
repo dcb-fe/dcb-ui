@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.22](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.21...v0.0.6-beta.22) (2021-07-27)
+
+### 修复
+
+- 修复 AddressEdit 组件 ([#32](https://github.com/dcb-fe/dcb-ui/issues/32)) ([0985d0d](https://github.com/dcb-fe/dcb-ui/commit/0985d0db7033e6b9183ecac0464374718f2156c6))
+
 ### [0.0.6-beta.21](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.20...v0.0.6-beta.21) (2021-07-27)
 
 ### 修复
