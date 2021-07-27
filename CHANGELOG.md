@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.20](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.19...v0.0.6-beta.20) (2021-07-27)
+
+### 修复
+
+- 修复 Radio 组件 ([#30](https://github.com/dcb-fe/dcb-ui/issues/30)) ([716a4da](https://github.com/dcb-fe/dcb-ui/commit/716a4daf8e80052ecf50b1ed3b6b73277f96416d))
+
 ### [0.0.6-beta.19](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.18...v0.0.6-beta.19) (2021-07-27)
 
 ### 特性
