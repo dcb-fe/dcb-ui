@@ -145,8 +145,9 @@
 <style lang="scss" module>
   .list {
     height: 100%;
+    background-color: #F5F5F5;
     box-sizing: border-box;
-    padding-bottom: 80px;
+    padding: 12px 12px 80px;
     overflow: auto;
   }
 
