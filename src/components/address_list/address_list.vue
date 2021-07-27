@@ -28,10 +28,19 @@
 </template>
 
 <script>
+  import DButton from '../button/button';
+  import DIcon from '../icon/icon';
+  import DRadio from '../radio/radio';
   import { defineComponent } from '@/utils';
 
   export default defineComponent({
     name: 'AddressList',
+
+    components: {
+      DButton,
+      DIcon,
+      DRadio
+    },
 
     props: {
       list: {
