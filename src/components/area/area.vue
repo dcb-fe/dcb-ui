@@ -44,10 +44,17 @@
 </template>
 
 <script>
+  import DIcon from '../icon/icon';
+  import DPopup from '../popup/popup';
   import { defineComponent } from '@/utils';
 
   export default defineComponent({
     name: 'Area',
+
+    components: {
+      DIcon,
+      DPopup
+    },
 
     inheritAttrs: false,
 
