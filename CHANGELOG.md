@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.23](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.22...v0.0.6-beta.23) (2021-07-27)
+
+### 修复
+
+- 修复 Cell 组件 ([#33](https://github.com/dcb-fe/dcb-ui/issues/33)) ([3f68f12](https://github.com/dcb-fe/dcb-ui/commit/3f68f124a705084d25c14cf33f074d7d056e291e))
+
 ### [0.0.6-beta.22](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.21...v0.0.6-beta.22) (2021-07-27)
 
 ### 修复
