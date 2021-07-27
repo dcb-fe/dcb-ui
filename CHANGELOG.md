@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.26](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.25...v0.0.6-beta.26) (2021-07-27)
+
+### 修复
+
+- 移除 Switch 测试单元 ([#35](https://github.com/dcb-fe/dcb-ui/issues/35)) ([a89c41f](https://github.com/dcb-fe/dcb-ui/commit/a89c41f6dbfad13469a5bf2abe87c5ed8315214f))
+
 ### [0.0.6-beta.25](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.24...v0.0.6-beta.25) (2021-07-27)
 
 ### [0.0.6-beta.24](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.23...v0.0.6-beta.24) (2021-07-27)
