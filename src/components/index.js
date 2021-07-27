@@ -1,5 +1,7 @@
 // @index(['./**/*.vue', '!**/__*/**'], (f, _) => `export { default as ${_.pascalCase(f.name)} } from '${f.path}';`)
+export { default as AddressEdit } from './address_edit/address_edit';
 export { default as AddressList } from './address_list/address_list';
+export { default as Area } from './area/area';
 export { default as Button } from './button/button';
 export { default as Cell } from './cell/cell';
 export { default as DatetimePicker } from './datetime_picker/datetime_picker';

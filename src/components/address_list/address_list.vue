@@ -28,10 +28,19 @@
 </template>
 
 <script>
+  import DButton from '../button/button';
+  import DIcon from '../icon/icon';
+  import DRadio from '../radio/radio';
   import { defineComponent } from '@/utils';
 
   export default defineComponent({
     name: 'AddressList',
+
+    components: {
+      DButton,
+      DIcon,
+      DRadio
+    },
 
     props: {
       list: {
@@ -40,6 +49,7 @@
         desc: '地址列表'
       },
 
+      // eslint-disable-next-line vue/require-default-prop
       value: {
         type: [Number, String],
         desc: '当前选中地址的 id'
@@ -135,8 +145,9 @@
 <style lang="scss" module>
   .list {
     height: 100%;
+    background-color: #F5F5F5;
     box-sizing: border-box;
-    padding-bottom: 80px;
+    padding: 12px 12px 80px;
     overflow: auto;
   }
 

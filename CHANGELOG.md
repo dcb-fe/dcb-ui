@@ -1,5 +1,61 @@
 # 更新日志
 
+### [0.0.6-beta.26](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.25...v0.0.6-beta.26) (2021-07-27)
+
+### 修复
+
+- 移除 Switch 测试单元 ([#35](https://github.com/dcb-fe/dcb-ui/issues/35)) ([a89c41f](https://github.com/dcb-fe/dcb-ui/commit/a89c41f6dbfad13469a5bf2abe87c5ed8315214f))
+
+### [0.0.6-beta.25](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.24...v0.0.6-beta.25) (2021-07-27)
+
+### [0.0.6-beta.24](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.23...v0.0.6-beta.24) (2021-07-27)
+
+### 修复
+
+- 修复 Switch 组件 ([#34](https://github.com/dcb-fe/dcb-ui/issues/34)) ([5bf88ca](https://github.com/dcb-fe/dcb-ui/commit/5bf88ca35dc013289538663691b17bbd9f411768))
+
+### [0.0.6-beta.23](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.22...v0.0.6-beta.23) (2021-07-27)
+
+### 修复
+
+- 修复 Cell 组件 ([#33](https://github.com/dcb-fe/dcb-ui/issues/33)) ([3f68f12](https://github.com/dcb-fe/dcb-ui/commit/3f68f124a705084d25c14cf33f074d7d056e291e))
+
+### [0.0.6-beta.22](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.21...v0.0.6-beta.22) (2021-07-27)
+
+### 修复
+
+- 修复 AddressEdit 组件 ([#32](https://github.com/dcb-fe/dcb-ui/issues/32)) ([0985d0d](https://github.com/dcb-fe/dcb-ui/commit/0985d0db7033e6b9183ecac0464374718f2156c6))
+
+### [0.0.6-beta.21](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.20...v0.0.6-beta.21) (2021-07-27)
+
+### 修复
+
+- 修复 Cell 组件 ([#31](https://github.com/dcb-fe/dcb-ui/issues/31)) ([8b45c9e](https://github.com/dcb-fe/dcb-ui/commit/8b45c9e2691600f5df41aefb56dfabb2ea6cf271))
+
+### [0.0.6-beta.20](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.19...v0.0.6-beta.20) (2021-07-27)
+
+### 修复
+
+- 修复 Radio 组件 ([#30](https://github.com/dcb-fe/dcb-ui/issues/30)) ([716a4da](https://github.com/dcb-fe/dcb-ui/commit/716a4daf8e80052ecf50b1ed3b6b73277f96416d))
+
+### [0.0.6-beta.19](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.18...v0.0.6-beta.19) (2021-07-27)
+
+### 特性
+
+- 新增 AddressEdit 地址编辑 组件 ([#28](https://github.com/dcb-fe/dcb-ui/issues/28)) ([b147cb0](https://github.com/dcb-fe/dcb-ui/commit/b147cb0890337be50330372bea1e61652d990b49))
+
+### [0.0.6-beta.18](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.17...v0.0.6-beta.18) (2021-07-27)
+
+### 特性
+
+- 新增 AddressEdit 地址编辑 组件 ([#27](https://github.com/dcb-fe/dcb-ui/issues/27)) ([07533fc](https://github.com/dcb-fe/dcb-ui/commit/07533fc33866b353effba020dcdfb6e4cce2a6c4))
+
+### [0.0.6-beta.17](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.16...v0.0.6-beta.17) (2021-07-26)
+
+### 特性
+
+- 新增 Area 省市区选择组件 ([#26](https://github.com/dcb-fe/dcb-ui/issues/26)) ([b16c530](https://github.com/dcb-fe/dcb-ui/commit/b16c530ba1042af8ac805eda2a96e828ed13620a))
+
 ### [0.0.6-beta.16](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.15...v0.0.6-beta.16) (2021-07-24)
 
 ### 特性

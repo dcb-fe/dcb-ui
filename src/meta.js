@@ -2,7 +2,7 @@ export const meta = {
   /**
    * 版本号。
    */
-  version: '0.0.6-beta.16',
+  version: '0.0.6-beta.26',
 
   /**
    * 组件分组。
@@ -37,7 +37,14 @@ export const meta = {
           { name: 'Loading', cname: '加载' },
         ],
       },
-      { title: '业务组件', list: [{ name: 'AddressList', cname: '地址列表' }] },
+      {
+        title: '业务组件',
+        list: [
+          { name: 'AddressList', cname: '地址列表' },
+          { name: 'Area', cname: '省市区选择' },
+          { name: 'AddressEdit', cname: '地址编辑' },
+        ],
+      },
     ],
   // 分组结束
 };

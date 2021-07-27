@@ -1,16 +1,16 @@
 <template>
   <div :class="_.cell" :style="{ 'background-color': bgColor }">
-    <div :class="_.box">
-      <slot name="left-icon">
+    <div :class="[_.box, border && _.border_bottom]">
+      <!-- <slot name="left-icon">
         <d-icon v-if="leftIcon" :class="_.left_icon" :name="leftIcon"/>
-      </slot>
+      </slot> -->
 
       <div :class="_.left">
         <span :class="_.title">
-          <slot name="title">{{ title }}</slot>
+          <slot name="title">{{ label }}</slot>
         </span>
 
-        <div :class="_.sub-title">
+        <div v-if="subTitle" :class="_.sub_title">
           <slot name="sub-title">{{ subTitle }}</slot>
         </div>
       </div>
@@ -28,22 +28,27 @@
 </template>
 
 <script>
+  import DIcon from '../icon/icon';
   import { defineComponent } from '@/utils';
 
   export default defineComponent({
     name: 'Cell',
 
+    components: {
+      DIcon
+    },
+
     props: {
-      title: {
+      label: {
         type: String,
         default: '',
-        desc: ''
+        desc: '单元格标题'
       },
 
       subTitle: {
         type: String,
         default: '',
-        desc: ''
+        desc: '单元格副标题'
       },
 
       leftIcon: {
@@ -61,24 +66,20 @@
       desc: {
         type: String,
         default: '',
-        desc: ''
+        desc: '右侧内容'
       },
       
-      showIcon: {
-        type: Boolean,
-        default: false,
-        desc: ''
-      },
-
       bgColor: {
         type: String,
         default: '#fff',
-        desc: ''
-      }
-    },
+        desc: '单元格背景色'
+      },
 
-    created () {
-      console.log(this.$slots.desc);
+      border: {
+        type: Boolean,
+        default: true,
+        desc: '是否显示内边框'
+      }
     },
 
     methods: {
@@ -94,8 +95,7 @@
 </script>
 
 <style lang="scss" module>
-  .cell {
-    
+  .cell { 
     box-sizing: border-box;
     padding: 0 0 0 12px;
     text-decoration: none;
@@ -105,15 +105,19 @@
   }
 
   .box {
-    border-bottom: 1px solid #E9E9E9;
     box-sizing: border-box;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     min-height: 54px;
-    padding-right: 12px;
+    padding: 16px 12px 16px 0;
+  }
+
+  .border_bottom {
+    border-bottom: 1px solid #E9E9E9;
   }
 
   .title, .desc {
+    display: block;
     color: #333;
     font-size: 16px;
     line-height: 22px;
@@ -140,7 +144,7 @@
   .right {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
   }
 </style>
