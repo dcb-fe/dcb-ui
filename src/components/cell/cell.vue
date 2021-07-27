@@ -10,7 +10,7 @@
           <slot name="title">{{ label }}</slot>
         </span>
 
-        <div v-if="subTitle" :class="_.sub-title">
+        <div v-if="subTitle" :class="_.sub_title">
           <slot name="sub-title">{{ subTitle }}</slot>
         </div>
       </div>
