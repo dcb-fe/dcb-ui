@@ -184,6 +184,7 @@
 
 <style lang="scss" module>
   .address_edit {
+    height: 100%;
     background-color: #F5F5F5;
     box-sizing: border-box;
   }
