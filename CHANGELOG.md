@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.28](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.27...v0.0.6-beta.28) (2021-07-27)
+
+### 修复
+
+- **datetimePicker:** demo 示例 call 传参方式修改 ([#38](https://github.com/dcb-fe/dcb-ui/issues/38)) ([cb0fe7f](https://github.com/dcb-fe/dcb-ui/commit/cb0fe7f1950acb2ce08cd42328f80fb007441fb6))
+
 ### [0.0.6-beta.27](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.26...v0.0.6-beta.27) (2021-07-27)
 
 ### 修复
