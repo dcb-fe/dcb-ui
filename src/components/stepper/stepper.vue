@@ -32,8 +32,10 @@
 </template>
 
 <script>
-  import { addUnit, getRootScrollTop, isDef, isIOS } from './utils';
+  import { addUnit, isDef } from './utils';
   import { defineComponent } from '@/utils';
+  import { getRootScrollTop } from '../../utils/dom/scroll';
+  import { isIOS } from '../../utils/validate/system';
 
   const LONG_PRESS_START_TIME = 600;
   const LONG_PRESS_INTERVAL = 200;

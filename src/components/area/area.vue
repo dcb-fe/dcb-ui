@@ -176,12 +176,12 @@
           this.tabIndex = this.tabIndex + 1;
           this.lineAnimation();
 
-          calBack.next = this.tabName[this.tabIndex];
+          calBack.next = this.tabName[this.tabIndex] ? this.tabName[this.tabIndex] : '';
           calBack.value = item;
           
           this.$emit('onChange', calBack);
 
-          if (calBack.custom === 'country') {
+          if (!calBack.next) {
             this.$emit('confirm', this.selectedRegion);
             this.showPopup = false;
           }
@@ -255,7 +255,7 @@
 
   .region_tab {
     position: relative;
-    margin-top: 32px;
+    margin-top: 25px;
     display: flex;
     font-size: 13px;
     color: #1d1e1e;

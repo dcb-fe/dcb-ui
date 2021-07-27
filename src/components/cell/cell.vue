@@ -1,13 +1,13 @@
 <template>
   <div :class="_.cell" :style="{ 'background-color': bgColor }">
-    <div :class="_.box">
+    <div :class="[_.box, border && _.border_bottom]">
       <slot name="left-icon">
         <d-icon v-if="leftIcon" :class="_.left_icon" :name="leftIcon"/>
       </slot>
 
       <div :class="_.left">
         <span :class="_.title">
-          <slot name="title">{{ title }}</slot>
+          <slot name="title">{{ label }}</slot>
         </span>
 
         <div v-if="subTitle" :class="_.sub-title">
@@ -34,7 +34,7 @@
     name: 'Cell',
 
     props: {
-      title: {
+      label: {
         type: String,
         default: '',
         desc: ''
@@ -61,19 +61,19 @@
       desc: {
         type: String,
         default: '',
-        desc: ''
+        desc: '右侧内容'
       },
       
-      showIcon: {
-        type: Boolean,
-        default: false,
-        desc: ''
-      },
-
       bgColor: {
         type: String,
         default: '#fff',
-        desc: ''
+        desc: '单元格背景色'
+      },
+
+      border: {
+        type: Boolean,
+        default: true,
+        desc: '是否显示内边框'
       }
     },
 
@@ -100,12 +100,15 @@
   }
 
   .box {
-    border-bottom: 1px solid #E9E9E9;
     box-sizing: border-box;
     display: flex;
     align-items: flex-start;
     min-height: 54px;
     padding: 16px 12px 16px 0;
+  }
+
+  .border_bottom {
+    border-bottom: 1px solid #E9E9E9;
   }
 
   .title, .desc {

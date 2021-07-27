@@ -40,6 +40,7 @@
         desc: '地址列表'
       },
 
+      // eslint-disable-next-line vue/require-default-prop
       value: {
         type: [Number, String],
         desc: '当前选中地址的 id'
