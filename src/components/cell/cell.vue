@@ -28,10 +28,15 @@
 </template>
 
 <script>
+  import DIcon from '../icon/icon';
   import { defineComponent } from '@/utils';
 
   export default defineComponent({
     name: 'Cell',
+
+    components: {
+      DIcon
+    },
 
     props: {
       label: {
