@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.19](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.18...v0.0.6-beta.19) (2021-07-27)
+
+### 特性
+
+- 新增 AddressEdit 地址编辑 组件 ([#28](https://github.com/dcb-fe/dcb-ui/issues/28)) ([b147cb0](https://github.com/dcb-fe/dcb-ui/commit/b147cb0890337be50330372bea1e61652d990b49))
+
 ### [0.0.6-beta.18](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.17...v0.0.6-beta.18) (2021-07-27)
 
 ### 特性
