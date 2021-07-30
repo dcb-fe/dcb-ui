@@ -178,20 +178,13 @@
                 );
               };
               document.onmouseup = e => {
+                setTimeout(() => {
+                  this.columnData(key).moveing = false
+                }, 200)
                 this.toucendveHandle('dragBox', e, key);
                 document.onmousemove = null;
                 document.onmouseup = null;
               };
-            });
-            dom.addEventListener('mouseup', () => {
-              let sUserAgent = navigator.userAgent.toLowerCase();
-              if (
-                !/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(
-                  sUserAgent,
-                )
-              ) {
-                this.datetimeConfig.column[key].moveing = false;
-              }
             });
             dom.addEventListener('touchstart', event => {
               event.preventDefault();
@@ -773,8 +766,6 @@
       },
       touchmoveHandle(refName, coordinates, key) {
         this.columnData(key).moveing = true;
-        this.columnData(key).duration = '1000ms';
-        this.columnData(key).property = 'all';
         if (this.columnData(key).moveY) {
           let uDomY = this.getuDomY(refName);
           let diff = Math.abs(this.columnData(key).moveY - coordinates.pageY);
