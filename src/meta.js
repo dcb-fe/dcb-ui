@@ -45,6 +45,7 @@ export const meta = {
           { name: 'AddressEdit', cname: '地址编辑' },
         ],
       },
+      { title: '展示组件', list: [{ name: 'Skeleton', cname: '骨架屏' }] },
     ],
   // 分组结束
 };
