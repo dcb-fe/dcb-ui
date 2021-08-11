@@ -1,5 +1,16 @@
 # 更新日志
 
+### [0.0.6-beta.29](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.28...v0.0.6-beta.29) (2021-08-11)
+
+### 特性
+
+- **skeleton:** 新增骨架屏组件 ([#39](https://github.com/dcb-fe/dcb-ui/issues/39)) ([eeef8e0](https://github.com/dcb-fe/dcb-ui/commit/eeef8e0ed5a49ea7ef0a901eb2ee436af8734062))
+
+### 修复
+
+- 修复 address_edit 组件 ([#41](https://github.com/dcb-fe/dcb-ui/issues/41)) ([e01f158](https://github.com/dcb-fe/dcb-ui/commit/e01f1583189b850c3fbd81db577f4dc14a60c15e))
+- **datetime-picker:** 时间选择组件 bug 修复 ([#40](https://github.com/dcb-fe/dcb-ui/issues/40)) ([b7825bf](https://github.com/dcb-fe/dcb-ui/commit/b7825bf87fd951520cc0c5157910606b7631adfb))
+
 ### [0.0.6-beta.28](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.27...v0.0.6-beta.28) (2021-07-27)
 
 ### 修复
