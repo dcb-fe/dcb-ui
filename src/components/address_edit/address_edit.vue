@@ -115,8 +115,11 @@
     },
 
     data () {
+      const { province, city, county, districtCode } = this.addressInfo;
+      const addressText = districtCode ? `${province}${city}${county}` : '';
+
       return {
-        addressText: '',
+        addressText,
         visible: false,
         disabled: true,
         form: {
