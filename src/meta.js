@@ -46,7 +46,13 @@ export const meta = {
           { name: 'SubmitBar', cname: '提交订单栏' },
         ],
       },
-      { title: '展示组件', list: [{ name: 'Skeleton', cname: '骨架屏' }] },
+      {
+        title: '展示组件',
+        list: [
+          { name: 'Skeleton', cname: '骨架屏' },
+          { name: 'Badge', cname: '徽标' },
+        ],
+      },
     ],
   // 分组结束
 };
