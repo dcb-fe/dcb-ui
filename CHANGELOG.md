@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.30](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.29...v0.0.6-beta.30) (2021-09-06)
+
+### 特性
+
+- 新增 submit_bar 组件 ([#42](https://github.com/dcb-fe/dcb-ui/issues/42)) ([519bb89](https://github.com/dcb-fe/dcb-ui/commit/519bb89decc0e7252c83dae8eaf2d0957128f348))
+
 ### [0.0.6-beta.29](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.28...v0.0.6-beta.29) (2021-08-11)
 
 ### 特性
