@@ -2,6 +2,11 @@
 export { default as DemoAddressEditBasic } from '../../src/components/address_edit/__demo__/basic';
 export { default as DemoAddressListBasic } from '../../src/components/address_list/__demo__/basic';
 export { default as DemoAreaBasic } from '../../src/components/area/__demo__/basic';
+export { default as DemoBadgeBasic } from '../../src/components/badge/__demo__/basic';
+export { default as DemoBadgeColor } from '../../src/components/badge/__demo__/color';
+export { default as DemoBadgeIcon } from '../../src/components/badge/__demo__/icon';
+export { default as DemoBadgeMax } from '../../src/components/badge/__demo__/max';
+export { default as DemoBadgeSingle } from '../../src/components/badge/__demo__/single';
 export { default as DemoButtonColor } from '../../src/components/button/__demo__/color';
 export { default as DemoButtonDisabled } from '../../src/components/button/__demo__/disabled';
 export { default as DemoButtonPrimary } from '../../src/components/button/__demo__/primary';

@@ -43,10 +43,15 @@ export const meta = {
           { name: 'AddressList', cname: '地址列表' },
           { name: 'Area', cname: '省市区选择' },
           { name: 'AddressEdit', cname: '地址编辑' },
-          { name: 'SubmitBar', cname: '提交订单栏' },
         ],
       },
-      { title: '展示组件', list: [{ name: 'Skeleton', cname: '骨架屏' }] },
+      {
+        title: '展示组件',
+        list: [
+          { name: 'Skeleton', cname: '骨架屏' },
+          { name: 'Badge', cname: '徽标' },
+        ],
+      },
     ],
   // 分组结束
 };
