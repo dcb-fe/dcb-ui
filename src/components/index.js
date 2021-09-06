@@ -14,5 +14,6 @@ export { default as Radio } from './radio/radio';
 export { default as Search } from './search/search';
 export { default as Skeleton } from './skeleton/skeleton';
 export { default as Stepper } from './stepper/stepper';
+export { default as SubmitBar } from './submit_bar/submit_bar';
 export { default as Switch } from './switch/switch';
 // @endindex
