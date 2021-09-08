@@ -46,6 +46,7 @@ export const meta = {
           { name: 'GoodsAction', cname: '商品导航' },
           { name: 'GoodsActionIcon', cname: '商品导航Icon' },
           { name: 'GoodsActionButton', cname: '商品导航Button' },
+          { name: 'SubmitBar', cname: '提交订单栏' },
         ],
       },
       {
