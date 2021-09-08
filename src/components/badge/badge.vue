@@ -5,7 +5,11 @@
       :class="[_.content, dot && _.dot, $slots.default && _.fixed]"
       :style="{ background: color }"
     >
-      <slot name="content">{{ content + `${content > max ? '+' : ''}` }}</slot>
+      <slot name="content">
+        <template v-if="content > 0">
+          {{ `${content > max ? max + '+' : content}` }}
+        </template>
+      </slot>
     </div>
   </div>
 </template>

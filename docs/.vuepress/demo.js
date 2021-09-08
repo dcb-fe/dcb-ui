@@ -14,6 +14,12 @@ export { default as DemoButtonSecondary } from '../../src/components/button/__de
 export { default as DemoButtonSize } from '../../src/components/button/__demo__/size';
 export { default as DemoCellBasic } from '../../src/components/cell/__demo__/basic';
 export { default as DemoDatetimePickerBasic } from '../../src/components/datetime_picker/__demo__/basic';
+export { default as DemoGoodsActionButtonBasic } from '../../src/components/goods_action_button/__demo__/basic';
+export { default as DemoGoodsActionIconBasic } from '../../src/components/goods_action_icon/__demo__/basic';
+export { default as DemoGoodsActionBadgeTip } from '../../src/components/goods_action/__demo__/badge_tip';
+export { default as DemoGoodsActionBasic } from '../../src/components/goods_action/__demo__/basic';
+export { default as DemoGoodsActionButtonColor } from '../../src/components/goods_action/__demo__/button_color';
+export { default as DemoGoodsActionIconColor } from '../../src/components/goods_action/__demo__/icon_color';
 export { default as DemoIconBasic } from '../../src/components/icon/__demo__/basic';
 export { default as DemoLoadingBasic } from '../../src/components/loading/__demo__/basic';
 export { default as DemoLoadingCustomColor } from '../../src/components/loading/__demo__/custom_color';
