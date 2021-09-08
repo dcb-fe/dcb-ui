@@ -1,5 +1,15 @@
 # 更新日志
 
+### [0.0.6-beta.31](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.30...v0.0.6-beta.31) (2021-09-08)
+
+### 修复
+
+- **SubmitBar:** 修复目录里不显示 SubmitBar 的问题 ([#45](https://github.com/dcb-fe/dcb-ui/issues/45)) ([7816c11](https://github.com/dcb-fe/dcb-ui/commit/7816c11c9b5f40bd6cba9ca5447c869908a542f7))
+
+### 特性
+
+- 新增 swipe 组件 ([#44](https://github.com/dcb-fe/dcb-ui/issues/44)) ([93e1a19](https://github.com/dcb-fe/dcb-ui/commit/93e1a19be64c7b91ab683d2a1b8e4ccd2917c0e0))
+
 ### [0.0.6-beta.30](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.29...v0.0.6-beta.30) (2021-09-06)
 
 ### 特性
