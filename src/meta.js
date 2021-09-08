@@ -51,6 +51,8 @@ export const meta = {
         list: [
           { name: 'Skeleton', cname: '骨架屏' },
           { name: 'Badge', cname: '徽标' },
+          { name: 'Swipe', cname: '轮播' },
+          { name: 'SwipeItem', cname: '轮播项' },
         ],
       },
     ],
