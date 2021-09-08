@@ -19,5 +19,7 @@ export { default as Search } from './search/search';
 export { default as Skeleton } from './skeleton/skeleton';
 export { default as Stepper } from './stepper/stepper';
 export { default as SubmitBar } from './submit_bar/submit_bar';
+export { default as SwipeItem } from './swipe_item/swipe_item';
+export { default as Swipe } from './swipe/swipe';
 export { default as Switch } from './switch/switch';
 // @endindex

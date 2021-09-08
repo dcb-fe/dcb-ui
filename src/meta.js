@@ -2,7 +2,7 @@ export const meta = {
   /**
    * 版本号。
    */
-  version: '0.0.6-beta.30',
+  version: '0.0.6-beta.31',
 
   /**
    * 组件分组。
@@ -54,6 +54,8 @@ export const meta = {
         list: [
           { name: 'Skeleton', cname: '骨架屏' },
           { name: 'Badge', cname: '徽标' },
+          { name: 'Swipe', cname: '轮播' },
+          { name: 'SwipeItem', cname: '轮播项' },
         ],
       },
     ],
