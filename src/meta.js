@@ -43,6 +43,7 @@ export const meta = {
           { name: 'AddressList', cname: '地址列表' },
           { name: 'Area', cname: '省市区选择' },
           { name: 'AddressEdit', cname: '地址编辑' },
+          { name: 'SubmitBar', cname: '提交订单栏' },
         ],
       },
       {
