@@ -1,16 +1,17 @@
 <template>
   <div class="form-container">
-    <d-field :label="label" v-model="value"> ... </d-field>
-    <d-button @click="handleClick" style="margin-top: 20px">获取当前Value值</d-button>
-
+    <d-field :label="label" v-model="value" required error/>
+    <d-field :label="label1" v-model="value1" required errorMessage="请输入12"/>
   </div>
 </template>
 
 <script>
   export default {
     data:()=>({
-      label:'测试输入框',
+      label:'文本',
       value:'',
+      label1:'文本',
+      value1:'',
 
     }),
     methods: {

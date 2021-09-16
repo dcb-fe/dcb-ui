@@ -15,6 +15,11 @@ export { default as DemoButtonSize } from '../../src/components/button/__demo__/
 export { default as DemoCellBasic } from '../../src/components/cell/__demo__/basic';
 export { default as DemoDatetimePickerBasic } from '../../src/components/datetime_picker/__demo__/basic';
 export { default as DemoFieldBasic } from '../../src/components/field/__demo__/basic';
+export { default as DemoFieldCustom } from '../../src/components/field/__demo__/custom';
+export { default as DemoFieldDisabled } from '../../src/components/field/__demo__/disabled';
+export { default as DemoFieldErrornotify } from '../../src/components/field/__demo__/errornotify';
+export { default as DemoFieldInsertbutton } from '../../src/components/field/__demo__/insertbutton';
+export { default as DemoFieldShowicon } from '../../src/components/field/__demo__/showicon';
 export { default as DemoGoodsActionButtonBasic } from '../../src/components/goods_action_button/__demo__/basic';
 export { default as DemoGoodsActionIconBasic } from '../../src/components/goods_action_icon/__demo__/basic';
 export { default as DemoGoodsActionBadgeTip } from '../../src/components/goods_action/__demo__/badge_tip';

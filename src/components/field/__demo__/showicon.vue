@@ -1,16 +1,27 @@
 <template>
   <div class="form-container">
-    <d-field :label="label" v-model="value"> ... </d-field>
-    <d-button @click="handleClick" style="margin-top: 20px">获取当前Value值</d-button>
-
+    <d-field
+      v-model="value"
+      :label="label"
+      left-icon="user_circle"
+      right-icon="service"
+    />
+    <d-field
+      v-model="value1"
+      :label="label1"
+      left-icon="user_circle"
+      clearable
+    />
   </div>
 </template>
 
 <script>
   export default {
     data:()=>({
-      label:'测试输入框',
+      label:'文本',
       value:'',
+      label1:'文本',
+      value1:'123',
 
     }),
     methods: {

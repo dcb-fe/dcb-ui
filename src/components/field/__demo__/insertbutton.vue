@@ -1,7 +1,8 @@
 <template>
   <div class="form-container">
-    <d-field :label="label" v-model="value"> ... </d-field>
-    <d-button @click="handleClick" style="margin-top: 20px">获取当前Value值</d-button>
+    <d-field :label="label" v-model="value">
+      <div slot="button"></div>
+    </d-field>
 
   </div>
 </template>
