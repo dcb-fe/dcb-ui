@@ -4,7 +4,7 @@
       v-model="value"
       :label="label"
       left-icon="user_circle"
-      right-icon="service"
+      right-icon="select"
     />
     <d-field
       v-model="value1"

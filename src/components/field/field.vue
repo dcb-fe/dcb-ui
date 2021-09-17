@@ -343,10 +343,7 @@ function compose(...funcs) {
         }
       },
       textareaHeightAuto(val) {
-        console.log('input',val.target.value.length,this.textareaLength)
-        // this.textareaHeight = '20px'
         if (val.target.value.length>this.textareaLength){
-          console.log('撑开')
           this.textareaLength = val.target.value.length
           const textArea = this.$refs.textarea
           if (textArea.scrollHeight - this.textareaHeight>5){
@@ -355,23 +352,18 @@ function compose(...funcs) {
           }
         }
         else {
-          console.log('退回')
           this.textareaLength = val.target.value.length
           const tempDict = this.textareaHeightArr[this.textareaHeightArr.length-1]
           if (val.target.value.length<tempDict.length){
-            let lastStepHeight = this.textareaHeightArr.pop()
-            lastStepHeight = lastStepHeight.height
-            console.log('lastStepHeight',lastStepHeight)
-            this.textareaHeight = lastStepHeight
+            if(this.textareaHeightArr.length>1){
+              let lastStepHeight = this.textareaHeightArr.pop()
+              lastStepHeight = lastStepHeight.height
+              this.textareaHeight = lastStepHeight
+            }
           }
-
         }
-
-
       },
-      isShowMaxlength(){
-        return (this.type === 'textarea' && this.maxlength);
-      },
+
       clearInput(){
         this.clearable?
           this.inputVal = ''
