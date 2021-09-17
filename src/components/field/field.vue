@@ -14,25 +14,45 @@
         _.right_input,
         disabled?_.field_disabled:'',
         error?_.field_error:'',
-        ]">
+        errorMessage?_.field_error_message:''
+        ]"
+           style="position: relative"
+      >
         <input
+          v-if="type!=='textarea'"
           v-model="inputVal"
           :placeholder="placeholder"
-          :type="type==='password'?type:''"
+          :type="inputType(type)"
           :readonly="readonly"
           :disabled="disabled"
+          :style="`text-align: ${inputAlign}`"
           @input="input"
           @focus="onfocus = true"
           @focusout="focusout"
-
         >
+        <label v-else>
+          <textarea
+            ref="textarea"
+            v-model="inputVal"
+            :placeholder="placeholder"
+            :type="inputType(type)"
+            :readonly="readonly"
+            :disabled="disabled"
+            @input="input"
+            @focus="onfocus = true"
+            @focusout="focusout"
+          />
+
+        </label>
+        <span v-if="type === 'textarea' && maxlength" style="position: absolute;bottom: -10px;right: 6px">
+            {{ textareaLength }}/{{ maxlength }}
+        </span>
       </div>
-      <div :class="_.right_icon" >
+      <div v-if="clearable?onfocus:rightIcon"  :class="_.right_icon">
         <d-icon
-          v-if="clearable?onfocus:rightIcon"
           :name="clearable?'search_eliminate':rightIcon"
-          @click="clearInput"
           :style="clearable?'cursor:pointer':''"
+          @click="clearInput"
         />
       </div>
       <div :class="_.right_button">
@@ -49,9 +69,9 @@
 </template>
 
 <script>
-  import { defineComponent } from '@/utils';
+import {defineComponent} from '@/utils';
 
-  function compose(...funcs) {
+function compose(...funcs) {
     return function proxy(...args) {
       const len = funcs.length;
       if (len === 0) {
@@ -137,16 +157,37 @@
         default: '',
         desc: '错误消息',
       },
+      formatter: {
+        type: Function,
+        default: null,
+        desc: '自动轮播间隔，单位为 ms',
+      },
+      formatTrigger: {
+        type: String,
+        default: 'onChange',
+        desc: '可以选择onBlur',
+      },
+      showWordLimit: {
+        type: Boolean,
+        default: false,
+        desc: '是否显示字数限制',
+      },
+      maxlength: {
+        type: Number,
+        default: 0,
+        desc: '设置最大输入长度',
+      },
+      inputAlign: {
+        type: String,
+        default: '',
+        desc: '自动轮播间隔，单位为 ms',
+      },
       // size: {
       //   type: String,
       //   default: '',
       //   desc: '自动轮播间隔，单位为 ms',
       // },
-      // maxlength: {
-      //   type: String,
-      //   default: '',
-      //   desc: '自动轮播间隔，单位为 ms',
-      // },
+
       // border: {
       //   type: String,
       //   default: '',
@@ -186,27 +227,14 @@
       //   default: '',
       //   desc: '自动轮播间隔，单位为 ms',
       // },
-      // 'show-word-limit': {
-      //   type: String,
-      //   default: '',
-      //   desc: '自动轮播间隔，单位为 ms',
-      // },
+
 
       // 'error-message': {
       //   type: String,
       //   default: '',
       //   desc: '自动轮播间隔，单位为 ms',
       // },
-      // formatter: {
-      //   type: String,
-      //   default: '',
-      //   desc: '自动轮播间隔，单位为 ms',
-      // },
-      // 'format-trigger': {
-      //   type: String,
-      //   default: '',
-      //   desc: '自动轮播间隔，单位为 ms',
-      // },
+
       // 'arrow-direction': {
       //   type: String,
       //   default: '',
@@ -227,11 +255,7 @@
       //   default: '',
       //   desc: '自动轮播间隔，单位为 ms',
       // },
-      // 'input-align': {
-      //   type: String,
-      //   default: '',
-      //   desc: '自动轮播间隔，单位为 ms',
-      // },
+
       // 'error-message-align': {
       //   type: String,
       //   default: '',
@@ -267,22 +291,26 @@
     },
     data:()=>({
       inputVal:'',
-      onfocus:false
+      onfocus:false,
+      textareaHeight:0,
+      textareaLength:0,
+      textareaHeightArr:[]
     }),
     computed:{
-      isSlotEmpty(){
 
-      }
     },
     watch:{
       value(){
         this.inputVal = this.value
       },
-      focus(val){
-        console.log(val)
-      },
       inputVal(val){
         this.$emit('input', val)
+      },
+      textareaHeight(val){
+
+        this.$refs.textarea.style.height = `${val }px`
+        this.textareaHeight = val
+
       }
     },
     mounted(){
@@ -291,11 +319,58 @@
       })
     },
     methods:{
+      inputType(val){
+        if (val === 'password'||val==='textarea') return val
+        return ''
+      },
       input(val){
-        // console.log(val.target.value,this.value)
-        this.fitterVal(val.target.value).then((rightVal)=>{
-          this.inputVal = rightVal
-        })
+        // 通过数据来记录高度
+        if (this.type === 'textarea') this.textareaHeightAuto(val)
+
+        console.log(val.target.value,this.value)
+        if (this.formatTrigger === 'onChange'){
+          if (this.formatter){
+            const tempVal = compose(this.formatter,this.fitterVal)(val.target.value)
+            this.inputVal =  this.maxlength?this.fitterLength(tempVal,this.maxlength-1):tempVal
+          }
+          else {
+            const tempVal = this.fitterVal(val.target.value)
+            this.inputVal =  this.maxlength?this.fitterLength(tempVal,this.maxlength-1):tempVal
+          }
+        }
+        else {
+          this.inputVal = val.target.value
+        }
+      },
+      textareaHeightAuto(val) {
+        console.log('input',val.target.value.length,this.textareaLength)
+        // this.textareaHeight = '20px'
+        if (val.target.value.length>this.textareaLength){
+          console.log('撑开')
+          this.textareaLength = val.target.value.length
+          const textArea = this.$refs.textarea
+          if (textArea.scrollHeight - this.textareaHeight>5){
+            this.textareaHeightArr.push({length:val.target.value.length,height:this.textareaHeight})
+            this.textareaHeight = textArea.scrollHeight
+          }
+        }
+        else {
+          console.log('退回')
+          this.textareaLength = val.target.value.length
+          const tempDict = this.textareaHeightArr[this.textareaHeightArr.length-1]
+          if (val.target.value.length<tempDict.length){
+            let lastStepHeight = this.textareaHeightArr.pop()
+            lastStepHeight = lastStepHeight.height
+            console.log('lastStepHeight',lastStepHeight)
+            this.textareaHeight = lastStepHeight
+          }
+
+        }
+
+
+      },
+      isShowMaxlength(){
+        return (this.type === 'textarea' && this.maxlength);
       },
       clearInput(){
         this.clearable?
@@ -303,7 +378,20 @@
           :
           {}
       },
-      focusout(){
+      focusout(val){
+        if (this.formatTrigger === 'onBlur'){
+          if (this.formatter){
+            const tempVal = compose(this.formatter,this.fitterVal)(val.target.value)
+            this.inputVal =  this.maxlength?this.fitterLength(tempVal,this.maxlength-1):tempVal
+          }
+          else {
+            const tempVal = this.fitterVal(val.target.value)
+            this.inputVal =  this.maxlength?this.fitterLength(tempVal,this.maxlength-1):tempVal
+          }
+        }
+        else {
+          this.inputVal = val.target.value
+        }
         setTimeout(()=>{
           this.onfocus = false
         },200)
@@ -312,7 +400,10 @@
         return val.replace(/[^\d]/g,'')
       },
       fitterTelLength(val){
-        if (val.length > 11) return val.slice(0,11)
+        return this.fitterLength(val,11)
+      },
+      fitterLength(val,limit){
+        if (val.length > limit) return val.slice(0,limit)
         return val
       },
       fitterNumberWithDecimalPoint(val){
@@ -325,7 +416,7 @@
         val = val.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
         return val
       },
-      async fitterVal(val){
+      fitterVal(val){
         switch (this.type) {
           case 'text':
             return val
@@ -366,8 +457,8 @@
     .right_input{
       display: inline-block;
       padding-right: 12px;
+
       flex: 1;
-      min-width: 49%;
       >input{
         width: 100%;
         outline:0;
@@ -386,6 +477,33 @@
         }
         &:-ms-input-placeholder{
           color: #ccc;
+        }
+      }
+      >label{
+        padding-top: 20px;
+
+        textarea{
+          margin-top: 15px;
+          width: 100%;
+          height: auto;
+          outline:0;
+          border: none;
+          background: transparent;
+          font-size: 16px;
+          resize: none;
+          font-family: PingFangSC-Regular;
+          &::-webkit-input-placeholder{
+            color: #ccc;
+          }
+          &::-moz-placeholder{
+            color: #ccc;
+          }
+          &:-moz-placeholder{
+            color: #ccc;
+          }
+          &:-ms-input-placeholder{
+            color: #ccc;
+          }
         }
       }
     }
@@ -423,11 +541,17 @@
         }
       }
     }
+    .field_error_message{
+      min-width: 49%;
+    }
     .error_message{
       color: #EE0D24;
       line-height: 0;
       padding-bottom: 20px;
       margin-left: 98px;
+    }
+    .right_button{
+      padding-right: 12px;
     }
     .left_icon{
       font-size: 22px;

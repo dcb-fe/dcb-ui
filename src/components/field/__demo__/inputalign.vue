@@ -1,17 +1,14 @@
 <template>
   <div class="form-container">
-    <d-field v-model="value" :label="label" required error/>
-    <d-field v-model="value1" :label="label1" required error-message="请输入12"/>
+    <d-field v-model="value" :label="label" input-align="right"> ... </d-field>
   </div>
 </template>
 
 <script>
   export default {
     data:()=>({
-      label:'文本',
+      label:'测试输入框',
       value:'',
-      label1:'文本',
-      value1:'',
 
     }),
     methods: {

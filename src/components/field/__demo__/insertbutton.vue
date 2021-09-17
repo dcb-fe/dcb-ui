@@ -1,7 +1,7 @@
 <template>
   <div class="form-container">
-    <d-field :label="label" v-model="value">
-      <div slot="button"></div>
+    <d-field v-model="value" :label="label">
+      <button slot="button">获取验证码</button>
     </d-field>
 
   </div>

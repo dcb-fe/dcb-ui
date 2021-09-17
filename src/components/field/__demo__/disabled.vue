@@ -1,7 +1,7 @@
 <template>
   <div class="form-container">
-    <d-field :label="label" v-model="value" readonly />
-    <d-field :label="label1" v-model="value1" disabled />
+    <d-field v-model="value" :label="label" readonly />
+    <d-field v-model="value1" :label="label1" disabled />
   </div>
 </template>
 
