@@ -1,5 +1,15 @@
 # 更新日志
 
+### [0.0.6-beta.32](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.31...v0.0.6-beta.32) (2021-09-16)
+
+### 修复
+
+- **GoodsAction:** 添加目录 ([#47](https://github.com/dcb-fe/dcb-ui/issues/47)) ([fc7fa9c](https://github.com/dcb-fe/dcb-ui/commit/fc7fa9c2b9ab10e9e75f4c1f6f4d68a92fd650a4))
+
+### 特性
+
+- 新增 steps 组件 ([#48](https://github.com/dcb-fe/dcb-ui/issues/48)) ([a2d28dd](https://github.com/dcb-fe/dcb-ui/commit/a2d28dd5bc3f7307e541e3cca32e0d9048e4fd30))
+
 ### [0.0.6-beta.31](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.30...v0.0.6-beta.31) (2021-09-08)
 
 ### 修复

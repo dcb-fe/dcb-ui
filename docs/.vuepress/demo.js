@@ -31,6 +31,7 @@ export { default as DemoGoodsActionBasic } from '../../src/components/goods_acti
 export { default as DemoGoodsActionButtonColor } from '../../src/components/goods_action/__demo__/button_color';
 export { default as DemoGoodsActionIconColor } from '../../src/components/goods_action/__demo__/icon_color';
 export { default as DemoIconBasic } from '../../src/components/icon/__demo__/basic';
+export { default as DemoImageBasic } from '../../src/components/image/__demo__/basic';
 export { default as DemoLoadingBasic } from '../../src/components/loading/__demo__/basic';
 export { default as DemoLoadingCustomColor } from '../../src/components/loading/__demo__/custom_color';
 export { default as DemoLoadingCustomSize } from '../../src/components/loading/__demo__/custom_size';
@@ -55,6 +56,7 @@ export { default as DemoSearchCenter } from '../../src/components/search/__demo_
 export { default as DemoSearchRightContent } from '../../src/components/search/__demo__/right_content';
 export { default as DemoSearchRound } from '../../src/components/search/__demo__/round';
 export { default as DemoSkeletonBasic } from '../../src/components/skeleton/__demo__/basic';
+export { default as DemoStepBasic } from '../../src/components/step/__demo__/basic';
 export { default as DemoStepperAsync } from '../../src/components/stepper/__demo__/async';
 export { default as DemoStepperBasic } from '../../src/components/stepper/__demo__/basic';
 export { default as DemoStepperDisabled } from '../../src/components/stepper/__demo__/disabled';
@@ -62,6 +64,9 @@ export { default as DemoStepperInteger } from '../../src/components/stepper/__de
 export { default as DemoStepperLimit } from '../../src/components/stepper/__demo__/limit';
 export { default as DemoStepperRound } from '../../src/components/stepper/__demo__/round';
 export { default as DemoStepperStep } from '../../src/components/stepper/__demo__/step';
+export { default as DemoStepsBasic } from '../../src/components/steps/__demo__/basic';
+export { default as DemoStepsCustom } from '../../src/components/steps/__demo__/custom';
+export { default as DemoStepsVertical } from '../../src/components/steps/__demo__/vertical';
 export { default as DemoSubmitBarBasic } from '../../src/components/submit_bar/__demo__/basic';
 export { default as DemoSubmitBarDisabled } from '../../src/components/submit_bar/__demo__/disabled';
 export { default as DemoSubmitBarHigh } from '../../src/components/submit_bar/__demo__/high';

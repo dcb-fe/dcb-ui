@@ -11,6 +11,7 @@ export { default as GoodsActionButton } from './goods_action_button/goods_action
 export { default as GoodsActionIcon } from './goods_action_icon/goods_action_icon';
 export { default as GoodsAction } from './goods_action/goods_action';
 export { default as Icon } from './icon/icon';
+export { default as Image } from './image/image';
 export { default as Loading } from './loading/loading';
 export { default as Notify } from './notify/notify';
 export { default as NumberKeyboard } from './number_keyboard/number_keyboard';
@@ -18,7 +19,9 @@ export { default as Popup } from './popup/popup';
 export { default as Radio } from './radio/radio';
 export { default as Search } from './search/search';
 export { default as Skeleton } from './skeleton/skeleton';
+export { default as Step } from './step/step';
 export { default as Stepper } from './stepper/stepper';
+export { default as Steps } from './steps/steps';
 export { default as SubmitBar } from './submit_bar/submit_bar';
 export { default as SwipeItem } from './swipe_item/swipe_item';
 export { default as Swipe } from './swipe/swipe';

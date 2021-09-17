@@ -2,7 +2,7 @@ export const meta = {
   /**
    * 版本号。
    */
-  version: '0.0.6-beta.31',
+  version: '0.0.6-beta.32',
 
   /**
    * 组件分组。
@@ -17,6 +17,7 @@ export const meta = {
           { name: 'Popup', cname: '弹出层' },
           { name: 'Icon', cname: '图标' },
           { name: 'Cell', cname: '单元格' },
+          { name: 'Image', cname: '图片' },
         ],
       },
       {
@@ -56,7 +57,9 @@ export const meta = {
           { name: 'Skeleton', cname: '骨架屏' },
           { name: 'Badge', cname: '徽标' },
           { name: 'Swipe', cname: '轮播' },
-          { name: 'SwipeItem', cname: '轮播项' },
+          // { name: 'SwipeItem', cname: '轮播项' },
+          { name: 'Steps', cname: '步骤条' },
+          // { name: 'Step', cname: '步骤项' },
         ],
       },
     ],
