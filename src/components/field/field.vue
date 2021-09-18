@@ -31,6 +31,9 @@
           @focusout="focusout"
         >
         <label v-else>
+          <div contenteditable="true">
+            {{inputVal}}
+          </div>
           <textarea
             ref="textarea"
             v-model="inputVal"
@@ -292,9 +295,7 @@ function compose(...funcs) {
     data:()=>({
       inputVal:'',
       onfocus:false,
-      textareaHeight:0,
       textareaLength:0,
-      textareaHeightArr:[]
     }),
     computed:{
 
@@ -306,12 +307,7 @@ function compose(...funcs) {
       inputVal(val){
         this.$emit('input', val)
       },
-      textareaHeight(val){
 
-        this.$refs.textarea.style.height = `${val }px`
-        this.textareaHeight = val
-
-      }
     },
     mounted(){
       this.$nextTick(()=>{
@@ -325,7 +321,8 @@ function compose(...funcs) {
       },
       input(val){
         // 通过数据来记录高度
-        if (this.type === 'textarea') this.textareaHeightAuto(val)
+        // if (this.type === 'textarea') this.textareaHeightAuto(val)
+        this.textareaLength = val.target.value.length
 
         console.log(val.target.value,this.value)
         if (this.formatTrigger === 'onChange'){
@@ -342,27 +339,27 @@ function compose(...funcs) {
           this.inputVal = val.target.value
         }
       },
-      textareaHeightAuto(val) {
-        if (val.target.value.length>this.textareaLength){
-          this.textareaLength = val.target.value.length
-          const textArea = this.$refs.textarea
-          if (textArea.scrollHeight - this.textareaHeight>5){
-            this.textareaHeightArr.push({length:val.target.value.length,height:this.textareaHeight})
-            this.textareaHeight = textArea.scrollHeight
-          }
-        }
-        else {
-          this.textareaLength = val.target.value.length
-          const tempDict = this.textareaHeightArr[this.textareaHeightArr.length-1]
-          if (val.target.value.length<tempDict.length){
-            if(this.textareaHeightArr.length>1){
-              let lastStepHeight = this.textareaHeightArr.pop()
-              lastStepHeight = lastStepHeight.height
-              this.textareaHeight = lastStepHeight
-            }
-          }
-        }
-      },
+      // textareaHeightAuto(val) {
+      //   // if (val.target.value.length>this.textareaLength){
+      //   //   this.textareaLength = val.target.value.length
+      //   //   const textArea = this.$refs.textarea
+      //   //   if (textArea.scrollHeight - this.textareaHeight>5){
+      //   //     this.textareaHeightArr.push({length:val.target.value.length,height:this.textareaHeight})
+      //   //     this.textareaHeight = textArea.scrollHeight
+      //   //   }
+      //   // }
+      //   // else {
+      //   //   this.textareaLength = val.target.value.length
+      //   //   const tempDict = this.textareaHeightArr[this.textareaHeightArr.length-1]
+      //   //   if (val.target.value.length<tempDict.length){
+      //   //     if(this.textareaHeightArr.length>1){
+      //   //       let lastStepHeight = this.textareaHeightArr.pop()
+      //   //       lastStepHeight = lastStepHeight.height
+      //   //       this.textareaHeight = lastStepHeight
+      //   //     }
+      //   //   }
+      //   // }
+      // },
 
       clearInput(){
         this.clearable?
@@ -432,7 +429,7 @@ function compose(...funcs) {
   .field {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     line-height: 54px;
     background: #fff;
     border-bottom: 1px solid #E9E9E9;
@@ -451,6 +448,7 @@ function compose(...funcs) {
       padding-right: 12px;
 
       flex: 1;
+      max-width: 65%;
       >input{
         width: 100%;
         outline:0;
@@ -473,17 +471,36 @@ function compose(...funcs) {
       }
       >label{
         padding-top: 20px;
-
+        width: 100%;
+        >div{
+          width: 100%;
+          margin-top: 20px;
+          margin-bottom: 25px;
+          position: relative;
+          background-color: red;
+          z-index: -1;
+          opacity: 0;
+          font-family: PingFangSC-Regular;
+          line-height: 21px;
+          min-height: 21px;
+        }
         textarea{
           margin-top: 15px;
-          width: 100%;
+          width: 95%;
           height: auto;
+          line-height: 22px;
           outline:0;
           border: none;
           background: transparent;
           font-size: 16px;
           resize: none;
           font-family: PingFangSC-Regular;
+
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
           &::-webkit-input-placeholder{
             color: #ccc;
           }
@@ -496,7 +513,9 @@ function compose(...funcs) {
           &:-ms-input-placeholder{
             color: #ccc;
           }
+          &::-webkit-scrollbar{display: none;}
         }
+
       }
     }
     .field_disabled{
