@@ -1,6 +1,6 @@
 <template>
   <div style="padding-left: 12px; background-color: #fff">
-    <div :class="_.field">
+    <div :class="[_.field,errorMessage?_.field_wrap:'']">
       <d-icon v-if="leftIcon" :class="_.left_icon" :name="leftIcon" />
       <div
         :class="[
@@ -572,5 +572,8 @@ function compose(...funcs) {
       font-size: 22px;
       padding-right: 12px;
     }
+  }
+  .field_wrap{
+    flex-wrap: wrap !important;
   }
 </style>
