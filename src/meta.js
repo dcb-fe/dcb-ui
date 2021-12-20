@@ -44,6 +44,7 @@ export const meta = {
           { name: 'AddressEdit', cname: '地址编辑' },
         ],
       },
+      { title: '导航组件', list: [{ name: 'NavBar', cname: '导航栏' }] },
     ],
   // 分组结束
 };

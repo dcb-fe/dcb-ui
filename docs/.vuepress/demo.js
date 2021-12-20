@@ -15,6 +15,11 @@ export { default as DemoLoadingCustomSize } from '../../src/components/loading/_
 export { default as DemoLoadingCustomTextColor } from '../../src/components/loading/__demo__/custom_text_color';
 export { default as DemoLoadingDirection } from '../../src/components/loading/__demo__/direction';
 export { default as DemoLoadingText } from '../../src/components/loading/__demo__/text';
+export { default as DemoNavBarBasic } from '../../src/components/nav_bar/__demo__/basic';
+export { default as DemoNavBarCustom } from '../../src/components/nav_bar/__demo__/custom';
+export { default as DemoNavBarSearch } from '../../src/components/nav_bar/__demo__/search';
+export { default as DemoNavBarSlot } from '../../src/components/nav_bar/__demo__/slot';
+export { default as DemoNavBarText } from '../../src/components/nav_bar/__demo__/text';
 export { default as DemoNotifyBasic } from '../../src/components/notify/__demo__/basic';
 export { default as DemoNotifyDuration } from '../../src/components/notify/__demo__/duration';
 export { default as DemoNotifyType } from '../../src/components/notify/__demo__/type';

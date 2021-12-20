@@ -6,6 +6,7 @@ export { default as Button } from './button/button';
 export { default as Cell } from './cell/cell';
 export { default as Icon } from './icon/icon';
 export { default as Loading } from './loading/loading';
+export { default as NavBar } from './nav_bar/nav_bar';
 export { default as Notify } from './notify/notify';
 export { default as NumberKeyboard } from './number_keyboard/number_keyboard';
 export { default as Popup } from './popup/popup';
