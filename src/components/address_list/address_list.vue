@@ -1,7 +1,7 @@
 <template>
   <div :class="_.list">
     <div :class="_.group">
-      <div v-for="(item, index) in list" :key="index" :class="_.item" @click="$emit('select', item, index)">
+      <div v-for="(item, index) in list" :key="index" :class="_.item" @click.stop="$emit('select', item, index)">
         <div :class="[_.cell, item.serviceFlag && _.disabled]">
           <div :class="_.name">
             <span>{{item.receiver}}</span>
@@ -14,9 +14,8 @@
         </div>
 
         <div :class="_.action">
-          <d-radio v-if="!item.serviceFlag" v-model="radioVal" :class="_.default" :label="item.id" @click="label => {$emit('chose-default', label, item, index)}">默认地址</d-radio>
-          <div :class="_.delete" @click="$emit('delete', item, index)"><d-icon name="delete" :class="_.icon_delete"/>删除</div>
-          <div :class="_.edit" @click="$emit('edit', item, index)"><d-icon name="edit" :class="_.icon_edit"/>编辑</div>
+          <div :class="_.delete" @click.stop="$emit('delete', item, index)"><d-icon name="delete" :class="_.icon_delete"/>删除</div>
+          <div :class="_.edit" @click.stop="$emit('edit', item, index)"><d-icon name="edit" :class="_.icon_edit"/>编辑</div>
         </div>
       </div>
     </div>
@@ -30,7 +29,6 @@
 <script>
   import DButton from '../button/button';
   import DIcon from '../icon/icon';
-  import DRadio from '../radio/radio';
   import { defineComponent } from '@/utils';
 
   export default defineComponent({
@@ -39,7 +37,6 @@
     components: {
       DButton,
       DIcon,
-      DRadio
     },
 
     props: {
@@ -114,30 +111,6 @@
           }
         },
       },
-
-      'chose-default': {
-        desc: '点击设置默认地址时触发',
-        payload: {
-          item: {
-            type: Object,
-            desc: '地址对象',
-          },
-          index: {
-            type: Number,
-            desc: '索引',
-          }
-        },
-      }
-    },
-
-    data () {
-      return {
-        radioVal: this.value
-      }
-    },
-
-    methods: {
-
     }
   });
 </script>
@@ -151,18 +124,12 @@
     overflow: auto;
   }
 
-  .group {}
-
   .item {
     background-color: #fff;
     padding: 12px;
     margin-bottom: 12px;
     border-radius: 8px;
     user-select: none;
-  }
-
-  .cell {
-    
   }
 
   .name {
@@ -195,10 +162,6 @@
     border-radius: 7px;
     background-color: #F4FBFB;
     margin-right: 2px;
-  }
-
-  .default {
-    margin-right: auto !important;
   }
 
   .action {

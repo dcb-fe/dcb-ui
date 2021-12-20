@@ -4,10 +4,10 @@
     v-on="$listeners"
     ref="numberKeyboard"
     :class="[
-      _['number-keyboard'],
+      _.number_keyboard,
       title && _['width-title'],
-      show && _['number-keyboard-show'],
-      !show && _['number-keyboard-hide'],
+      show && _.show,
+      !show && _.hide,
     ]"
   >
     <div :class="_.header" v-if="title || closeButtonText">
@@ -577,14 +577,13 @@
 </script>
 
 <style lang="scss" module>
-  .number-keyboard {
-    &-show {
+  .number_keyboard {
+    &.show {
       animation: fadelogIn 0.4s;
       color: rgba(70, 81, 102, 1);
       height: auto;
     }
-
-    &-hide {
+    &.hide {
       padding: 0;
       height: 0;
       display: none;

@@ -1,5 +1,60 @@
 # 更新日志
 
+### [0.0.6-beta.33](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.32...v0.0.6-beta.33) (2021-12-20)
+
+### 特性
+
+- 新增 NavBar 组件 ([#50](https://github.com/dcb-fe/dcb-ui/issues/50)) ([4ed9335](https://github.com/dcb-fe/dcb-ui/commit/4ed93354270ebd6311c40cfbd43615056cc4463f))
+
+### [0.0.6-beta.32](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.31...v0.0.6-beta.32) (2021-09-16)
+
+### 修复
+
+- **GoodsAction:** 添加目录 ([#47](https://github.com/dcb-fe/dcb-ui/issues/47)) ([fc7fa9c](https://github.com/dcb-fe/dcb-ui/commit/fc7fa9c2b9ab10e9e75f4c1f6f4d68a92fd650a4))
+
+### 特性
+
+- 新增 steps 组件 ([#48](https://github.com/dcb-fe/dcb-ui/issues/48)) ([a2d28dd](https://github.com/dcb-fe/dcb-ui/commit/a2d28dd5bc3f7307e541e3cca32e0d9048e4fd30))
+
+### [0.0.6-beta.31](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.30...v0.0.6-beta.31) (2021-09-08)
+
+### 修复
+
+- **SubmitBar:** 修复目录里不显示 SubmitBar 的问题 ([#45](https://github.com/dcb-fe/dcb-ui/issues/45)) ([7816c11](https://github.com/dcb-fe/dcb-ui/commit/7816c11c9b5f40bd6cba9ca5447c869908a542f7))
+
+### 特性
+
+- 新增 swipe 组件 ([#44](https://github.com/dcb-fe/dcb-ui/issues/44)) ([93e1a19](https://github.com/dcb-fe/dcb-ui/commit/93e1a19be64c7b91ab683d2a1b8e4ccd2917c0e0))
+
+### [0.0.6-beta.30](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.29...v0.0.6-beta.30) (2021-09-06)
+
+### 特性
+
+- 新增 submit_bar 组件 ([#42](https://github.com/dcb-fe/dcb-ui/issues/42)) ([519bb89](https://github.com/dcb-fe/dcb-ui/commit/519bb89decc0e7252c83dae8eaf2d0957128f348))
+
+### [0.0.6-beta.29](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.28...v0.0.6-beta.29) (2021-08-11)
+
+### 特性
+
+- **skeleton:** 新增骨架屏组件 ([#39](https://github.com/dcb-fe/dcb-ui/issues/39)) ([eeef8e0](https://github.com/dcb-fe/dcb-ui/commit/eeef8e0ed5a49ea7ef0a901eb2ee436af8734062))
+
+### 修复
+
+- 修复 address_edit 组件 ([#41](https://github.com/dcb-fe/dcb-ui/issues/41)) ([e01f158](https://github.com/dcb-fe/dcb-ui/commit/e01f1583189b850c3fbd81db577f4dc14a60c15e))
+- **datetime-picker:** 时间选择组件 bug 修复 ([#40](https://github.com/dcb-fe/dcb-ui/issues/40)) ([b7825bf](https://github.com/dcb-fe/dcb-ui/commit/b7825bf87fd951520cc0c5157910606b7631adfb))
+
+### [0.0.6-beta.28](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.27...v0.0.6-beta.28) (2021-07-27)
+
+### 修复
+
+- **datetimePicker:** demo 示例 call 传参方式修改 ([#38](https://github.com/dcb-fe/dcb-ui/issues/38)) ([cb0fe7f](https://github.com/dcb-fe/dcb-ui/commit/cb0fe7f1950acb2ce08cd42328f80fb007441fb6))
+
+### [0.0.6-beta.27](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.26...v0.0.6-beta.27) (2021-07-27)
+
+### 修复
+
+- 修复 Switch 组件样式 ([#37](https://github.com/dcb-fe/dcb-ui/issues/37)) ([08eb020](https://github.com/dcb-fe/dcb-ui/commit/08eb020b7e90875fd4ed35ad55a658be0d613ee5))
+
 ### [0.0.6-beta.26](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.25...v0.0.6-beta.26) (2021-07-27)
 
 ### 修复
