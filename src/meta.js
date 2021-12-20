@@ -61,6 +61,7 @@ export const meta = {
           // { name: 'Step', cname: '步骤项' },
         ],
       },
+      { title: '导航组件', list: [{ name: 'NavBar', cname: '导航栏' }] },
     ],
   // 分组结束
 };
