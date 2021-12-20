@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.33](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.32...v0.0.6-beta.33) (2021-12-20)
+
+### 特性
+
+- 新增 NavBar 组件 ([#50](https://github.com/dcb-fe/dcb-ui/issues/50)) ([4ed9335](https://github.com/dcb-fe/dcb-ui/commit/4ed93354270ebd6311c40cfbd43615056cc4463f))
+
 ### [0.0.6-beta.32](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.31...v0.0.6-beta.32) (2021-09-16)
 
 ### 修复
