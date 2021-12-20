@@ -50,6 +50,7 @@ export const meta = {
           { name: 'SubmitBar', cname: '提交订单栏' },
         ],
       },
+
       {
         title: '展示组件',
         list: [
@@ -61,6 +62,7 @@ export const meta = {
           // { name: 'Step', cname: '步骤项' },
         ],
       },
+
       { title: '导航组件', list: [{ name: 'NavBar', cname: '导航栏' }] },
     ],
   // 分组结束
