@@ -6,7 +6,9 @@
       share
       close
       :safe-top="false"
-      @back="handleClick"
+      @back="handleClick('back')"
+      @share="handleClick('share')"
+      @close="handleClick('close')"
     />
     <br />
     <d-nav-bar
@@ -15,7 +17,9 @@
       share
       close
       :safe-top="false"
-      @back="handleClick"
+      @back="handleClick('back')"
+      @share="handleClick('share')"
+      @close="handleClick('close')"
     />
     <br />
     <d-nav-bar
@@ -24,7 +28,9 @@
       share
       close
       :safe-top="false"
-      @back="handleClick"
+      @back="handleClick('back')"
+      @share="handleClick('share')"
+      @close="handleClick('close')"
     />
   </div>
 </template>
@@ -32,8 +38,8 @@
 <script>
 export default {
   methods: {
-    handleClick() {
-      alert('hello');
+    handleClick(text) {
+      alert(text);
     },
   },
 };
