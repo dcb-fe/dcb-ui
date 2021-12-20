@@ -125,7 +125,7 @@ export default defineComponent({
     safeTop: {
       type: Boolean,
       default: true,
-      desc: '刘海屏安全区',
+      desc: '刘海屏安全区，非多彩宝环境设置为false',
     },
   },
 
