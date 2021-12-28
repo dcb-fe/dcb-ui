@@ -3,7 +3,14 @@
     :class="[_.nav_bar, fixed && _.nav_bar_fixed]"
     :style="{ background: background }"
   >
-    <div v-if="safeTop" :class="_.state"></div>
+    <div
+      v-if="safeTop"
+      :class="[
+        _.state,
+        _isIos && search && _.ios_safe_top,
+        _isAndroid && search && _.android_safe_top,
+      ]"
+    ></div>
 
     <div :class="[search ? _.search_content : _.content]">
       <div :class="_.content_left" @click.stop="handleBack">
@@ -56,9 +63,9 @@
 </template>
 
 <script>
-
 import DIcon from '../icon/icon';
 import { defineComponent } from '@/utils';
+import { isIOS, isAndroid } from '../../utils/validate/system';
 
 export default defineComponent({
   name: 'NavBar',
@@ -191,6 +198,14 @@ export default defineComponent({
     styleGetter() {
       return { color: this.background ? '#fff' : '' };
     },
+
+    _isIos() {
+      return isIOS();
+    },
+
+    _isAndroid() {
+      return isAndroid();
+    },
   },
 
   methods: {
@@ -256,6 +271,14 @@ export default defineComponent({
     box-sizing: border-box;
     height: 24px;
     padding-top: calc(var(--safe-area-inset-top));
+  }
+
+  .ios_safe_top {
+    padding-top: Max(20px, var(--safe-area-inset-top));
+  }
+
+  .android_safe_top {
+    padding-top: 30px;
   }
 
   .content {
