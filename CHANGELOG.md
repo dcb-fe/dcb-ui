@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.35](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.34...v0.0.6-beta.35) (2021-12-28)
+
+### 修复
+
+- 修复导航栏刘海屏兼容问题 ([#52](https://github.com/dcb-fe/dcb-ui/issues/52)) ([8e65947](https://github.com/dcb-fe/dcb-ui/commit/8e6594778a97b616ca72d92587260023ee94250c))
+
 ### [0.0.6-beta.34](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.33...v0.0.6-beta.34) (2021-12-20)
 
 ### [0.0.6-beta.33](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.32...v0.0.6-beta.33) (2021-12-20)
