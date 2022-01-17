@@ -58,7 +58,7 @@
   export default {
     name: 'test',
     components: {
-      'demo': demos[routerName]
+      'demo': typeof demos == 'object' ? demos[routerName] : ''
     },
     data() {
       return {
@@ -67,11 +67,13 @@
       }
     },
     mounted() {
-      let meta = document.createElement('meta')
-      meta.name = 'viewport'
-      meta.content = 'width=device-width, maximum-scale=1, user-scalable=no'
-      document.head.appendChild(meta)
-      document.getElementById('mobile').parentNode.parentNode.style.padding = 0
+      if (typeof window == 'object') {
+        let meta = document.createElement('meta')
+        meta.name = 'viewport'
+        meta.content = 'width=device-width, maximum-scale=1, user-scalable=no'
+        document.head.appendChild(meta)
+        document.getElementById('mobile').parentNode.parentNode.style.padding = 0
+      } 
     },
     methods: {
       showDemo (info) {
