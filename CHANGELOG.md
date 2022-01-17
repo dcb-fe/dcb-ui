@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.37](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.36...v0.0.6-beta.37) (2022-01-17)
+
+### 修复
+
+- 修复 ssr 渲染无法找到 window 问题 ([223f1e8](https://github.com/dcb-fe/dcb-ui/commit/223f1e84a0a972afffe3765ff3529748d035c6f9))
+
 ### [0.0.6-beta.36](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.35...v0.0.6-beta.36) (2022-01-17)
 
 ### 特性
