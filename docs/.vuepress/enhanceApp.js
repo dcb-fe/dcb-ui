@@ -4,7 +4,9 @@ import ApiTable from './apiTable';
 import ComponentContributors from './componentContributors';
 
 export default ({ Vue, router }) => {
-  window.demos = demos;
+  if (typeof window != 'undefined') {
+    window.demos = demos;
+  }
   const createMobileDemo = to => {
     const mobile = document.getElementById('mobile-demo');
     if (mobile) {
@@ -36,11 +38,13 @@ export default ({ Vue, router }) => {
     mobileDemo.style.height = '100%';
     mobileDemo.style.border = '0';
     mobileDemo.style.zIndex = '1';
-    mobileDemo.src = `${
-      window.location.origin
-    }/dcb-ui/v0/mobile/mobile.html?routerName=${
-      to.fullPath.split('/components/')[1]
-    }`;
+    if (typeof window != 'undefined') {
+      mobileDemo.src = `${
+        window.location.origin
+      }/dcb-ui/v0/mobile/mobile.html?routerName=${
+        to.fullPath.split('/components/')[1]
+      }`;
+    }
     mobileDemoDiv.appendChild(mobileDemoDivMask);
     mobileDemoDiv.appendChild(mobileDemo);
     document.getElementsByClassName('page')[0].style.paddingRight = '425px';

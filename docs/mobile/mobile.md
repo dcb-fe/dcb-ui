@@ -37,17 +37,24 @@
   })
   let getQueryString = (name) => {
     let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-    let r = window.location.search.substr(1).match(reg);
-    if (r != null) {
-      return unescape(r[2]);
+    if(typeof window != 'undefined') {
+      let r = window.location.search.substr(1).match(reg);
+      if (r != null) {
+        return unescape(r[2]);
+      }
     }
     return null;
   }
-  let href = parent.document.getElementById("mobile-demo") ? parent.document.getElementById("mobile-iframe").contentWindow.location.href : window.location.href
-  let nowRoute = href.split('routerName=')[1]
-  let routerName = router[decodeURI(nowRoute)] || getQueryString('routerName')
-  let menuKey = getQueryString('menuKey')
-  let mobileIframe = parent.document.getElementById("mobile-demo")
+  let routerName = '';
+  let menuKey = '';
+  let mobileIframe = '';
+  if(typeof window != 'undefined') {
+    let href = parent.document.getElementById("mobile-demo") ? parent.document.getElementById("mobile-iframe").contentWindow.location.href : window.location.href
+    let nowRoute = href.split('routerName=')[1]
+    routerName = router[decodeURI(nowRoute)] || getQueryString('routerName')
+    menuKey = getQueryString('menuKey')
+    mobileIframe = parent.document.getElementById("mobile-demo")
+  }
   export default {
     name: 'test',
     components: {
@@ -56,8 +63,7 @@
     data() {
       return {
         isIframe: mobileIframe || menuKey ? 1: 0,
-        list,
-        src: '333'
+        list
       }
     },
     mounted() {
@@ -69,7 +75,9 @@
     },
     methods: {
       showDemo (info) {
-        window.location.href = window.location.origin + '/dcb-ui/v0/mobile/mobile.html?&menuKey='+ info.title +'&routerName=' + info.key
+        if(typeof window != 'undefined') {
+          window.location.href = window.location.origin + '/dcb-ui/v0/mobile/mobile.html?&menuKey='+ info.title +'&routerName=' + info.key
+        }
       }
     }
   };
