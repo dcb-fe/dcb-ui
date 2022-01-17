@@ -54,7 +54,11 @@ export default ({ Vue, router }) => {
     return mobileDemoDiv;
   };
   router.beforeEach((to, from, next) => {
-    if (typeof window == 'object') {
+    if (
+      typeof window == 'object' &&
+      to.hash.indexOf('api') === -1 &&
+      to.hash.indexOf('贡献者') === -1
+    ) {
       if (to.name && to.path.indexOf('/components/') !== -1) {
         if (!document.getElementById('mobile-demo')) {
           let timd = '';
@@ -68,7 +72,8 @@ export default ({ Vue, router }) => {
                 .appendChild(createMobileDemo(to));
               clearTimeout(timd);
             } else {
-              add();
+              clearTimeout(timd);
+              timd = setTimeout(() => add(), 500);
             }
           };
           timd = setTimeout(() => add(), 500);
@@ -86,6 +91,14 @@ export default ({ Vue, router }) => {
         to.path.indexOf('/components/') === -1 &&
         to.path.indexOf('/mobile/') === -1
       ) {
+        const mobile = document.getElementById('mobile-demo');
+        if (mobile) {
+          document.getElementsByClassName('page')[0].style.paddingRight = 0;
+          mobile.remove();
+        }
+      }
+    } else {
+      if (typeof window == 'object') {
         const mobile = document.getElementById('mobile-demo');
         if (mobile) {
           document.getElementsByClassName('page')[0].style.paddingRight = 0;

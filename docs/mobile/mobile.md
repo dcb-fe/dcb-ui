@@ -8,7 +8,6 @@
        margin: 0;
        z-index: 999999;
        padding: 16px;
-       border-radius: 12px;
        background: #fff;
        overflow-y: scroll;
        box-sizing: border-box;
@@ -16,9 +15,12 @@
     <demo
       v-if="isIframe"
     ></demo>
-    <ul class="menu-list" v-else>
+    <ul class="menu-list" v-if="!mobileIframe && !isIframe && initTo">
       <li v-for="item in list" @click="showDemo(item)"><span>{{item.title}}</span><d-icon name="arrow_right" /></li>
     </ul>
+    <div class="loading" v-if="mask">
+      <DemoLoadingDirection/>
+    </div>
   </div>
   
 </template>
@@ -35,25 +37,11 @@
       })
     } 
   })
-  let getQueryString = (name) => {
-    let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-    if(typeof window != 'undefined') {
-      let r = window.location.search.substr(1).match(reg);
-      if (r != null) {
-        return unescape(r[2]);
-      }
-    }
-    return null;
-  }
   let routerName = '';
-  let menuKey = '';
-  let mobileIframe = '';
-  if(typeof window != 'undefined') {
+  if(typeof window == 'object') {
     let href = parent.document.getElementById("mobile-demo") ? parent.document.getElementById("mobile-iframe").contentWindow.location.href : window.location.href
     let nowRoute = href.split('routerName=')[1]
-    routerName = router[decodeURI(nowRoute)] || getQueryString('routerName')
-    menuKey = getQueryString('menuKey')
-    mobileIframe = parent.document.getElementById("mobile-demo")
+    routerName = router[decodeURI(nowRoute)]
   }
   export default {
     name: 'test',
@@ -62,20 +50,44 @@
     },
     data() {
       return {
-        isIframe: mobileIframe || menuKey ? 1: 0,
+        initTo: false,
+        mask: true,
+        mobileIframe: '',
+        isIframe: 0,
         list
       }
     },
     mounted() {
       if (typeof window == 'object') {
+        this.mobileIframe = parent.document.getElementById("mobile-demo")
+        this.menuKey = this.getQueryString('menuKey')
+        if (this.mobileIframe || this.menuKey) {
+          this.isIframe = 1
+        }
         let meta = document.createElement('meta')
         meta.name = 'viewport'
         meta.content = 'width=device-width, maximum-scale=1, user-scalable=no'
         document.head.appendChild(meta)
         document.getElementById('mobile').parentNode.parentNode.style.padding = 0
+        this.$nextTick(() => {
+          setTimeout(() => {
+            this.mask = false
+            this.initTo = true
+          }, 200)
+        })
       } 
     },
     methods: {
+      getQueryString (name) {
+        let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        if(typeof window != 'undefined') {
+          let r = window.location.search.substr(1).match(reg);
+          if (r != null) {
+            return unescape(r[2]);
+          }
+        }
+        return null;
+      },
       showDemo (info) {
         if(typeof window != 'undefined') {
           window.location.href = window.location.origin + '/dcb-ui/v0/mobile/mobile.html?&menuKey='+ info.title +'&routerName=' + info.key
@@ -102,5 +114,16 @@
     font-size: 14px;
     line-height: 40px;
     background: #f7f8fa;
+  }
+  #mobile > .loading{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
