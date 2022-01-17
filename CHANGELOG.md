@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.36](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.35...v0.0.6-beta.36) (2022-01-17)
+
+### 特性
+
+- 新增手机预览方式 ([#54](https://github.com/dcb-fe/dcb-ui/issues/54)) ([4ec9369](https://github.com/dcb-fe/dcb-ui/commit/4ec9369e83f37051704e1f360b15d47c1325dd29))
+
 ### [0.0.6-beta.35](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.34...v0.0.6-beta.35) (2021-12-28)
 
 ### 修复
