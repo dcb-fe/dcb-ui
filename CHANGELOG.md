@@ -1,5 +1,12 @@
 # 更新日志
 
+### [0.0.6-beta.39](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.38...v0.0.6-beta.39) (2022-01-17)
+
+### 修复
+
+- 修复模拟手机 ui 体验&解决异常报错问题 ([c0ccc33](https://github.com/dcb-fe/dcb-ui/commit/c0ccc33690fb6488802272fa0de63ffc1bcdc605))
+- 修复 loading demo 样式被全局样式污染 ([4250e5b](https://github.com/dcb-fe/dcb-ui/commit/4250e5b434884442cca0281250a2bc107272f135))
+
 ### [0.0.6-beta.38](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.37...v0.0.6-beta.38) (2022-01-17)
 
 ### 修复
