@@ -1,13 +1,13 @@
 <template>
   <div class="demo-spinner">
-    <d-loading class="custom"></d-loading>
-    <d-loading type="spinner" class="custom"></d-loading>
+    <d-loading class="custom-loading"></d-loading>
+    <d-loading type="spinner" class="custom-loading"></d-loading>
   </div>
 </template>
 
 <style lang="scss" scoped>
   .demo-spinner {
-    .custom {
+    .custom-loading {
       font-size: 24px;
     }
   }

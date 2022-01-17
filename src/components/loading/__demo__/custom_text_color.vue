@@ -1,7 +1,7 @@
 <template>
   <div class="demo-spinner">
-    <d-loading vertical class="custom">加载中...</d-loading>
-    <d-loading type="spinner" vertical class="custom">加载中...</d-loading>
+    <d-loading vertical class="custom-loading">加载中...</d-loading>
+    <d-loading type="spinner" vertical class="custom-loading">加载中...</d-loading>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
   .demo-spinner {
     display: flex;
 
-    .custom {
+    .custom-loading {
       ::v-deep {
         .d-loading-text {
           color: #ff980e;
