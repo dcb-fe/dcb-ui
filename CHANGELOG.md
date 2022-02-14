@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.41](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.39...v0.0.6-beta.41) (2022-02-14)
+
+### 修复
+
+- 图片组件支持 webp 格式预览&icon 组件新增图片 icon ([1ad6109](https://github.com/dcb-fe/dcb-ui/commit/1ad610965711babe9e9b6079d55123bdbc4f1eba))
+
 ### [0.0.6-beta.40](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.39...v0.0.6-beta.40) (2022-02-14)
 
 ### 修复
