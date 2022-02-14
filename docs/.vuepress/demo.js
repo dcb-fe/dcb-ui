@@ -22,6 +22,11 @@ export { default as DemoGoodsActionButtonColor } from '../../src/components/good
 export { default as DemoGoodsActionIconColor } from '../../src/components/goods_action/__demo__/icon_color';
 export { default as DemoIconBasic } from '../../src/components/icon/__demo__/basic';
 export { default as DemoImageBasic } from '../../src/components/image/__demo__/basic';
+export { default as DemoImageError } from '../../src/components/image/__demo__/error';
+export { default as DemoImageFit } from '../../src/components/image/__demo__/fit';
+export { default as DemoImageLoading } from '../../src/components/image/__demo__/loading';
+export { default as DemoImagePosition } from '../../src/components/image/__demo__/position';
+export { default as DemoImageRound } from '../../src/components/image/__demo__/round';
 export { default as DemoLoadingBasic } from '../../src/components/loading/__demo__/basic';
 export { default as DemoLoadingCustomColor } from '../../src/components/loading/__demo__/custom_color';
 export { default as DemoLoadingCustomSize } from '../../src/components/loading/__demo__/custom_size';
