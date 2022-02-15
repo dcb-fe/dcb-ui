@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.6-beta.42](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.41...v0.0.6-beta.42) (2022-02-15)
+
+### 修复
+
+- image 组件在 mac 环境下的浏览器预览支持 webp ([edc698d](https://github.com/dcb-fe/dcb-ui/commit/edc698dbc2d56da66f525114d4931d6abfe1c99a))
+
 ### [0.0.6-beta.41](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.39...v0.0.6-beta.41) (2022-02-14)
 
 ### 修复
