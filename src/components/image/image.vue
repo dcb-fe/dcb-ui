@@ -246,7 +246,8 @@
             } else {
               let [a] = version.replace('Android', '').split('.');
               let isW = version.indexOf('Windows');
-              if (a >= 7 || isW !== -1) {
+              let isMac = version.indexOf('IOS');
+              if (a >= 7 || isW !== -1 || isMac !== -1) {
                 return (
                   this.src +
                   (whiteList.includes(getUrl.exec(this.src)[0])
@@ -265,9 +266,13 @@
                 : this.src;
             } else {
               let [a] = version.replace('Android', '').split('.');
-              return a >= 7
-                ? this.src
-                : this.src + '?x-oss-process=image/format,png';
+              let isW = version.indexOf('Windows');
+              let isMac = version.indexOf('IOS');
+              if (a >= 7 || isW !== -1 || isMac !== -1)  {
+                return this.src
+              } else {
+                return this.src + '?x-oss-process=image/format,png'
+              }
             }
           } else {
             return this.src;
