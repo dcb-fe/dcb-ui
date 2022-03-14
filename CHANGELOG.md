@@ -1,5 +1,7 @@
 # 更新日志
 
+### [0.0.6](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.42...v0.0.6) (2022-03-14)
+
 ### [0.0.6-beta.42](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.41...v0.0.6-beta.42) (2022-02-15)
 
 ### 修复
