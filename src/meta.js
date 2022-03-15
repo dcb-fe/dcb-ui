@@ -29,6 +29,7 @@ export const meta = {
           { name: 'Switch', cname: '开关' },
           { name: 'Radio', cname: '单选框' },
           { name: 'DatetimePicker', cname: '时间选择' },
+          { name: 'Field', cname: '输入框' },
         ],
       },
       {
