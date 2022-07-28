@@ -59,6 +59,11 @@
         required: true,
         desc: '图片链接',
       },
+      transformWebP: {
+        type: Boolean,
+        default: true,
+        desc: '转换webp格式',
+      },
       position: {
         type: String,
         default: 'center',
@@ -230,6 +235,12 @@
             'assets.gogpay.cn',
             'cdn-resource.gogpay.cn',
           ];
+          if (!this.transformWebP) { // 不转webp
+            if (/\.webp$|/.test(this.src)) {
+              return this.src.split('!webp')[0]
+            }
+            return this.src
+          }
           if (/\.jpg$|.png$|.jpeg$|.gif$/.test(this.src)) {
             if (isIOS) {
               let [a] = version.replace('IOS', '').split('.');
@@ -262,7 +273,7 @@
             if (isIOS) {
               let [a] = version.replace('IOS', '').split('.');
               return a < 14
-                ? this.src + '?x-oss-process=image/format,png'
+                ? this.src.split('!webp')[0]
                 : this.src;
             } else {
               let [a] = version.replace('Android', '').split('.');
@@ -271,7 +282,7 @@
               if (a >= 7 || isW !== -1 || isMac !== -1)  {
                 return this.src
               } else {
-                return this.src + '?x-oss-process=image/format,png'
+                return this.src.split('!webp')[0]
               }
             }
           } else {
