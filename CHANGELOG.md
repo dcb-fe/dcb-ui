@@ -1,5 +1,12 @@
 # 更新日志
 
+### [0.0.7](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6...v0.0.7) (2022-07-28)
+
+### 修复
+
+- 升级 vue 版本到 2.6.14 ([06440e2](https://github.com/dcb-fe/dcb-ui/commit/06440e2eb7f4c38b63df3ac40d7ea3b52d90b378))
+- 图片组件增加 transformWebP 入参，默认支持转换 webp 格式图片 ([631b660](https://github.com/dcb-fe/dcb-ui/commit/631b660d5a5c6ded67054919f3277b3205ac7fc6))
+
 ### [0.0.6](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.42...v0.0.6) (2022-03-14)
 
 ### [0.0.6-beta.42](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6-beta.41...v0.0.6-beta.42) (2022-02-15)
