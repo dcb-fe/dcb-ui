@@ -97,8 +97,7 @@ export default {
   'steps.html#垂直渲染': 'DemoStepsVertical',
   'nav_bar.html': 'DemoNavBarBasic',
   'nav_bar.html#基础渲染': 'DemoNavBarBasic',
-  'nav_bar.html#使用文字按钮': 'DemoNavBarText',
-  'nav_bar.html#使用分享和关闭': 'DemoNavBarSlot',
+  'nav_bar.html#使用按钮-icon': 'DemoNavBarSlot',
   'nav_bar.html#使用搜索': 'DemoNavBarSearch',
   'nav_bar.html#自定义颜色': 'DemoNavBarCustom',
 };

@@ -1,368 +1,424 @@
 <template>
-  <i :class="[_.icon, _[name]]" v-bind="$attrs" v-on="$listeners" />
+  <i :class="[_.icon, _[name]]" v-bind="$attrs" v-on="$listeners"/>
 </template>
 
 <script>
-  import { defineComponent } from '@/utils';
+import {defineComponent} from '@/utils';
 
-  const icons = [
-    'arrow_right',
-    'select',
-    'plus',
-    'minus',
-    'search_eliminate',
-    'keyboard',
-    'backspace',
-    'add',
-    'camera',
-    'calendar',
-    'close',
-    'clock',
-    'cart',
-    'copy',
-    'closed_eye',
-    'eye',
-    'coupon',
-    'edit',
-    'delete',
-    'feedback',
-    'good_job',
-    'more',
-    'like',
-    'fire',
-    'location',
-    'home',
-    'link',
-    'notice',
-    'qr_code',
-    'picture',
-    'popup_close',
-    'order',
-    'return',
-    'refresh',
-    'search',
-    'scan',
-    'service',
-    'star',
-    'telephone',
-    'setting',
-    'user_circle',
-    'theme_color',
-    'copy_fill',
-    'cart_fill',
-    'edit_fill',
-    'calendar_fill',
-    'coupon_fill',
-    'like_fill',
-    'eye_fill',
-    'home_fill',
-    'good_job_fill',
-    'location_fill',
-    'fire_fill',
-    'qr_code_fill',
-    'theme_color_fill',
-    'setting_fill',
-    'delete_fill',
-    'telephone_fill',
-    'user_circle_fill',
-    'camera_fill',
-    'star_fill',
-    'notice_fill',
-    'picture_split',
-  ];
+const icons = [
+  'share',
+  'select',
+  'plus',
+  'minus',
+  'search_eliminate',
+  'keyboard',
+  'backspace',
+  'add',
+  'camera',
+  'calendar',
+  'close',
+  'clock',
+  'cart',
+  'copy',
+  'closed_eye',
+  'eye',
+  'coupon',
+  'edit',
+  'delete',
+  'feedback',
+  'good_job',
+  'more',
+  'like',
+  'fire',
+  'location',
+  'home',
+  'link',
+  'notice',
+  'code',
+  'picture',
+  'order',
+  'return',
+  'arrow_right',
+  'arrow_up',
+  'arrow_down',
+  'refresh',
+  'search',
+  'scan',
+  'service',
+  'star',
+  'telephone',
+  'setting',
+  'user_circle',
+  'theme_color',
+  'copy_fill',
+  'cart_fill',
+  'edit_fill',
+  'calendar_fill',
+  'coupon_fill',
+  'like_fill',
+  'eye_fill',
+  'home_fill',
+  'good_job_fill',
+  'location_fill',
+  'fire_fill',
+  'qr_code_fill',
+  'theme_color_fill',
+  'setting_fill',
+  'delete_fill',
+  'telephone_fill',
+  'user_circle_fill',
+  'camera_fill',
+  'star_fill',
+  'notice_fill',
+  'picture_split',
+];
 
-  export default defineComponent({
-    name: 'Icon',
+export default defineComponent({
+  name: 'Icon',
 
-    inheritAttrs: false,
+  inheritAttrs: false,
 
-    props: {
-      name: {
-        type: String,
-        enum: icons,
-        required: true,
-        desc: '图标名称',
-      },
+  props: {
+    name: {
+      type: String,
+      enum: icons,
+      required: true,
+      desc: '图标名称',
     },
+  },
 
-    emits: {
-      click: {
-        desc: '点击时触发',
-        payload: {
-          e: {
-            type: Object,
-            desc: '事件对象',
-          },
+  emits: {
+    click: {
+      desc: '点击时触发',
+      payload: {
+        e: {
+          type: Object,
+          desc: '事件对象',
         },
       },
     },
-  });
+  },
+});
 </script>
 
 <style lang="scss" module>
-  @font-face {
-    font-family: 'd-icon';  /* Project id 2653829 */
-    src: url('//at.alicdn.com/t/font_2653829_02gmdv30kq5i.woff2?t=1644568286048') format('woff2');
-  }
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'd-icon';  /* Project id 2653829 */
+  src: url('//at.alicdn.com/t/c/font_2653829_7nuad0nkt36.woff2?t=1660727568979') format('woff2');
+}
 
-  .icon {
-    display: inline-block;
-    font-family: 'd-icon' !important;
-    font-style: normal;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+.icon {
+  display: inline-block;
+  font-family: 'd-icon' !important;
+  font-style: normal;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .arrow_right:before {
-    content: "\e74b";
-  }
+.close:before {
+  content: "\e647";
+}
 
-  .select:before {
-    content: "\e74a";
-  }
+.return:before {
+  content: "\e648";
+}
 
-  .plus:before {
-    content: "\e748";
-  }
+.arrow_right:before {
+  content: "\e648";
+  display: inline-block;
+  transform: rotate(180deg);
+}
 
-  .minus:before {
-    content: "\e749";
-  }
+.arrow_up:before {
+  @extend .arrow_right;
+  transform: rotate(90deg);
+}
 
-  .search_eliminate:before {
-    content: "\e747";
-  }
+.arrow_down:before {
+  @extend .arrow_right;
+  transform: rotate(-90deg);
+}
 
-  .backspace:before {
-    content: "\e746";
-  }
+.search:before {
+  content: "\e649";
+}
 
-  .keyboard:before {
-    content: "\e745";
-  }
+.more:before {
+  content: "\e64a";
+}
 
-  .add:before {
-    content: "\e722";
-  }
+.arroi:before {
+  content: "\e64b";
+}
 
-  .camera:before {
-    content: "\e723";
-  }
+.copy_fill:before {
+  content: "\e64c";
+}
 
-  .calendar:before {
-    content: "\e724";
-  }
+.coupon_fill:before {
+  content: "\e64d";
+}
 
-  .close:before {
-    content: "\e725";
-  }
+.cart_fill:before {
+  content: "\e64e";
+}
 
-  .clock:before {
-    content: "\e726";
-  }
+.delete_fill:before {
+  content: "\e64f";
+}
 
-  .cart:before {
-    content: "\e727";
-  }
+.like_fill:before {
+  content: "\e673";
+}
 
-  .copy:before {
-    content: "\e728";
-  }
+.location_fill:before {
+  content: "\e651";
+}
 
-  .closed_eye:before {
-    content: "\e729";
-  }
+.fire_fill:before {
+  content: "\e652";
+}
 
-  .eye:before {
-    content: "\e72a";
-  }
+.good_job_fill:before {
+  content: "\e653";
+}
 
-  .coupon:before {
-    content: "\e72b";
-  }
+.eye_fill:before {
+  content: "\e654";
+}
 
-  .edit:before {
-    content: "\e72c";
-  }
+.user_circle_fill:before {
+  content: "\e655";
+}
 
-  .delete:before {
-    content: "\e72d";
-  }
+.home_fill:before {
+  content: "\e656";
+}
 
-  .feedback:before {
-    content: "\e72e";
-  }
+.notice_fill:before {
+  content: "\e657";
+}
 
-  .good_job:before {
-    content: "\e72f";
-  }
+.star_fill:before {
+  content: "\e67e";
+}
 
-  .more:before {
-    content: "\e730";
-  }
+.setting_fill:before {
+  content: "\e659";
+}
 
-  .like:before {
-    content: "\e731";
-  }
+.calendar_fill:before {
+  content: "\e65a";
+}
 
-  .fire:before {
-    content: "\e732";
-  }
+.edit_fill:before {
+  content: "\e65b";
+}
 
-  .location:before {
-    content: "\e733";
-  }
+.telephone_fill:before {
+  content: "\e65c";
+}
 
-  .home:before {
-    content: "\e734";
-  }
+.business:before {
+  content: "\e65d";
+}
 
-  .link:before {
-    content: "\e735";
-  }
+.camera_fill:before {
+  content: "\e65e";
+}
 
-  .notice:before {
-    content: "\e736";
-  }
+.qr_code_fill:before {
+  content: "\e65f";
+}
 
-  .qr_code:before {
-    content: "\e737";
-  }
+.theme_color_fill:before {
+  content: "\e660";
+}
 
-  .picture:before {
-    content: "\e738";
-  }
+.a-bankcard:before {
+  content: "\e661";
+}
 
-  .popup_close:before {
-    content: "\e739";
-  }
+.clock:before {
+  content: "\e662";
+}
 
-  .order:before {
-    content: "\e73a";
-  }
+.camera:before {
+  content: "\e663";
+}
 
-  .return:before {
-    content: "\e73b";
-  }
+.closed_eye:before {
+  content: "\e664";
+}
 
-  .refresh:before {
-    content: "\e73c";
-  }
+.coupon:before {
+  content: "\e665";
+}
 
-  .search:before {
-    content: "\e73d";
-  }
+.copy:before {
+  content: "\e666";
+}
 
-  .scan:before {
-    content: "\e73e";
-  }
+.code:before {
+  content: "\e667";
+}
 
-  .service:before {
-    content: "\e73f";
-  }
+.eye:before {
+  content: "\e668";
+}
 
-  .star:before {
-    content: "\e740";
-  }
+.calendar:before {
+  content: "\e669";
+}
 
-  .telephone:before {
-    content: "\e741";
-  }
+.edit:before {
+  content: "\e658";
+}
 
-  .setting:before {
-    content: "\e742";
-  }
+.business1:before {
+  content: "\e66b";
+}
 
-  .user_circle:before {
-    content: "\e743";
-  }
+.delete:before {
+  content: "\e66c";
+}
 
-  .theme_color:before {
-    content: "\e744";
-  }
+.home:before {
+  content: "\e66d";
+}
 
-  .copy_fill:before {
-    content: "\e70e";
-  }
+.feedback:before {
+  content: "\e66e";
+}
 
-  .cart_fill:before {
-    content: "\e70f";
-  }
+.like:before {
+  content: "\e66f";
+}
 
-  .edit_fill:before {
-    content: "\e710";
-  }
+.location:before {
+  content: "\e670";
+}
 
-  .calendar_fill:before {
-    content: "\e711";
-  }
+.notice:before {
+  content: "\e671";
+}
 
-  .coupon_fill:before {
-    content: "\e712";
-  }
+.good_job:before {
+  content: "\e672";
+}
 
-  .like_fill:before {
-    content: "\e713";
-  }
+.a-IDcard:before {
+  content: "\e674";
+}
 
-  .eye_fill:before {
-    content: "\e714";
-  }
+.fire:before {
+  content: "\e675";
+}
 
-  .home_fill:before {
-    content: "\e715";
-  }
+.picture:before {
+  content: "\e676";
+}
 
-  .good_job_fill:before {
-    content: "\e716";
-  }
+.order:before {
+  content: "\e677";
+}
 
-  .location_fill:before {
-    content: "\e717";
-  }
+.link:before {
+  content: "\e678";
+}
 
-  .fire_fill:before {
-    content: "\e718";
-  }
+.refresh:before {
+  content: "\e679";
+}
 
-  .qr_code_fill:before {
-    content: "\e719";
-  }
+.security:before {
+  content: "\e67a";
+}
 
-  .theme_color_fill:before {
-    content: "\e71a";
-  }
+.shopping:before {
+  content: "\e67b";
+}
 
-  .setting_fill:before {
-    content: "\e71b";
-  }
+.scan:before {
+  content: "\e67c";
+}
 
-  .delete_fill:before {
-    content: "\e71c";
-  }
+.share:before {
+  content: "\e67d";
+}
 
-  .telephone_fill:before {
-    content: "\e71d";
-  }
+.star:before {
+  content: "\e66a";
+}
 
-  .user_circle_fill:before {
-    content: "\e71e";
-  }
+.service:before {
+  content: "\e67f";
+}
 
-  .camera_fill:before {
-    content: "\e71f";
-  }
+.add:before {
+  content: "\e680";
+}
 
-  .star_fill:before {
-    content: "\e720";
-  }
+.theme_color:before {
+  content: "\e681";
+}
 
-  .notice_fill:before {
-    content: "\e721";
-  }
-  .picture_split:before {
-    content: "\e74d";
-  }
+.user_circle:before {
+  content: "\e682";
+}
+
+.vip:before {
+  content: "\e683";
+}
+
+.talk:before {
+  content: "\e684";
+}
+
+.telephone:before {
+  content: "\e685";
+}
+
+.alarm:before {
+  content: "\e686";
+}
+
+.cart:before {
+  content: "\e687";
+}
+
+.setting:before {
+  content: "\e689";
+}
+
+.picture_split:before {
+  content: "\e74d";
+}
+
+.select:before {
+  content: "\e74a";
+}
+
+.plus:before {
+  content: "\e748";
+}
+
+.minus:before {
+  content: "\e749";
+}
+
+.search_eliminate:before {
+  content: "\e747";
+}
+
+.backspace:before {
+  content: "\e746";
+}
+
+.keyboard:before {
+  content: "\e745";
+}
 </style>

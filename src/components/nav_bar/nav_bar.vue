@@ -14,7 +14,7 @@
 
     <div :class="[search ? _.search_content : _.content]">
       <div :class="_.content_left" @click.stop="handleBack">
-        <d-icon name="return" :class="_.icon" :style="styleGetter" />
+        <d-icon name="return" :class="_.icon" :style="styleGetter"/>
         <div v-if="leftText" :class="_.content_left_text">
           {{ leftText }}
         </div>
@@ -23,13 +23,50 @@
       <slot>
         <template v-if="!search">
           <div :class="[_.content_title, 'text-ellipsis']" :style="styleGetter">
-            {{ title }}
+            <template v-if="title">
+              {{ title }}
+            </template>
+            <slot name="tab" v-else>
+              <div :class="_.content_head_tab">
+                <template>
+                  <span
+                    v-for="(item, index) in tabS"
+                    ref="tabs"
+                    :class="[
+                      activeTab === index && _.content_head_tab_active,
+                      _.content_head_tab_item,
+                    ]"
+                    :key="'tab-' + index"
+                  ><a @click="selectTab(index, $event)">{{ item }}</a></span
+                  >
+                  <span
+                    ref="activeLine"
+                    :class="_.content_head_tab_active_line"
+                    v-if="tab.length"
+                  ></span>
+                </template>
+              </div>
+            </slot>
           </div>
 
           <div :class="_.content_right">
             <slot name="action">
               <d-icon
+                v-if="service"
+                :class="_.icon"
+                :style="styleGetter"
+                @click.stop="handleService"
+                name="service"
+              />
+              <d-icon
                 v-if="share"
+                :class="_.icon"
+                :style="styleGetter"
+                @click.stop="handleShare"
+                name="share"
+              />
+              <d-icon
+                v-if="more"
                 name="more"
                 :class="[_.icon, _.icon_share]"
                 :style="styleGetter"
@@ -37,7 +74,7 @@
               />
               <d-icon
                 v-if="close"
-                name="popup_close"
+                name="close"
                 :class="_.icon"
                 :style="styleGetter"
                 @click.stop="handleClose"
@@ -47,31 +84,62 @@
         </template>
 
         <template v-else>
-          <div
-            :class="_.search_content_bar"
-            :style="{ backgroundColor: searchBgColor }"
-            @click.stop="handleSearch"
+          <a
+            :style="styleGetter"
+            v-if="site"
+            :class="_.search_site"
+            @click="selectSite"
           >
-            <d-icon name="search" :style="styleGetter" />
-
-            <span :style="styleGetter">{{ placeholder }}</span>
-          </div>
+            <span :class="_.search_site_txt">{{ site }}</span>
+            <d-icon name="arroi" :style="styleGetter"/>
+          </a>
+          <slot name="search">
+            <div
+              :class="_.search_content_bar"
+              :style="{ backgroundColor: searchBgColor }"
+              @click.stop="handleSearch"
+            >
+              <d-icon name="search" :style="styleGetter"/>
+              <span v-if="shamSearch" :style="styleGetter">{{
+                  placeholder
+                }}</span>
+              <input
+                v-model="searchVal"
+                @blur="$emit('searchBlur')"
+                @focus="$emit('searchFocus')"
+                @keydown="keydown"
+                v-else
+                :style="styleGetter"
+                :placeholder="placeholder"
+              />
+            </div>
+          </slot>
         </template>
       </slot>
     </div>
+    <d-area
+      v-model="siteOption.visible"
+      :province="siteOption.province"
+      :city="siteOption.city"
+      :country="siteOption.country"
+      @confirm="data => $emit('areaConfirm', data)"
+      @onChange="data => $emit('areaChange', data)"
+    />
   </div>
 </template>
 
 <script>
 import DIcon from '../icon/icon';
-import { defineComponent } from '@/utils';
-import { isIOS, isAndroid } from '../../utils/validate/system';
+import {defineComponent} from '@/utils';
+import {isIOS, isAndroid} from '../../utils/validate/system';
+import DArea from '../area/area';
 
 export default defineComponent({
   name: 'NavBar',
 
   components: {
     DIcon,
+    DArea,
   },
 
   props: {
@@ -79,6 +147,12 @@ export default defineComponent({
       type: String,
       default: '',
       desc: '导航标题',
+    },
+
+    tab: {
+      type: Array,
+      default: () => [],
+      desc: 'tab菜单，最多只能放2个',
     },
 
     leftText: {
@@ -98,6 +172,44 @@ export default defineComponent({
       default: false,
       desc: '是否展示搜索',
     },
+    shamSearch: {
+      type: Boolean,
+      default: true,
+      desc: '是否展示虚假输入框',
+    },
+
+    site: {
+      type: String,
+      default: '',
+      desc: '是否展示搜索',
+    },
+    siteOption: {
+      type: Object,
+      default: () => {
+        return {
+          visible: false,
+          addressText: '',
+          province: [
+            {districtCode: 1, districtSimpleName: '北京'},
+            {districtCode: 2, districtSimpleName: '广西'},
+            {districtCode: 3, districtSimpleName: '江西'},
+            {districtCode: 4, districtSimpleName: '岫岩满族自治县'},
+          ], // 省
+          city: [
+            {districtCode: 7, districtSimpleName: '朝阳区'},
+            {districtCode: 8, districtSimpleName: '崇文区'},
+            {districtCode: 9, districtSimpleName: '昌平区'},
+            {districtCode: 6, districtSimpleName: '岫岩满族自治县'},
+          ], // 市
+          country: [
+            {districtCode: 3, districtSimpleName: '八里庄街道'},
+            {districtCode: 9, districtSimpleName: '北苑'},
+            {districtCode: 4, districtSimpleName: '岫岩满族自治县'},
+          ], // 县
+        };
+      },
+      desc: '地址配置项',
+    },
 
     placeholder: {
       type: String,
@@ -109,6 +221,16 @@ export default defineComponent({
       type: Boolean,
       default: false,
       desc: '是否展示分享',
+    },
+    more: {
+      type: Boolean,
+      default: false,
+      desc: '是否展示更多',
+    },
+    service: {
+      type: Boolean,
+      default: false,
+      desc: '是否展示客服',
     },
 
     close: {
@@ -147,56 +269,70 @@ export default defineComponent({
       desc: '自定义导航',
     },
 
+    tab: {
+      desc: '自定义title位置的标题（当title传值了此插槽不生效）',
+    },
+
     action: {
       desc: '自定义操作',
+    },
+
+    search: {
+      desc: '自定义搜索栏',
     },
   },
 
   emits: {
     back: {
       desc: '返回',
-      payload: {
-        e: {
-          type: Object,
-          desc: '事件对象',
-        },
-      },
     },
 
     close: {
       desc: '关闭',
-      payload: {
-        e: {
-          type: Object,
-          desc: '事件对象',
-        },
-      },
     },
 
     share: {
       desc: '分享',
-      payload: {
-        e: {
-          type: Object,
-          desc: '事件对象',
-        },
-      },
     },
 
     search: {
-      desc: '点击跳转分享',
+      desc: 'shamSearch为true时无返回值，反之则返回当前input中的value',
+    },
+    searchBlur: {
+      desc: '搜索失去焦点',
       payload: {
-        e: {
+        event: {
           type: Object,
-          desc: '事件对象',
+          desc: 'event',
+        },
+      },
+    },
+    searchFocus: {
+      desc: '搜索获取焦点',
+      payload: {
+        event: {
+          type: Object,
+          desc: 'event',
+        },
+      },
+    },
+    searchChange: {
+      desc: '搜索value值改变',
+      payload: {
+        value: {
+          type: String,
+          desc: '当前的搜索值',
         },
       },
     },
   },
 
   computed: {
+    tabS() {
+      return this.tab.length > 2 ? this.tab.splice(0, 2) : this.tab;
+    },
     styleGetter() {
-      return { color: this.background ? '#fff' : '' };
+      return {color: this.background ? '#fff' : ''};
     },
 
     _isIos() {
@@ -207,8 +343,36 @@ export default defineComponent({
       return isAndroid();
     },
   },
+  data() {
+    return {
+      searchVal: '',
+      activeTab: 0,
+    };
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      if (this.tab.length) {
+        this.setTabActive(this.$refs.tabs[0]);
+      }
+    });
+  },
+  watch: {
+    searchVal(v) {
+      this.$emit('searchChange', v);
+    },
+  },
 
   methods: {
+    keydown(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        this.$emit('search', this.searchVal);
+      }
+    },
+    selectSite() {
+      this.siteOption.visible = true;
+    },
     handleBack() {
       this.$emit('back');
     },
@@ -216,13 +380,30 @@ export default defineComponent({
     handleShare() {
       this.$emit('share');
     },
+    handleService() {
+      this.$emit('service');
+    },
 
     handleClose() {
       this.$emit('close');
     },
 
     handleSearch() {
-      this.$emit('search');
+      if (this.shamSearch) {
+        this.$emit('search');
+      }
+    },
+    setTabActive(parentNode) {
+      // 设置选中的tab
+      const x =
+        getComputedStyle(parentNode)['width'].split('px')[0] / 2 +
+        parentNode.offsetLeft;
+      this.$refs.activeLine.style.transform = `translateX(${x}px) translateX(-50%)`;
+    },
+    selectTab(index, event) {
+      this.setTabActive(event.target.parentNode);
+      this.activeTab = index;
+      this.$emit('tabIndex', index);
     },
   },
 });
@@ -288,6 +469,7 @@ export default defineComponent({
     display: grid;
     grid-template-columns: 82px 1fr 82px;
     align-items: center;
+    overflow: hidden;
 
     &_left {
       padding-left: 12px;
@@ -312,6 +494,11 @@ export default defineComponent({
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+
+      img {
+        width: 100%;
+        object-fit: none;
+      }
     }
 
     &_right {
@@ -319,6 +506,96 @@ export default defineComponent({
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
+      i {
+        & + i {
+          margin-left: 16px;
+        }
+      }
+    }
+
+    &_head_tab {
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      &_item {
+        position: relative;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 6px;
+        cursor: pointer;
+        text-decoration: none;
+        outline: none;
+
+        a {
+          font-size: 18px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          line-height: 25px;
+          color: #666666;
+
+          &:hover {
+            text-decoration: none !important;
+          }
+        }
+      }
+
+      &_active {
+        a {
+          font-weight: bold !important;
+          color: #333333 !important;
+        }
+
+        //&::after {
+        //  content: '';
+        //  position: absolute;
+        //  width: 100%;
+        //  background: #ff960a;
+        //  border-radius: 2px;
+        //  height: 4px;
+        //  left: 0;
+        //  bottom: -8px;
+        //}
+
+        &_line {
+          position: absolute;
+          width: 40px;
+          background: #ff960a;
+          border-radius: 2px;
+          height: 4px;
+          left: 0;
+          bottom: 0;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+  }
+
+  .search_site {
+    margin-left: 4px;
+    font-size: 16px;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: bold;
+    color: #333333;
+    line-height: 22px;
+    display: flex;
+
+    &_txt {
+      display: inline-block;
+      max-width: 64px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      text-decoration: none !important;
     }
   }
 
@@ -351,6 +628,24 @@ export default defineComponent({
         font-size: 14px;
         height: 22px;
         line-height: 22px;
+      }
+
+      input {
+        width: 100%;
+        font-family: inherit; /* 1 */
+        margin: 0; /* 2 */
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(255, 0, 0, 0); // 移除移动端阴影
+        border: 0;
+        background: none;
+        padding-left: 4px;
+        outline: none;
+
+        &::placeholder {
+          font-size: 14px;
+          height: 22px;
+          line-height: 22px;
+        }
       }
     }
   }
