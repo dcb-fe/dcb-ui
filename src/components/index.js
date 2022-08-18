@@ -6,6 +6,7 @@ export { default as Badge } from './badge/badge';
 export { default as Button } from './button/button';
 export { default as Cell } from './cell/cell';
 export { default as DatetimePicker } from './datetime_picker/datetime_picker';
+export { default as Field } from './field/field';
 export { default as GoodsActionButton } from './goods_action_button/goods_action_button';
 export { default as GoodsActionIcon } from './goods_action_icon/goods_action_icon';
 export { default as GoodsAction } from './goods_action/goods_action';

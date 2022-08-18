@@ -16,7 +16,7 @@
             <a
               :href="`/components/${snakeCase(item.name)}.html`"
               :key="item.name"
-              @click.prevent="handleClick(item)">
+              @click.prevent="handleClick()">
               {{ item.name }}
             </a>
             <span :class="$style.divider" :key="item.name">,</span>
