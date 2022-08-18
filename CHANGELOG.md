@@ -1,5 +1,12 @@
 # 更新日志
 
+### [0.0.8-beta.0](https://github.com/dcb-fe/dcb-ui/compare/v0.0.7...v0.0.8-beta.0) (2022-08-18)
+
+### 修复
+
+- 导航栏增加若干种使用场景 ([a054080](https://github.com/dcb-fe/dcb-ui/commit/a05408062f49e5357f7a7bd15b2e0b6772af4976))
+- icon 组件更新 ([04d7e09](https://github.com/dcb-fe/dcb-ui/commit/04d7e09e067edb5fd2c8b2816ef5007cc899652d))
+
 ### [0.0.7](https://github.com/dcb-fe/dcb-ui/compare/v0.0.6...v0.0.7) (2022-07-28)
 
 ### 修复
