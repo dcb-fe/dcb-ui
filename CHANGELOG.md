@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.8-beta.1](https://github.com/dcb-fe/dcb-ui/compare/v0.0.8-beta.0...v0.0.8-beta.1) (2022-08-19)
+
+### 修复
+
+- 适配安卓刘海屏安全区 ([68eeefb](https://github.com/dcb-fe/dcb-ui/commit/68eeefbe1c2faa61d90ea42a9ff47b18fbdb20e9))
+
 ### [0.0.8-beta.0](https://github.com/dcb-fe/dcb-ui/compare/v0.0.7...v0.0.8-beta.0) (2022-08-18)
 
 ### 修复
