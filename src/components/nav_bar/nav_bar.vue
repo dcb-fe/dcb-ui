@@ -7,8 +7,9 @@
       v-if="safeTop"
       :class="[
         _.state,
-        _isIos && search && _.ios_safe_top,
-        _isAndroid && search && _.android_safe_top,
+        _isIos && _.ios_safe_top,
+        _isAndroid && _.android_safe_top,
+        _isAndroid && judgeBigScreen() && _.android_safe_top_full,
       ]"
     ></div>
 
@@ -296,7 +297,7 @@ export default defineComponent({
     },
 
     search: {
-      desc: 'shamSearch为true时无返回值，反之则返回当前input中的value',
+      desc: 'shamSearch为true时无返回值，反之则返回当前input中的value（回车事件也会触发该方法）',
     },
     searchBlur: {
       desc: '搜索失去焦点',
@@ -364,6 +365,9 @@ export default defineComponent({
   },
 
   methods: {
+    judgeBigScreen() {
+      return window.screen.height === window.outerHeight; // true 刘海屏
+    },
     keydown(event) {
       if (event.keyCode === 13) {
         event.preventDefault();
@@ -410,26 +414,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" module>
-// 安全区域变量初始化
-// :root {
-//   --safe-area-inset-top: 24px;
-//   --safe-area-inset-right: 0px;
-//   --safe-area-inset-bottom: 0px;
-//   --safe-area-inset-left: 0px;
-//   @supports (top: constant(safe-area-inset-top)) and (padding: Max(10px, 20px)) {
-//     --safe-area-inset-top: Max(constant(safe-area-inset-top), 24px);
-//     --safe-area-inset-right: constant(safe-area-inset-right);
-//     --safe-area-inset-bottom: constant(safe-area-inset-bottom);
-//     --safe-area-inset-left: constant(safe-area-inset-left);
-//   }
-//   @supports (top: env(safe-area-inset-top)) and (padding: Max(10px, 20px)) {
-//     --safe-area-inset-top: Max(env(safe-area-inset-top), 24px);
-//     --safe-area-inset-right: env(safe-area-inset-right);
-//     --safe-area-inset-bottom: env(safe-area-inset-bottom);
-//     --safe-area-inset-left: env(safe-area-inset-left);
-//   }
-// }
-
 .nav_bar {
   background-color: #fff;
   width: 100%;
@@ -450,16 +434,23 @@ export default defineComponent({
 
   .state {
     box-sizing: border-box;
-    height: 24px;
-    padding-top: calc(var(--safe-area-inset-top));
   }
 
   .ios_safe_top {
-    padding-top: Max(20px, var(--safe-area-inset-top));
+    @supports (-webkit-touch-callout: none) {
+      /*针对IOS的css*/
+      padding-top: constant(safe-area-inset-top);
+      padding-top: env(safe-area-inset-top);
+    }
   }
 
   .android_safe_top {
-    padding-top: 30px;
+    padding-top: 40px;
+  }
+
+  .android_safe_top_full {
+    // 全面屏
+    padding-top: 25px;
   }
 
   .content {
