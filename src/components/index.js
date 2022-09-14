@@ -12,6 +12,7 @@ export { default as GoodsAction } from './goods_action/goods_action';
 export { default as Icon } from './icon/icon';
 export { default as Image } from './image/image';
 export { default as Loading } from './loading/loading';
+export { default as NavBarPage } from './nav_bar_page/nav_bar_page';
 export { default as NavBar } from './nav_bar/nav_bar';
 export { default as Notify } from './notify/notify';
 export { default as NumberKeyboard } from './number_keyboard/number_keyboard';

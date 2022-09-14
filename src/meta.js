@@ -50,20 +50,22 @@ export const meta = {
           { name: 'SubmitBar', cname: '提交订单栏' },
         ],
       },
-
       {
         title: '展示组件',
         list: [
           { name: 'Skeleton', cname: '骨架屏' },
           { name: 'Badge', cname: '徽标' },
           { name: 'Swipe', cname: '轮播' },
-          // { name: 'SwipeItem', cname: '轮播项' },
           { name: 'Steps', cname: '步骤条' },
-          // { name: 'Step', cname: '步骤项' },
         ],
       },
-
-      { title: '导航组件', list: [{ name: 'NavBar', cname: '导航栏' }] },
+      {
+        title: '导航组件',
+        list: [
+          { name: 'NavBar', cname: '导航栏' },
+          { name: 'NavBarPage', cname: '滑动渐变导航栏页面' },
+        ],
+      },
     ],
   // 分组结束
 };
