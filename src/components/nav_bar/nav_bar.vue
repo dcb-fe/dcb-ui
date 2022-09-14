@@ -245,6 +245,11 @@ export default defineComponent({
       default: '',
       desc: '导航背景色',
     },
+    color: {
+      type: String,
+      default: '',
+      desc: '导航栏文案/icon颜色',
+    },
 
     searchBgColor: {
       type: String,
@@ -333,7 +338,7 @@ export default defineComponent({
       return this.tab.length > 2 ? this.tab.splice(0, 2) : this.tab;
     },
     styleGetter() {
-      return {color: this.background ? '#fff' : ''};
+      return {color: this.color ? this.color : (this.background ? '#fff' : '')};
     },
 
     _isIos() {
