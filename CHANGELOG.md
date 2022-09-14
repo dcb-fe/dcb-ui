@@ -1,5 +1,15 @@
 # 更新日志
 
+### [0.0.8-beta.2](https://github.com/dcb-fe/dcb-ui/compare/v0.0.8-beta.1...v0.0.8-beta.2) (2022-09-14)
+
+### 修复
+
+- 导航栏增加 color 属性，支持动态修改文案/icon 颜色 ([9afdd72](https://github.com/dcb-fe/dcb-ui/commit/9afdd7257b115e8edafe831ca7cf800e6ece11fd))
+
+### 特性
+
+- 新增滑动渐变导航栏页面组件 ([945775e](https://github.com/dcb-fe/dcb-ui/commit/945775e6138bcf20f7110f018ed3b41d9f859f73))
+
 ### [0.0.8-beta.1](https://github.com/dcb-fe/dcb-ui/compare/v0.0.8-beta.0...v0.0.8-beta.1) (2022-08-19)
 
 ### 修复
