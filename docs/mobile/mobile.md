@@ -7,7 +7,6 @@
        top: 0;
        margin: 0;
        z-index: 999999;
-       padding: 16px;
        background: #fff;
        overflow-y: scroll;
        box-sizing: border-box;
