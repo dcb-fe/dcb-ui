@@ -45,7 +45,9 @@ const props = () => {
 };
 export default defineComponent({
   name: 'NavBarPage',
-  comments: {DNavBar},
+  components: {
+    DNavBar
+  },
   props: {
     ...props(),
     showNavBar: {
