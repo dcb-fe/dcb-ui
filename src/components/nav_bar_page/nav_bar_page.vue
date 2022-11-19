@@ -1,8 +1,10 @@
 <template>
   <div :class="_.nav_bar_page">
-    <div ref="pageHead" v-if="showNavBar" :style="{ background: nowBgColor }">
+    <div ref="pageHead" v-if="showNavBar">
       <slot name="navBar">
         <DNavBar
+          ref="DNavBar"
+          :fixed="fixed"
           :title="title"
           :tab="tab"
           :safeTop="safeTop"
@@ -18,8 +20,13 @@
           :service="service"
           :close="close"
           :searchBgColor="searchBgColor"
-          background="transparent"
+          :background="nowBgColor"
           :color="nowColor"
+          @back="$emit('back')"
+          @close="$emit('close')"
+          @service="$emit('service')"
+          @more="$emit('more')"
+          @share="$emit('share')"
         />
       </slot>
     </div>
@@ -39,7 +46,6 @@ import DNavBar from '@/components/nav_bar/nav_bar';
 
 const props = () => {
   const data = {...DNavBar.props};
-  delete data.fixed;
   delete data.background;
   return data;
 };
@@ -50,6 +56,11 @@ export default defineComponent({
   },
   props: {
     ...props(),
+    fixed: {
+      type: Boolean,
+      default: true,
+      desc: '是否浮动布局',
+    },
     showNavBar: {
       type: Boolean,
       default: true,
@@ -57,7 +68,7 @@ export default defineComponent({
     },
     navBarBg: {
       type: String,
-      default: '',
+      default: 'transparent',
       desc: '导航栏背景颜色',
     },
     navBarColor: {
@@ -68,7 +79,25 @@ export default defineComponent({
     scrollCallBack: {
       // 滑动回调
       type: Function,
-      desc: '页面滑动事件，返回Object（that,// 组件实例，opacity，// 透明度, scrollExceed // 滚动距离是否超过导航栏高度, scrollTop // 滑动距离顶部的高度）,可以通过实例修改newBgColor,newColor的颜色值',
+      desc: '页面滑动事件，返回Object（that,// 组件实例，opacity，// 透明度, scrollExceed // 滚动距离是否超过导航栏高度, scrollTop // 滑动距离顶部的高度, pageHeadH // 导航栏区域的高度）,可以通过实例修改newBgColor,newColor的颜色值',
+    },
+  },
+  emits: {
+    back: {
+      desc: '返回',
+    },
+
+    close: {
+      desc: '关闭',
+    },
+    service: {
+      desc: '客服',
+    },
+    more: {
+      desc: '更多',
+    },
+    share: {
+      desc: '分享',
     },
   },
   slots: {
@@ -83,6 +112,7 @@ export default defineComponent({
     return {
       newBgColor: '',
       newColor: '',
+      pageHeadH: 0
     };
   },
   computed: {
@@ -98,6 +128,10 @@ export default defineComponent({
     },
   },
   mounted() {
+    this.$nextTick(() => {
+      this.pageHeadH = this.$slots.navBar ? this.$refs.pageContent.parentNode.children[0].children[0].offsetHeight : this.$refs.DNavBar.$el.offsetHeight
+      this.$refs.pageContent.children[0].style.paddingTop = this.pageHeadH + 'px'
+    })
   },
   methods: {
     hexToRgb(val) {
@@ -133,7 +167,7 @@ export default defineComponent({
       return {rgb: result};
     },
     async scrollPageContent({target}) {
-      const pageHeadH = this.$refs?.pageHead?.offsetHeight;
+      const pageHeadH = this.pageHeadH
       const opacity =
         target.scrollTop <= pageHeadH
           ? target.scrollTop / Math.round(pageHeadH)
@@ -146,12 +180,17 @@ export default defineComponent({
           opacity, // 透明度
           scrollExceed, // 滑动距离是否超过导航栏
           scrollTop: target.scrollTop, // 滑动距离顶部的高度
+          pageHeadH // 导航栏区域的高度
         });
         return;
       }
       this.newBgColor = `rgba(255,255,255,${opacity})`;
       this.newColor = '#000';
       this.$emit('scrollExceed', {scrollExceed, opacity}); // 根据opacity 设置手机状态栏颜色
+      if (scrollExceed) {
+        this.newBgColor = `rgba(255,255,255,1)`;
+        this.newColor = '#000';
+      }
       if (target.scrollTop === 0) {
         this.newColor = '';
       }
@@ -162,13 +201,10 @@ export default defineComponent({
 
 <style lang="scss" module>
 .nav_bar_page {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 
   &_content {
-    flex: 1;
+    height: 100vh;
     overflow-y: scroll;
     padding-bottom: 20px;
 

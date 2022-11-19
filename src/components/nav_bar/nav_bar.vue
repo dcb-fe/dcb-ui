@@ -16,7 +16,7 @@
     <div :class="[search ? _.search_content : _.content]">
       <div :class="_.content_left" @click.stop="handleBack">
         <d-icon name="return" :class="_.icon" :style="styleGetter"/>
-        <div v-if="leftText" :class="_.content_left_text">
+        <div v-if="leftText" :style="styleGetter" :class="_.content_left_text">
           {{ leftText }}
         </div>
       </div>
@@ -71,7 +71,7 @@
                 name="more"
                 :class="[_.icon, _.icon_share]"
                 :style="styleGetter"
-                @click.stop="handleShare"
+                @click.stop="handleMore"
               />
               <d-icon
                 v-if="close"
@@ -389,6 +389,9 @@ export default defineComponent({
     handleShare() {
       this.$emit('share');
     },
+    handleMore() {
+      this.$emit('more');
+    },
     handleService() {
       this.$emit('service');
     },
@@ -426,7 +429,6 @@ export default defineComponent({
 
   &_fixed {
     position: fixed;
-    top: 0;
   }
 
   .icon {
