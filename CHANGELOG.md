@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.8-beta.4](https://github.com/dcb-fe/dcb-ui/compare/v0.0.8-beta.3...v0.0.8-beta.4) (2022-11-19)
+
+### 修复
+
+- 完善导航栏组件使用规则 ([c5285d3](https://github.com/dcb-fe/dcb-ui/commit/c5285d3be4b498a9efeaea2a70de42603e208741))
+
 ### [0.0.8-beta.3](https://github.com/dcb-fe/dcb-ui/compare/v0.0.8-beta.2...v0.0.8-beta.3) (2022-10-18)
 
 ### 修复
