@@ -102,5 +102,6 @@ export default {
   'nav_bar.html#自定义颜色': 'DemoNavBarCustom',
   'nav_bar_page.html': 'DemoNavBarPageBasic',
   'nav_bar_page.html#基础渲染': 'DemoNavBarPageBasic',
-  'nav_bar_page.html#自定义渲染': 'DemoNavBarPageSlot',
+  'nav_bar_page.html#插槽渲染': 'DemoNavBarPageSlot',
+  'nav_bar_page.html#自定义渲染': 'DemoNavBarPageCustom',
 };

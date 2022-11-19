@@ -1,5 +1,5 @@
 <template>
-  <div class="slot">
+  <div class="custom1">
     <d-nav-bar-page
       class="page-home"
       title="标题"
@@ -7,15 +7,21 @@
     >
       <template #navBar>
         <d-nav-bar
-          search
-          search-bg-color="rgba(255, 255, 255, 0.41)"
+          leftText="返回"
+          title="标题"
           :background="navBarBg"
-          :safe-top="true"
           :color="color"
           fixed
+          :safe-top="false"
           @back="handleClick('back')"
-          @search="handleClick('handleClick')"
-        />
+        >
+          <template #action>
+            <div class="link">
+              <d-icon name="link" @click="handleClick('link')"/>
+              <span @click="handleClick('按钮')">按钮</span>
+            </div>
+          </template>
+        </d-nav-bar>
       </template>
       <div class="content">
         <div
@@ -32,21 +38,22 @@ export default {
   data() {
     return {
       navBarBg: 'transparent',
-      color: '#fff',
+      color: '#000',
     };
   },
   methods: {
     handleClick(v) {
       alert(v);
     },
-    //  that 组件实例，opacity 透明度, scrollExceed 滚动距离是否超过导航栏高度, scrollTop 滑动距离顶部的高度
-    scrollCallBack({that, opacity, scrollExceed, scrollTop}) {
+    //  that 组件实例，opacity 透明度, scrollExceed 滚动距离是否超过导航栏高度, scrollTop 滑动距离顶部的高度，pageHeadH // 导航栏区域的高度
+    scrollCallBack({that, opacity, scrollExceed, scrollTop, pageHeadH}) {
       this.navBarBg = `linear-gradient(270deg, rgba(253, 154, 120, ${opacity}) 0%,
        rgba(255, 161, 23, ${opacity}) 51%, rgba(255, 123, 105, ${opacity}) 100%)`;
       this.color = '#000';
+      console.log('pageHeadH', pageHeadH)
       if (scrollTop === 0) {
         this.navBarBg = 'transparent';
-        this.color = '#fff';
+        this.color = '#000';
       }
     },
   },
