@@ -15,10 +15,12 @@
 
     <div :class="[search ? _.search_content : _.content]">
       <div :class="_.content_left" @click.stop="handleBack">
-        <d-icon name="return" :class="_.icon" :style="styleGetter"/>
-        <div v-if="leftText" :style="styleGetter" :class="_.content_left_text">
-          {{ leftText }}
-        </div>
+        <slot name="left">
+          <d-icon name="return" :class="_.icon" :style="styleGetter"/>
+          <div v-if="leftText" :style="styleGetter" :class="_.content_left_text">
+            {{ leftText }}
+          </div>
+        </slot>
       </div>
 
       <slot>
@@ -114,6 +116,7 @@
                 :placeholder="placeholder"
               />
             </div>
+            <slot name="action"/>
           </slot>
         </template>
       </slot>
@@ -281,6 +284,10 @@ export default defineComponent({
 
     action: {
       desc: '自定义操作',
+    },
+
+    left: {
+      desc: '自定义左侧区域内容',
     },
 
     search: {
