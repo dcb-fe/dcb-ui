@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.8](https://github.com/dcb-fe/dcb-ui/compare/v0.0.8-beta.4...v0.0.8) (2022-12-05)
+
+### 修复
+
+- 导航栏支持自定义左侧区域内容和搜索场景下自定义最右侧类容 ([6c76920](https://github.com/dcb-fe/dcb-ui/commit/6c7692071c26fd06f10430af6661d0aa959998ec))
+
 ### [0.0.8-beta.4](https://github.com/dcb-fe/dcb-ui/compare/v0.0.8-beta.3...v0.0.8-beta.4) (2022-11-19)
 
 ### 修复
