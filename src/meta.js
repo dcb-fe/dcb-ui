@@ -2,7 +2,7 @@ export const meta = {
   /**
    * 版本号。
    */
-  version: '0.0.9-beta.0',
+  version: '0.0.9-beta.1',
 
   /**
    * 组件分组。

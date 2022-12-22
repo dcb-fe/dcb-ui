@@ -1,5 +1,11 @@
 # 更新日志
 
+### [0.0.9-beta.1](https://github.com/dcb-fe/dcb-ui/compare/v0.0.9-beta.0...v0.0.9-beta.1) (2022-12-22)
+
+### 修复
+
+- 再次进入滑动导航栏页面是否回到顶部 bug 修复 ([850cf69](https://github.com/dcb-fe/dcb-ui/commit/850cf6947aabb4855fee85b80fb7c0d7edc6b034))
+
 ### [0.0.9-beta.0](https://github.com/dcb-fe/dcb-ui/compare/v0.0.8...v0.0.9-beta.0) (2022-12-22)
 
 ### 修复
