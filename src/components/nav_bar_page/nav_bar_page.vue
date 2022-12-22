@@ -135,7 +135,9 @@ export default defineComponent({
   activated() {
     if (this.backToTop) {
       this.scrollPageContent({
-        scrollTop: 0
+        target: {
+          scrollTop: 0
+        }
       })
     }
   },
