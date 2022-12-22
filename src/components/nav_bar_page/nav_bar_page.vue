@@ -76,6 +76,11 @@ export default defineComponent({
       default: '#fff',
       desc: '导航栏文字颜色',
     },
+    backToTop: {
+      type: Boolean,
+      default: true,
+      desc: '再次进入时，是否回到顶部',
+    },
     scrollCallBack: {
       // 滑动回调
       type: Function,
@@ -127,6 +132,13 @@ export default defineComponent({
       },
     },
   },
+  activated() {
+    if (this.backToTop) {
+      this.scrollPageContent({
+        scrollTop: 0
+      })
+    }
+  },
   mounted() {
     this.$nextTick(() => {
       this.pageHeadH = this.$slots.navBar ? this.$refs.pageContent.parentNode.children[0].children[0].offsetHeight : this.$refs.DNavBar.$el.offsetHeight
@@ -167,6 +179,7 @@ export default defineComponent({
       return {rgb: result};
     },
     async scrollPageContent({target}) {
+      console.log('执行', target)
       const pageHeadH = this.pageHeadH
       const opacity =
         target.scrollTop <= pageHeadH
