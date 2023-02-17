@@ -134,10 +134,12 @@ export default defineComponent({
   },
   activated() {
     if (this.backToTop) {
-      this.scrollPageContent({
-        target: {
-          scrollTop: 0
-        }
+      this.$nextTick(() => {
+        this.scrollPageContent({
+          target: {
+            scrollTop: 0
+          }
+        })
       })
     }
   },
