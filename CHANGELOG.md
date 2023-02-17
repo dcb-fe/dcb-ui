@@ -1,5 +1,11 @@
 # 更新日志
 
+## [1.0.0-beta.0](https://github.com/dcb-fe/dcb-ui/compare/v0.0.9-beta.1...v1.0.0-beta.0) (2023-02-17)
+
+### 修复
+
+- opacity 计算得 NAN 问题处理 ([8e7be6b](https://github.com/dcb-fe/dcb-ui/commit/8e7be6be648c2646d0f4bdc4042ad4ce467def1a))
+
 ### [0.0.9-beta.1](https://github.com/dcb-fe/dcb-ui/compare/v0.0.9-beta.0...v0.0.9-beta.1) (2022-12-22)
 
 ### 修复
