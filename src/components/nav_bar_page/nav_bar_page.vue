@@ -183,10 +183,13 @@ export default defineComponent({
     async scrollPageContent({target}) {
       console.log('执行', target)
       const pageHeadH = this.pageHeadH
-      const opacity =
+      let opacity =
         target.scrollTop <= pageHeadH
           ? target.scrollTop / Math.round(pageHeadH)
           : 1;
+      if (isNaN(opacity)){
+        opacity = 0
+      }
       const scrollExceed = target.scrollTop >= pageHeadH;
       if (this.scrollCallBack) {
         // 自定义滚动事件
