@@ -1,5 +1,11 @@
 # 更新日志
 
+## [1.0.0-beta.1](https://github.com/dcb-fe/dcb-ui/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2023-02-17)
+
+### 修复
+
+- 执行 activated 时等待渲染完成后触发事件 ([2f8863b](https://github.com/dcb-fe/dcb-ui/commit/2f8863b22f0875be06a06da314c7c871463e6c9c))
+
 ## [1.0.0-beta.0](https://github.com/dcb-fe/dcb-ui/compare/v0.0.9-beta.1...v1.0.0-beta.0) (2023-02-17)
 
 ### 修复
